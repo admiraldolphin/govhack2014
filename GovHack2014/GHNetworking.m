@@ -260,5 +260,8 @@ static GHNetworking* _sharedInstance;
     
 }
 
+- (BOOL)isHost {
+    return self.peerType == GHNetworkingPeerTypeHost;
+}
 
 @end

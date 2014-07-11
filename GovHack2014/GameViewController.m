@@ -11,6 +11,7 @@
 
 @interface GameViewController () <GHNetworkingSessionDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *chatField;
+@property (weak, nonatomic) IBOutlet UILabel *peerTypeLabel;
 
 @end
 
@@ -46,6 +47,12 @@
     [super viewDidLoad];
     
     [GHNetworking sharedNetworking].sessionDelegate = self;
+    
+    if ([GHNetworking sharedNetworking].isHost) {
+        self.peerTypeLabel.text = @"You are the server";
+    } else {
+        self.peerTypeLabel.text = @"You are a client";
+    }
     
     // Do any additional setup after loading the view.
 }

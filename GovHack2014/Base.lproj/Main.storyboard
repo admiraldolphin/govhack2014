@@ -137,6 +137,7 @@
                     <navigationItem key="navigationItem" id="KvM-lT-cyg"/>
                     <connections>
                         <outlet property="chatField" destination="raQ-12-8tl" id="Eoy-qB-NRt"/>
+                        <outlet property="peerTypeLabel" destination="E5P-4w-hnn" id="2PN-jS-dni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IV2-B3-zYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
