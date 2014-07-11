@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Secret Lab. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GamesListViewController.h"
 #import "GHNetworking.h"
 
-@interface ViewController () <GHNetworkingPeerDiscoveryDelegate>
+@interface GamesListViewController () <GHNetworkingPeerDiscoveryDelegate>
 
 @end
 
-@implementation ViewController
+@implementation GamesListViewController
 
 - (IBAction)startGame:(id)sender {
     [[GHNetworking sharedNetworking] createGame];
