@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6G-I2-i1b">
-                                <rect key="frame" x="117" y="347" width="86" height="30"/>
+                                <rect key="frame" x="117" y="221" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Leave Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,14 +102,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-12-8tl">
-                                <rect key="frame" x="20" y="220" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chat Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-12-8tl">
+                                <rect key="frame" x="20" y="145" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-YP-euu">
-                                <rect key="frame" x="138" y="258" width="36" height="30"/>
+                                <rect key="frame" x="138" y="183" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,8 +123,8 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="E5P-4w-hnn" secondAttribute="centerX" constant="-0.5" id="0Wn-Z7-vg9"/>
                             <constraint firstItem="raQ-12-8tl" firstAttribute="leading" secondItem="gU5-yV-AV3" secondAttribute="leading" constant="20" id="18x-I5-6df"/>
-                            <constraint firstItem="R6G-I2-i1b" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="59" id="9Rh-YD-vZv"/>
-                            <constraint firstItem="raQ-12-8tl" firstAttribute="top" secondItem="E5P-4w-hnn" secondAttribute="bottom" constant="95" id="KMD-ws-z5v"/>
+                            <constraint firstItem="R6G-I2-i1b" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="8" symbolic="YES" id="9Rh-YD-vZv"/>
+                            <constraint firstItem="raQ-12-8tl" firstAttribute="top" secondItem="E5P-4w-hnn" secondAttribute="bottom" constant="20" id="KMD-ws-z5v"/>
                             <constraint firstItem="xCn-dC-KZD" firstAttribute="top" secondItem="rQV-ni-8Xa" secondAttribute="bottom" constant="55" id="OOK-0T-5Ju"/>
                             <constraint firstItem="E5P-4w-hnn" firstAttribute="top" secondItem="xCn-dC-KZD" secondAttribute="bottom" constant="8" symbolic="YES" id="XUn-M7-HGo"/>
                             <constraint firstAttribute="centerX" secondItem="XB2-YP-euu" secondAttribute="centerX" constant="4" id="ZjS-DY-Vda"/>
