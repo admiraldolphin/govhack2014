@@ -23,7 +23,8 @@ typedef enum : NSUInteger {
     GHNetworkingPeerTypeHost,
 } GHNetworkingPeerType;
 
-
+// Notifications
+NSString* GHNetworkingDidChangeStateNotification = @"GHNetworkingDidChangeStateNotification";
 
 @interface GHMessage : NSObject <NSCoding>
 
@@ -65,7 +66,7 @@ static GHNetworking* _sharedInstance;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser* advertiser;
 @property (nonatomic, strong) MCNearbyServiceBrowser* browser;
 
-@property (assign) GHNetworkingState state;
+@property (nonatomic, assign) GHNetworkingState state;
 @property (assign) GHNetworkingPeerType peerType;
 
 @property (copy) GameCreationCompletionBlock creationCompletionBlock;
@@ -138,10 +139,15 @@ static GHNetworking* _sharedInstance;
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void(^)(BOOL accept, MCSession *session))invitationHandler {
     
     if (self.peerType != GHNetworkingPeerTypeHost) {
+        
+        // we are not the host, don't let people join us
         invitationHandler(NO, nil);
         return;
     } else {
-        invitationHandler(YES, self.session);
+        
+        // If we are in the lobby, we can accept people
+        if (self.state == GHNetworkingStateLobby)
+            invitationHandler(YES, self.session);
     }
     
 }
@@ -164,6 +170,7 @@ static GHNetworking* _sharedInstance;
 
 - (void) createGame {
     [self createSession];
+    self.state = GHNetworkingStateLobby;
     self.peerType = GHNetworkingPeerTypeHost;
     [self.advertiser startAdvertisingPeer];
     
@@ -223,12 +230,27 @@ static GHNetworking* _sharedInstance;
         if (self.peerType == GHNetworkingPeerTypeClient && self.state == GHNetworkingStateJoiningGame) {
             
             self.hostPeerID = peerID;
+            self.state = GHNetworkingStateLobby;
             
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.peerDiscoveryDelegate networkingDidJoinSession: peerID];
 
             }];
         }
+    }
+    
+    if (self.state == GHNetworkingStateLobby) {
+        if (state == MCSessionStateConnected) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.sessionDelegate networkingPlayerDidJoinSession:peerID];
+            }];
+        }
+        if (state == MCSessionStateNotConnected) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.sessionDelegate networkingPlayerDidLeaveSession:peerID];
+            }];
+        }
+        
     }
     
     if (state == MCSessionStateNotConnected) {
@@ -256,12 +278,38 @@ static GHNetworking* _sharedInstance;
     
 }
 
+- (void)beginGame {
+    self.state = GHNetworkingStateInGame;
+    [self.advertiser stopAdvertisingPeer];
+    
+    [self sendMessage:GHNetworkingMessageGameBeginning data:nil];
+}
+
 - (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error {
+    
+}
+
+- (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress {
+    
+}
+
+- (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID {
     
 }
 
 - (BOOL)isHost {
     return self.peerType == GHNetworkingPeerTypeHost;
+}
+
+- (NSArray *)connectedPeers {
+    return self.session.connectedPeers;
+}
+
+- (void)setState:(GHNetworkingState)state {
+    GHNetworkingState oldState = _state;
+    _state = state;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:GHNetworkingDidChangeStateNotification object:self userInfo:@{@"oldState": @(oldState), @"newState" : @(_state)}];
 }
 
 @end

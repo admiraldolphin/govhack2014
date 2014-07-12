@@ -22,7 +22,7 @@
 		68E6C802196FD78D000CF1A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68E6C800196FD78D000CF1A0 /* InfoPlist.strings */; };
 		68E6C804196FD78D000CF1A0 /* GovHack2014Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E6C803196FD78D000CF1A0 /* GovHack2014Tests.m */; };
 		68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E6C80E196FDA63000CF1A0 /* GHNetworking.m */; };
-		68E6C812196FF3BE000CF1A0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E6C811196FF3BE000CF1A0 /* GameViewController.m */; };
+		68E6C812196FF3BE000CF1A0 /* LobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E6C811196FF3BE000CF1A0 /* LobbyViewController.m */; };
 		68E6C855196FF808000CF1A0 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C854196FF808000CF1A0 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +58,8 @@
 		68E6C803196FD78D000CF1A0 /* GovHack2014Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GovHack2014Tests.m; sourceTree = "<group>"; };
 		68E6C80D196FDA63000CF1A0 /* GHNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNetworking.h; sourceTree = "<group>"; };
 		68E6C80E196FDA63000CF1A0 /* GHNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNetworking.m; sourceTree = "<group>"; };
-		68E6C810196FF3BE000CF1A0 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		68E6C811196FF3BE000CF1A0 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		68E6C810196FF3BE000CF1A0 /* LobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LobbyViewController.h; sourceTree = "<group>"; };
+		68E6C811196FF3BE000CF1A0 /* LobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LobbyViewController.m; sourceTree = "<group>"; };
 		68E6C854196FF808000CF1A0 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -127,8 +127,8 @@
 				68E6C7EA196FD78D000CF1A0 /* Main.storyboard */,
 				68E6C7ED196FD78D000CF1A0 /* GamesListViewController.h */,
 				68E6C7EE196FD78D000CF1A0 /* GamesListViewController.m */,
-				68E6C810196FF3BE000CF1A0 /* GameViewController.h */,
-				68E6C811196FF3BE000CF1A0 /* GameViewController.m */,
+				68E6C810196FF3BE000CF1A0 /* LobbyViewController.h */,
+				68E6C811196FF3BE000CF1A0 /* LobbyViewController.m */,
 				68E6C80D196FDA63000CF1A0 /* GHNetworking.h */,
 				68E6C80E196FDA63000CF1A0 /* GHNetworking.m */,
 				68E6C7F0196FD78D000CF1A0 /* Images.xcassets */,
@@ -271,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68E6C812196FF3BE000CF1A0 /* GameViewController.m in Sources */,
+				68E6C812196FF3BE000CF1A0 /* LobbyViewController.m in Sources */,
 				68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */,
 				68E6C7EF196FD78D000CF1A0 /* GamesListViewController.m in Sources */,
 				68E6C7E9196FD78D000CF1A0 /* AppDelegate.m in Sources */,
@@ -486,6 +486,7 @@
 				68E6C809196FD78D000CF1A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68E6C80A196FD78D000CF1A0 /* Build configuration list for PBXNativeTarget "GovHack2014Tests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +495,7 @@
 				68E6C80C196FD78D000CF1A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

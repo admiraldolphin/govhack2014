@@ -6,16 +6,18 @@
 //  Copyright (c) 2014 Secret Lab. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "LobbyViewController.h"
 #import "GHNetworking.h"
 
-@interface GameViewController () <GHNetworkingSessionDelegate>
+@interface LobbyViewController () <GHNetworkingSessionDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *chatField;
 @property (weak, nonatomic) IBOutlet UILabel *peerTypeLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *playersLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startGameButton;
 @end
 
-@implementation GameViewController
+@implementation LobbyViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,6 +40,29 @@
     [[[UIAlertView alloc] initWithTitle:@"Message" message:string delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
 }
 
+- (void) updatePlayerCount {
+    
+    // +1 to include ourself
+    NSUInteger playerCount = [GHNetworking sharedNetworking].connectedPeers.count + 1;
+    
+    NSString* playerCountString = [NSString stringWithFormat:@"%lu players connected", (unsigned long)playerCount];
+    
+    self.playersLabel.text = playerCountString;
+}
+
+- (void)networkingPlayerDidJoinSession:(MCPeerID *)peerID {
+    [self updatePlayerCount];
+}
+
+- (void)networkingPlayerDidLeaveSession:(MCPeerID *)peerID {
+    [self updatePlayerCount];
+}
+
+- (IBAction)startGame:(id)sender {
+    [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageGameBeginning data:nil];
+    [self performSegueWithIdentifier:@"BeginGame" sender:nil];
+}
+
 - (IBAction)leaveGame:(id)sender {
     [[GHNetworking sharedNetworking] leaveGame];
 }
@@ -50,9 +75,15 @@
     
     if ([GHNetworking sharedNetworking].isHost) {
         self.peerTypeLabel.text = @"You are the server";
+        
+        self.startGameButton.enabled = YES;
     } else {
         self.peerTypeLabel.text = @"You are a client";
+        
+        self.startGameButton.enabled = NO;
     }
+    
+    [self updatePlayerCount];
     
     // Do any additional setup after loading the view.
 }

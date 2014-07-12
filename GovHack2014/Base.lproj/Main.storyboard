@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="350" y="59"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Lobby View Controller-->
         <scene sceneID="Net-Sj-VqT">
             <objects>
-                <viewController id="37L-MH-mqa" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="37L-MH-mqa" customClass="LobbyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rQV-ni-8Xa"/>
                         <viewControllerLayoutGuide type="bottom" id="DBT-8d-eHm"/>
@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6G-I2-i1b">
-                                <rect key="frame" x="117" y="221" width="86" height="30"/>
+                                <rect key="frame" x="214" y="213" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Leave Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,26 +90,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-dC-KZD">
-                                <rect key="frame" x="128" y="75" width="66" height="21"/>
+                                <rect key="frame" x="128" y="50" width="66" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are the PEERTYPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5P-4w-hnn">
-                                <rect key="frame" x="72" y="104" width="177" height="21"/>
+                                <rect key="frame" x="72" y="79" width="177" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chat Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-12-8tl">
-                                <rect key="frame" x="20" y="145" width="280" height="30"/>
+                                <rect key="frame" x="20" y="137" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-YP-euu">
-                                <rect key="frame" x="138" y="183" width="36" height="30"/>
+                                <rect key="frame" x="138" y="175" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,26 +118,48 @@
                                     <action selector="sendChat:" destination="37L-MH-mqa" eventType="touchUpInside" id="qTC-Gh-sah"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cW-M2-tuc">
+                                <rect key="frame" x="20" y="213" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="37L-MH-mqa" eventType="touchUpInside" id="7oG-nA-LAx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 players in game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-BU-aag">
+                                <rect key="frame" x="88" y="108" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="E5P-4w-hnn" secondAttribute="centerX" constant="-0.5" id="0Wn-Z7-vg9"/>
                             <constraint firstItem="raQ-12-8tl" firstAttribute="leading" secondItem="gU5-yV-AV3" secondAttribute="leading" constant="20" id="18x-I5-6df"/>
                             <constraint firstItem="R6G-I2-i1b" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="8" symbolic="YES" id="9Rh-YD-vZv"/>
-                            <constraint firstItem="raQ-12-8tl" firstAttribute="top" secondItem="E5P-4w-hnn" secondAttribute="bottom" constant="20" id="KMD-ws-z5v"/>
-                            <constraint firstItem="xCn-dC-KZD" firstAttribute="top" secondItem="rQV-ni-8Xa" secondAttribute="bottom" constant="55" id="OOK-0T-5Ju"/>
+                            <constraint firstAttribute="centerX" secondItem="9QC-BU-aag" secondAttribute="centerX" id="G0h-vk-x2e"/>
+                            <constraint firstItem="xCn-dC-KZD" firstAttribute="top" secondItem="rQV-ni-8Xa" secondAttribute="bottom" constant="30" id="OOK-0T-5Ju"/>
                             <constraint firstItem="E5P-4w-hnn" firstAttribute="top" secondItem="xCn-dC-KZD" secondAttribute="bottom" constant="8" symbolic="YES" id="XUn-M7-HGo"/>
                             <constraint firstAttribute="centerX" secondItem="XB2-YP-euu" secondAttribute="centerX" constant="4" id="ZjS-DY-Vda"/>
+                            <constraint firstItem="8cW-M2-tuc" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="8" id="aui-lj-DL0"/>
                             <constraint firstAttribute="centerX" secondItem="xCn-dC-KZD" secondAttribute="centerX" constant="-0.5" id="dBc-MT-M3Q"/>
                             <constraint firstAttribute="trailing" secondItem="raQ-12-8tl" secondAttribute="trailing" constant="20" id="fLT-Ib-7GN"/>
-                            <constraint firstAttribute="centerX" secondItem="R6G-I2-i1b" secondAttribute="centerX" id="kao-jL-C7O"/>
+                            <constraint firstItem="8cW-M2-tuc" firstAttribute="leading" secondItem="gU5-yV-AV3" secondAttribute="leading" constant="20" symbolic="YES" id="fP7-rM-Weq"/>
+                            <constraint firstAttribute="trailing" secondItem="R6G-I2-i1b" secondAttribute="trailing" constant="20" symbolic="YES" id="hQ2-gu-Pcf"/>
+                            <constraint firstItem="raQ-12-8tl" firstAttribute="top" secondItem="9QC-BU-aag" secondAttribute="bottom" constant="8" symbolic="YES" id="qGZ-Og-uc3"/>
                             <constraint firstItem="XB2-YP-euu" firstAttribute="top" secondItem="raQ-12-8tl" secondAttribute="bottom" constant="8" id="uV2-b3-A3C"/>
+                            <constraint firstItem="9QC-BU-aag" firstAttribute="top" secondItem="E5P-4w-hnn" secondAttribute="bottom" constant="8" symbolic="YES" id="vJF-9a-jY4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KvM-lT-cyg"/>
                     <connections>
                         <outlet property="chatField" destination="raQ-12-8tl" id="Eoy-qB-NRt"/>
                         <outlet property="peerTypeLabel" destination="E5P-4w-hnn" id="2PN-jS-dni"/>
+                        <outlet property="playersLabel" destination="9QC-BU-aag" id="H7v-mV-nDA"/>
+                        <outlet property="startGameButton" destination="8cW-M2-tuc" id="4Ee-p9-cMQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IV2-B3-zYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
