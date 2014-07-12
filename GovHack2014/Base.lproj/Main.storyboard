@@ -211,10 +211,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuJ-Ti-Mrg">
+                                <rect key="frame" x="136" y="510" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="mtY-kh-1sL" secondAttribute="centerX" id="EZV-In-6gj"/>
+                            <constraint firstItem="8wG-Xb-WZP" firstAttribute="top" secondItem="NuJ-Ti-Mrg" secondAttribute="bottom" constant="8" symbolic="YES" id="My8-j8-CQD"/>
                             <constraint firstAttribute="centerX" secondItem="K1Z-Uh-gI3" secondAttribute="centerX" id="N1c-CN-ets"/>
                             <constraint firstAttribute="centerY" secondItem="xgj-0T-xrt" secondAttribute="centerY" id="NyG-Pb-GTe"/>
                             <constraint firstAttribute="trailing" secondItem="iPy-he-E5o" secondAttribute="trailing" constant="20" id="Zbt-nd-bdo"/>
@@ -225,6 +232,7 @@
                             <constraint firstAttribute="centerX" secondItem="8wG-Xb-WZP" secondAttribute="centerX" id="vSU-ie-zGL"/>
                             <constraint firstItem="mtY-kh-1sL" firstAttribute="top" secondItem="K1Z-Uh-gI3" secondAttribute="bottom" constant="8" symbolic="YES" id="woB-xV-RPo"/>
                             <constraint firstItem="NiO-3l-Qhz" firstAttribute="top" secondItem="8wG-Xb-WZP" secondAttribute="bottom" constant="20" symbolic="YES" id="xBw-i5-CE6"/>
+                            <constraint firstAttribute="centerX" secondItem="NuJ-Ti-Mrg" secondAttribute="centerX" id="xfC-Fc-vZ2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k0f-VL-gWq"/>
@@ -232,6 +240,7 @@
                         <outlet property="gameStateLabel" destination="8wG-Xb-WZP" id="7u6-8p-cAg"/>
                         <outlet property="missionNameLabel" destination="mtY-kh-1sL" id="2b6-xC-wdE"/>
                         <outlet property="missionTimeProgress" destination="iPy-he-E5o" id="heN-Qx-th7"/>
+                        <outlet property="pointsLabel" destination="NuJ-Ti-Mrg" id="SvH-vb-eLe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Knh-6x-TJo" userLabel="First Responder" sceneMemberID="firstResponder"/>

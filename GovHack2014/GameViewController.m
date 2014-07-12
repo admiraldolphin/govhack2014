@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *missionNameLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *missionTimeProgress;
 @property (weak, nonatomic) IBOutlet UILabel *gameStateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @end
 
 @implementation GameViewController
@@ -56,6 +57,11 @@
     
     [self.gameClient addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     
+    [self.gameClient addObserver:self forKeyPath:@"points" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
+    
+    [self.gameClient addObserver:self forKeyPath:@"people" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
+    
+    
     
 }
 
@@ -79,6 +85,22 @@
         [self updateState];
     }
     
+    if ([keyPath isEqualToString:@"points"]) {
+        [self updatePoints];
+    }
+    
+    if ([keyPath isEqualToString:@"people"]) {
+        [self updatePeople];
+    }
+    
+}
+
+- (void)updatePeople {
+    NSLog(@"NEW PEOPLE:\n%@", self.gameClient.people);
+}
+
+- (void) updatePoints {
+    self.pointsLabel.text = [NSString stringWithFormat:@"%i Points", self.gameClient.points];
 }
 
 - (void) updateProgress {

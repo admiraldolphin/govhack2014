@@ -20,8 +20,8 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, assign) GHGameState gameState;
 
+@property (assign) NSUInteger peoplePerPeer;
 @property (assign) NSTimeInterval waitingForMissionsDelay;
-
 @property (assign) NSTimeInterval endOfRoundReportDelay;
 
 @property (weak) GHGameClient* localClient;

@@ -10,19 +10,36 @@
 #import "GHNetworking.h"
 #import "GHGameClient.h"
 
-// agents are people who can complete missions; each player has multiple agents
-@interface GHAgent : NSObject
+// people can complete missions; each player has multiple people
+@interface GHPerson : NSObject
 
-// Display name of the agent
+// Display name of the person
 @property (strong) NSString* name;
 
 // Array of strings
 @property (strong) NSArray* functionTypes;
 
-// Amount of money deducted when this agent is used
+// Amount of money deducted when this person is used
 @property (assign) NSUInteger costToUse;
 
+// The owner of this person
+@property (weak) MCPeerID* owner;
+
+// The displayed description (like, 'minister of finance')
+@property (strong) NSString* description;
+
+// A dictionary indicating which components get used to build the picture
+@property (strong) NSDictionary* appearance;
+
 @end
+
+@implementation GHPerson
+
+
+
+@end
+
+#pragma mark -
 
 // missions are tasks that must be completed by an agent
 @interface GHMission : NSObject
@@ -30,7 +47,7 @@
 // The name of the mission, selected
 @property (strong) NSString* title;
 
-// Array of strings; an agent with one of these valid types must be selected to
+// Array of strings; a person with one of these valid types must be selected to
 // complete the mission
 @property (strong) NSArray* functionsRequired;
 
@@ -45,6 +62,7 @@
 
 // number of points deducted on mission failure (always negative)
 @property (assign) NSInteger failurePoints;
+
 
 @end
 
@@ -74,6 +92,8 @@
 
 @end
 
+#pragma mark - 
+
 @interface GHGame ()
 
 // number of points currently
@@ -94,6 +114,8 @@
     // maps peerIDs to missions
     NSMutableDictionary* _missions;
     
+    NSMutableArray* _agents;
+    
     NSTimer* _timer;
 }
 
@@ -102,10 +124,12 @@
     
     if (self) {
         _missions = [NSMutableDictionary dictionary];
+        _agents = [NSMutableArray array];
         
         self.points = 0;
         self.pointsFailureThreshold = 10;
         self.pointsSuccessThreshold = -10;
+        self.peoplePerPeer = 4;
         
         [self beginRound];
         
@@ -127,15 +151,51 @@
         
         for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
             [self createMissionForPeer:peer];
+            [self setupPeopleForPeer:peer];
         }
         
+        // Delete all agents
+        [_agents removeAllObjects];
+        
+        // Give all players agents
         [self createMissionForPeer:[GHNetworking sharedNetworking].localPeer];
+        [self setupPeopleForPeer:[GHNetworking sharedNetworking].localPeer];
+        
+        
+        
     });
     
 }
 
+- (void) setupPeopleForPeer:(MCPeerID*)peerID {
+    
+    NSMutableArray* newPeople = [NSMutableArray array];
+    
+    for (int i = 0; i < self.peoplePerPeer; i++) {
+        GHPerson* person = [[GHPerson alloc] init];
+        person.name = [NSString stringWithFormat:@"PERSON %i", arc4random_uniform(10)];
+        person.description = @"A RIGHT OLD CHAP";
+        person.functionTypes = @[@"FUNCTION1", @"FUNCTION2"];
+        person.appearance = @{};
+        person.costToUse = arc4random_uniform(15);
+        person.owner = peerID;
+        
+        [_agents addObject:person];
+        
+        NSDictionary* descriptionDict = @{@"name": person.name,
+                                          @"description": person.description,
+                                          @"appearance": person.appearance};
+        
+        [newPeople addObject:descriptionDict];
+        
+    }
+    
+    [self sendMessageNamed:@"people" data:@{@"people":newPeople} toPeer:peerID mode:MCSessionSendDataReliable];
+    
+}
 
-- (void) peer:(MCPeerID*)peer usedAgent:(GHAgent*)agent {
+
+- (void) peer:(MCPeerID*)peer usedAgent:(GHPerson*)agent {
     
     self.money += agent.costToUse;
     

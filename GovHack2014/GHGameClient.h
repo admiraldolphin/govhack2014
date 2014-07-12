@@ -23,4 +23,6 @@
 
 @property (assign) NSInteger points;
 
+@property (strong) NSArray* people;
+
 @end

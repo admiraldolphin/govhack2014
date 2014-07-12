@@ -31,6 +31,10 @@
         self.timeRemaining = [dict[@"timeRemaining"] floatValue];
     }
     
+    if ([dict[@"messageType"] isEqualToString:@"people"]) {
+        self.people = [dict[@"people"] copy];
+    }
+    
 }
 
 @end
