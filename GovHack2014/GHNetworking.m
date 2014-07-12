@@ -10,12 +10,6 @@
 
 #define SERVICE_TYPE @"govhack14"
 
-typedef enum : NSUInteger {
-    GHNetworkingStateNotConnected,
-    GHNetworkingStateJoiningGame,
-    GHNetworkingStateLobby,
-    GHNetworkingStateInGame
-} GHNetworkingState;
 
 typedef enum : NSUInteger {
     GHNetworkingPeerTypeUndefined,
@@ -174,10 +168,6 @@ static GHNetworking* _sharedInstance;
     self.peerType = GHNetworkingPeerTypeHost;
     [self.advertiser startAdvertisingPeer];
     
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [self.sessionDelegate networkingWillBeginSession];
-
-    }];
 }
 
 - (void) sendMessage:(GHNetworkingMessage)message data:(NSData*)data {
@@ -249,15 +239,23 @@ static GHNetworking* _sharedInstance;
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.sessionDelegate networkingPlayerDidLeaveSession:peerID];
             }];
+            
+            // If we're the client and the host leaves, bail out
+            if (self.peerType == GHNetworkingPeerTypeClient && peerID == self.hostPeerID) {
+                [self leaveGame];
+            }
         }
         
     }
     
-    if (state == MCSessionStateNotConnected) {
-        if (self.peerType == GHNetworkingPeerTypeClient && peerID == self.hostPeerID) {
+    if (self.state == GHNetworkingStateInGame) {
+        // if we lose a peer, bail out to the start
+        if (state == MCSessionStateNotConnected) {
             [self leaveGame];
         }
     }
+    
+    
 
 }
 
@@ -267,12 +265,23 @@ static GHNetworking* _sharedInstance;
     
     switch (message.message) {
         case GHNetworkingMessageShutdown:
+        {
             [self leaveGame];
+        }
+            break;
+        case GHNetworkingMessageGameBeginning:
+        {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.sessionDelegate networkingWillBeginGame];
+            }];
+        }
             break;
         default:
+        {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.sessionDelegate networkingDidReceiveMessage:message.message data:message.data];
             }];
+        }
             break;
     }
     

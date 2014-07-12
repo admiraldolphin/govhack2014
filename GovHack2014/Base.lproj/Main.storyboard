@@ -160,11 +160,44 @@
                         <outlet property="peerTypeLabel" destination="E5P-4w-hnn" id="2PN-jS-dni"/>
                         <outlet property="playersLabel" destination="9QC-BU-aag" id="H7v-mV-nDA"/>
                         <outlet property="startGameButton" destination="8cW-M2-tuc" id="4Ee-p9-cMQ"/>
+                        <segue destination="GHb-Ok-HAt" kind="push" identifier="BeginGame" id="Bll-w0-xOd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IV2-B3-zYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800" y="59"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="n1M-gc-jYD">
+            <objects>
+                <viewController id="GHb-Ok-HAt" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LFq-zV-Li5"/>
+                        <viewControllerLayoutGuide type="bottom" id="NiO-3l-Qhz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BDa-bT-YW5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are now in game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgj-0T-xrt">
+                                <rect key="frame" x="80" y="274" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xgj-0T-xrt" secondAttribute="centerY" id="NyG-Pb-GTe"/>
+                            <constraint firstAttribute="centerX" secondItem="xgj-0T-xrt" secondAttribute="centerX" id="oVv-fc-yCf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k0f-VL-gWq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Knh-6x-TJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1275" y="59"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z2H-QD-bGG">

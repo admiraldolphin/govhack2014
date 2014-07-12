@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680161411970C6CB0062C8E8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161401970C6CB0062C8E8 /* GameViewController.m */; };
 		680161441970D29C0062C8E8 /* GHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161431970D29C0062C8E8 /* GHGame.m */; };
 		68E6C7D9196FD78D000CF1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7D8196FD78D000CF1A0 /* Foundation.framework */; };
 		68E6C7DB196FD78D000CF1A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6801613F1970C6CB0062C8E8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		680161401970C6CB0062C8E8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		680161421970D29C0062C8E8 /* GHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGame.h; sourceTree = "<group>"; };
 		680161431970D29C0062C8E8 /* GHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGame.m; sourceTree = "<group>"; };
 		68E6C7D5196FD78D000CF1A0 /* GovHack2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHack2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,8 @@
 				68E6C7EE196FD78D000CF1A0 /* GamesListViewController.m */,
 				68E6C810196FF3BE000CF1A0 /* LobbyViewController.h */,
 				68E6C811196FF3BE000CF1A0 /* LobbyViewController.m */,
+				6801613F1970C6CB0062C8E8 /* GameViewController.h */,
+				680161401970C6CB0062C8E8 /* GameViewController.m */,
 				68E6C80D196FDA63000CF1A0 /* GHNetworking.h */,
 				68E6C80E196FDA63000CF1A0 /* GHNetworking.m */,
 				680161421970D29C0062C8E8 /* GHGame.h */,
@@ -280,6 +285,7 @@
 				68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */,
 				68E6C7EF196FD78D000CF1A0 /* GamesListViewController.m in Sources */,
 				68E6C7E9196FD78D000CF1A0 /* AppDelegate.m in Sources */,
+				680161411970C6CB0062C8E8 /* GameViewController.m in Sources */,
 				680161441970D29C0062C8E8 /* GHGame.m in Sources */,
 				68E6C7E5196FD78D000CF1A0 /* main.m in Sources */,
 			);

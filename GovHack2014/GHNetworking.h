@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 @import MultipeerConnectivity;
 
+typedef enum : NSUInteger {
+    GHNetworkingStateNotConnected,
+    GHNetworkingStateJoiningGame,
+    GHNetworkingStateLobby,
+    GHNetworkingStateInGame
+} GHNetworkingState;
+
+
 typedef enum : NSInteger {
     GHNetworkingMessageShutdown,
     GHNetworkingMessageData,
@@ -29,7 +37,7 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 
 @protocol GHNetworkingSessionDelegate <NSObject>
 
-- (void) networkingWillBeginSession;
+- (void) networkingWillBeginGame;
 - (void) networkingPlayerDidJoinSession:(MCPeerID*)peerID;
 - (void) networkingPlayerDidLeaveSession:(MCPeerID*)peerID;
 - (void) networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSData*)data;
@@ -63,6 +71,8 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 - (void) beginGame;
 
 - (void) sendMessage:(GHNetworkingMessage)message data:(NSData*)data;
+
+@property (readonly) GHNetworkingState state;
 
 @property (readonly) BOOL isHost;
 

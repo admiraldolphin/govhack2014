@@ -88,8 +88,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)networkingWillBeginSession {
-    
+- (void)networkingWillBeginGame {
+    [self performSegueWithIdentifier:@"BeginGame" sender:nil];
 }
 
 - (void)networkingDidTerminateSession {    
