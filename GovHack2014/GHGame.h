@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GHGameClient;
 
 typedef enum : NSUInteger {
     GHGameStateWaitingForMissions, // "get ready!"
@@ -17,10 +18,12 @@ typedef enum : NSUInteger {
 
 @interface GHGame : NSObject
 
-@property (assign) GHGameState gameState;
+@property (nonatomic, assign) GHGameState gameState;
 
 @property (assign) NSTimeInterval waitingForMissionsDelay;
 
 @property (assign) NSTimeInterval endOfRoundReportDelay;
+
+@property (weak) GHGameClient* localClient;
 
 @end

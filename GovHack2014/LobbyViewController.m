@@ -29,13 +29,14 @@
 }
 
 - (IBAction)sendChat:(id)sender {
-    NSData* dataToSend = [self.chatField.text dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* dataToSend = @{@"text": [self.chatField.text dataUsingEncoding:NSUTF8StringEncoding]};
+    
     [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageData data:dataToSend];
     self.chatField.text = @"";
 }
 
-- (void)networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSData *)data {
-    NSString* string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+- (void)networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSDictionary *)data {
+    NSString* string = [data objectForKey:@"text"];
     
     [[[UIAlertView alloc] initWithTitle:@"Message" message:string delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
 }

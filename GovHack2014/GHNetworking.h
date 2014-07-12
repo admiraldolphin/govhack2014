@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GHMessage.h"
 @import MultipeerConnectivity;
 
 typedef enum : NSUInteger {
@@ -17,11 +18,7 @@ typedef enum : NSUInteger {
 } GHNetworkingState;
 
 
-typedef enum : NSInteger {
-    GHNetworkingMessageShutdown,
-    GHNetworkingMessageData,
-    GHNetworkingMessageGameBeginning,
-} GHNetworkingMessage;
+
 
 extern NSString* GHNetworkingDidChangeStateNotification;
 
@@ -40,12 +37,8 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 - (void) networkingWillBeginGame;
 - (void) networkingPlayerDidJoinSession:(MCPeerID*)peerID;
 - (void) networkingPlayerDidLeaveSession:(MCPeerID*)peerID;
-- (void) networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSData*)data;
+- (void) networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSDictionary*)data;
 - (void) networkingDidTerminateSession;
-
-@end
-
-@protocol GHNetworkingDataDeliveryDelegate <NSObject>
 
 @end
 
@@ -53,12 +46,13 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 
 + (GHNetworking*) sharedNetworking;
 
+@property (readonly) MCPeerID* localPeer;
+
 @property (readonly) NSArray* nearbyPeers;
 @property (readonly) NSArray* connectedPeers;
 
 @property (weak) id<GHNetworkingPeerDiscoveryDelegate> peerDiscoveryDelegate;
 @property (weak) id<GHNetworkingSessionDelegate> sessionDelegate;
-@property (weak) id<GHNetworkingDataDeliveryDelegate> dataDeliveryDelegate;
 
 // invites all peers
 - (void) createGame;
@@ -70,9 +64,10 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 // Begins the game, stops advertising, and disallows all incoming connections
 - (void) beginGame;
 
-- (void) sendMessage:(GHNetworkingMessage)message data:(NSData*)data;
+- (void) sendMessage:(GHNetworkingMessage)message data:(NSDictionary*)data;
+- (void) sendMessage:(GHNetworkingMessage)message data:(NSDictionary *)data toPeer:(MCPeerID*)peer deliveryMode:(MCSessionSendDataMode)mode;
 
-@property (readonly) GHNetworkingState state;
+@property (nonatomic, readonly) GHNetworkingState state;
 
 @property (readonly) BOOL isHost;
 

@@ -8,6 +8,7 @@
 
 #import "GHGame.h"
 #import "GHNetworking.h"
+#import "GHGameClient.h"
 
 // agents are people who can complete missions; each player has multiple agents
 @interface GHAgent : NSObject
@@ -62,8 +63,11 @@
     
     mission.title = [[self TEMPmissionNames] objectAtIndex:arc4random_uniform([self TEMPmissionNames].count)];
     
-    mission.time = arc4random_uniform(10) + 10;
+    mission.time = arc4random_uniform(10) + 1;
     mission.timeRemaining = mission.time;
+    mission.failurePoints = -3;
+    mission.successPoints = +3;
+    
     
     return mission;
 }
@@ -89,6 +93,8 @@
 @implementation GHGame {
     // maps peerIDs to missions
     NSMutableDictionary* _missions;
+    
+    NSTimer* _timer;
 }
 
 - (id)init {
@@ -100,6 +106,11 @@
         self.points = 0;
         self.pointsFailureThreshold = 10;
         self.pointsSuccessThreshold = -10;
+        
+        [self beginRound];
+        
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(timerUpdated:) userInfo:nil repeats:YES];
+        
     }
     
     return self;
@@ -117,6 +128,8 @@
         for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
             [self createMissionForPeer:peer];
         }
+        
+        [self createMissionForPeer:[GHNetworking sharedNetworking].localPeer];
     });
     
 }
@@ -124,14 +137,7 @@
 
 - (void) peer:(MCPeerID*)peer usedAgent:(GHAgent*)agent {
     
-    // can we afford this agent? cancel if not
-    if (self.money < agent.costToUse) {
-        return;
-    }
-    
-    self.money -= agent.costToUse;
-    // TODO: send updated money to peers
-    
+    self.money += agent.costToUse;
     
     // did activating this agent successfully complete a mission?
     NSArray* missions = [_missions.allValues copy];
@@ -145,7 +151,6 @@
             }
         }
     }
-    
 }
 
 // Called when a mission succeeds or fails
@@ -171,23 +176,37 @@
     _points = points;
     
     if (points <= self.pointsFailureThreshold) {
-        // TODO: fail game
+        [self gameOver];
     }
     
     if (points >= self.pointsSuccessThreshold) {
-        // TODO: succeed round
+        [self roundSucceeded];
     }
     
-    // TODO: send updated points
+    [self sendMessageNamed:@"points" data:@{@"points":@(self.points)}];
+}
+
+#pragma mark - Round management
+
+- (void) roundSucceeded {
+    // Indicate to clients that we're now viewing game report
+    self.gameState = GHGameStateViewingGameReport;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.endOfRoundReportDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self beginRound];
+        
+    });
 }
 
 - (void) gameOver {
     self.gameState = GHGameStateGameOver;
     
-    // TODO: inform clients
 }
 
-- (void) timerUpdated:(NSTimeInterval)deltaTime {
+- (void) timerUpdated:(NSTimer*)timer {
+    
+    float deltaTime = timer.timeInterval;
+    
     if (self.gameState != GHGameStatePerformingMissions) {
         // timer doesn't apply unless we're performing missions
         
@@ -201,27 +220,18 @@
     for (GHMission* mission in missions) {
         mission.timeRemaining -= deltaTime;
         
+        NSDictionary* data = @{@"timeRemaining":@(mission.timeRemaining), @"timeAvailable":@(mission.time)};
+        
+        [self sendMessageNamed:@"time" data:data toPeer:[self peerForMission:mission] mode:MCSessionSendDataUnreliable];
+        
         if (mission.timeRemaining <= 0.0) {
             [self missionCompleted:mission successfully:NO];
         }
         
-        // Send update mission data to relevant peer
     }
-    
     
 }
 
-- (void) roundSucceeded {
-    // Indicate to clients that we're now viewing game report
-    self.gameState = GHGameStateViewingGameReport;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.endOfRoundReportDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self beginRound];
-        
-    });
-    
-    // TODO: inform clients
-}
 
 - (GHMission*) missionForPeer:(MCPeerID*)peer {
     return [_missions objectForKey:peer];
@@ -245,9 +255,48 @@
     
     [_missions setObject:mission forKey:peer];
     
-    // TODO: send mission to this peer
+    [self sendMessageNamed:@"mission" data:@{@"missionName": mission.title} toPeer:peer mode:MCSessionSendDataReliable];
     
     return mission;
+}
+
+- (NSMutableDictionary *)prepareMessageWithName:(NSString *)messageName data:(NSDictionary *)data {
+    // Alert all peers
+    NSDictionary* messageNameDict = @{@"messageType": messageName};
+    
+    NSMutableDictionary* dataToSend = [data mutableCopy];
+    [dataToSend addEntriesFromDictionary:messageNameDict];
+    return dataToSend;
+}
+
+- (void) sendMessageNamed:(NSString*)messageName data:(NSDictionary*)data toPeer:(MCPeerID*)peer mode:(MCSessionSendDataMode)mode {
+    
+    NSMutableDictionary * dataToSend = [self prepareMessageWithName:messageName data:data];
+    
+    if (peer == [GHNetworking sharedNetworking].localPeer) {
+        [self.localClient processReceivedMessage:dataToSend];
+    } else {
+        [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageData data:dataToSend toPeer:peer deliveryMode:mode];
+    }
+    
+}
+
+- (void) sendMessageNamed:(NSString*)messageName data:(NSDictionary*)data {
+    
+    NSMutableDictionary * dataToSend = [self prepareMessageWithName:messageName data:data];
+    
+    [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageData data:dataToSend];
+    
+    [self.localClient processReceivedMessage:dataToSend];
+    
+}
+
+
+- (void)setGameState:(GHGameState)gameState {
+    _gameState = gameState;
+    
+    [self sendMessageNamed:@"state" data:@{@"state":@(_gameState)}];
+    
 }
 
 @end

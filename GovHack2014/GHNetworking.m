@@ -7,6 +7,7 @@
 //
 
 #import "GHNetworking.h"
+#import "GHMessage.h"
 
 #define SERVICE_TYPE @"govhack14"
 
@@ -20,32 +21,6 @@ typedef enum : NSUInteger {
 // Notifications
 NSString* GHNetworkingDidChangeStateNotification = @"GHNetworkingDidChangeStateNotification";
 
-@interface GHMessage : NSObject <NSCoding>
-
-@property (assign) GHNetworkingMessage message;
-
-@property (strong) NSData* data;
-
-@end
-
-@implementation GHMessage
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    
-    self = [self init];
-    
-    self.message = [aDecoder decodeIntegerForKey:@"message"];
-    self.data = [aDecoder decodeObjectForKey:@"data"];
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeInteger:self.message forKey:@"message"];
-    [aCoder encodeObject:self.data forKey:@"data"];
-}
-
-@end
 
 static GHNetworking* _sharedInstance;
 
@@ -170,14 +145,22 @@ static GHNetworking* _sharedInstance;
     
 }
 
-- (void) sendMessage:(GHNetworkingMessage)message data:(NSData*)data {
-    GHMessage* messageObject = [[GHMessage alloc] init];
-    messageObject.message = message;
-    messageObject.data = data;
+- (void) sendMessage:(GHNetworkingMessage)message data:(NSDictionary*)data {
+    GHMessage* messageObject = [[GHMessage alloc] initWithMessage:message data:data];
     
     NSData* messageData = [NSKeyedArchiver archivedDataWithRootObject:messageObject];
     
     [self.session sendData:messageData toPeers:self.session.connectedPeers withMode:MCSessionSendDataReliable error:nil];
+}
+
+- (void)sendMessage:(GHNetworkingMessage)message data:(NSDictionary *)data toPeer:(MCPeerID *)peer deliveryMode:(MCSessionSendDataMode)mode{
+    
+    GHMessage* messageObject = [[GHMessage alloc] initWithMessage:message data:data];
+    
+    NSData* messageData = [NSKeyedArchiver archivedDataWithRootObject:messageObject];
+    
+    [self.session sendData:messageData toPeers:@[peer] withMode:mode error:nil];
+
 }
 
 - (void)leaveGame {
@@ -319,6 +302,10 @@ static GHNetworking* _sharedInstance;
     _state = state;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:GHNetworkingDidChangeStateNotification object:self userInfo:@{@"oldState": @(oldState), @"newState" : @(_state)}];
+}
+
+- (MCPeerID *)localPeer {
+    return self.peerID;
 }
 
 @end
