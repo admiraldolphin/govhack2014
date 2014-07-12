@@ -32,13 +32,32 @@
 @property (strong) NSString* description;
 
 // A dictionary indicating which components get used to build the picture
-@property (strong) NSDictionary* appearance;
+@property (strong) NSString* appearance;
 
 @end
 
 @implementation GHPerson
 
-
+- (id)init {
+    self = [super init];
+    
+    if (self) {
+        self.appearance = [NSString stringWithFormat:@"%@%i%i%i%i%i%i%i%i",
+                                arc4random_uniform(2) == 0 ? @"m" : @"f",
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(6)+1,
+                                arc4random_uniform(2)+1
+                                ];
+        
+    }
+    
+    return self;
+}
 
 @end
 
@@ -188,13 +207,12 @@
         GHPerson* person = [[GHPerson alloc] init];
         person.name = [NSString stringWithFormat:@"PERSON %i", arc4random_uniform(10)];
         
-        do {
+        /*do {
             person.identifier = [NSString stringWithFormat:@"%06i", arc4random_uniform(1000000)];
-        } while ([self personWithIdentifier:person.identifier] != NULL);
+        } while ([self personWithIdentifier:person.identifier] != NULL);*/
         
         person.description = @"A RIGHT OLD CHAP";
         person.functionTypes = @[@"FUNCTION1", @"FUNCTION2"];
-        person.appearance = @{};
         person.costToUse = arc4random_uniform(15);
         person.owner = peerID;
         

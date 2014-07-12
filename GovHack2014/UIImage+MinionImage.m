@@ -22,6 +22,8 @@
     
     NSMutableArray *imageArray = [NSMutableArray array];
     
+    // 1-2 Shirt
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Shirt%@",[minionImageIdentString substringWithRange:NSMakeRange(8, 1)]]]];
     // 1-6 Hair
     [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Hair%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(1, 1)]]]];
     // 1-6 Eyebrow
@@ -33,10 +35,10 @@
     // 1-6 Nose
     [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Nose%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(5, 1)]]]];
     // 1-5 Accessory
-    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Accessory%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(6, 1)]]]];
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Accessory%@",[minionImageIdentString substringWithRange:NSMakeRange(6, 1)]]]];
     // 1-6 Head
     [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Head%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(7, 1)]]]];
-    // 1-6 accessories (none currently supported...)
+    
     
     UIImage *image = imageArray[0];
     UIGraphicsBeginImageContext(image.size);

@@ -11,6 +11,7 @@
 #import "GHGame.h"
 #import "GHGameClient.h"
 #import "GHMinionCell.h"
+#import "UIImage+MinionImage.h"
 
 @interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource>
 
@@ -192,6 +193,7 @@
     
     NSDictionary* person = self.gameClient.people[indexPath.item];
     
+    cell.imageView.image = [UIImage imageWithMinionString:person[@"appearance"]];
     cell.nameLabel.text = person[@"name"];
     
     return cell;
