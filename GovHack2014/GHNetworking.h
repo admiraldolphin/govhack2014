@@ -46,7 +46,8 @@ typedef void(^GameCreationCompletionBlock)(BOOL success);
 
 + (GHNetworking*) sharedNetworking;
 
-@property (readonly) MCPeerID* localPeer;
+@property (nonatomic, strong) MCPeerID *peerID;
+@property (nonatomic, strong) MCPeerID *hostPeerID;
 
 @property (readonly) NSArray* nearbyPeers;
 @property (readonly) NSArray* connectedPeers;

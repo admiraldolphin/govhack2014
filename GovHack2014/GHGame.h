@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class GHGameClient;
+@import MultipeerConnectivity;
 
 typedef enum : NSUInteger {
     GHGameStateWaitingForMissions, // "get ready!"
@@ -18,6 +19,8 @@ typedef enum : NSUInteger {
 
 @interface GHGame : NSObject
 
+- (id) initWithLocalClient:(GHGameClient*)localClient;
+
 @property (nonatomic, assign) GHGameState gameState;
 
 @property (assign) NSUInteger peoplePerPeer;
@@ -25,5 +28,7 @@ typedef enum : NSUInteger {
 @property (assign) NSTimeInterval endOfRoundReportDelay;
 
 @property (weak) GHGameClient* localClient;
+
+- (void) peerUsedAgentWithIdentifier:(NSString*)agent;
 
 @end

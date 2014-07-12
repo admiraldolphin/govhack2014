@@ -16,6 +16,10 @@
 
 @property (nonatomic, assign) GHGameState state;
 
+@property (assign) NSUInteger missionsSucceeded;
+@property (assign) NSUInteger minionsUsed;
+@property (assign) NSUInteger moneySpent;
+
 @property (assign) NSTimeInterval timeAvailable;
 @property (assign) NSTimeInterval timeRemaining;
 

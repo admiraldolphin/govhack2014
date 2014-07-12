@@ -103,7 +103,7 @@
     
     mission.title = [[self TEMPmissionNames] objectAtIndex:arc4random_uniform([self TEMPmissionNames].count)];
     
-    mission.time = arc4random_uniform(10) + 1;
+    mission.time = arc4random_uniform(15) + 5;
     mission.timeRemaining = mission.time;
     mission.failurePoints = -3;
     mission.successPoints = +3;
@@ -130,6 +130,10 @@
 // amount of money
 @property (assign) NSUInteger money;
 
+@property (assign) NSUInteger missionsSucceeded;
+
+@property (assign) NSUInteger minionsUsed;
+
 @end
 
 @implementation GHGame {
@@ -141,17 +145,23 @@
     NSTimer* _timer;
 }
 
-- (id)init {
+- (id) initWithLocalClient:(GHGameClient*)localClient {
     self = [super init];
     
     if (self) {
+        
+        _localClient = localClient;
+        
         _missions = [NSMutableDictionary dictionary];
         _agents = [NSMutableArray array];
         
+        self.pointsFailureThreshold = -10;
+        self.pointsSuccessThreshold = 10;
         self.points = 0;
-        self.pointsFailureThreshold = 10;
-        self.pointsSuccessThreshold = -10;
         self.peoplePerPeer = 4;
+        
+        self.endOfRoundReportDelay = 3.0;
+        self.waitingForMissionsDelay = 3.0;
         
         [self beginRound];
         
@@ -163,27 +173,27 @@
 }
 
 - (void) beginRound {
+    
+    self.points = 0;
+    
     self.gameState = GHGameStateWaitingForMissions;
+    
+    // Delete all agents
+    [_agents removeAllObjects];
+    
+    // create a mission for all peers
+    
+    for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
+        [self createMissionForPeer:peer];
+        [self setupPeopleForPeer:peer];
+    }
+    [self createMissionForPeer:[GHNetworking sharedNetworking].peerID];
+    [self setupPeopleForPeer:[GHNetworking sharedNetworking].peerID];
+
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waitingForMissionsDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         self.gameState = GHGameStatePerformingMissions;
-        
-        // create a mission for all peers
-        
-        for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
-            [self createMissionForPeer:peer];
-            [self setupPeopleForPeer:peer];
-        }
-        
-        // Delete all agents
-        [_agents removeAllObjects];
-        
-        // Give all players agents
-        [self createMissionForPeer:[GHNetworking sharedNetworking].localPeer];
-        [self setupPeopleForPeer:[GHNetworking sharedNetworking].localPeer];
-        
-        
         
     });
     
@@ -191,9 +201,12 @@
 
 - (GHPerson*) personWithIdentifier:(NSString*)identifier {
     
-    NSUInteger i = [_agents indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        return YES;
+    NSUInteger i = [_agents indexOfObjectPassingTest:^BOOL(GHPerson* obj, NSUInteger idx, BOOL *stop) {
+        return [obj.identifier isEqualToString:identifier];
     }];
+    
+    if (i == NSNotFound)
+        return nil;
     
     return _agents[i];
     
@@ -207,9 +220,9 @@
         GHPerson* person = [[GHPerson alloc] init];
         person.name = [NSString stringWithFormat:@"PERSON %i", arc4random_uniform(10)];
         
-        /*do {
+        do {
             person.identifier = [NSString stringWithFormat:@"%06i", arc4random_uniform(1000000)];
-        } while ([self personWithIdentifier:person.identifier] != NULL);*/
+        } while ([self personWithIdentifier:person.identifier] != NULL);
         
         person.description = @"A RIGHT OLD CHAP";
         person.functionTypes = @[@"FUNCTION1", @"FUNCTION2"];
@@ -220,6 +233,7 @@
         
         NSDictionary* descriptionDict = @{@"name": person.name,
                                           @"description": person.description,
+                                          @"identifier": person.identifier,
                                           @"appearance": person.appearance};
         
         [newPeople addObject:descriptionDict];
@@ -230,7 +244,9 @@
     
 }
 
-- (void) peer:(MCPeerID*)peer usedAgent:(GHPerson*)agent {
+- (void) peerUsedAgentWithIdentifier:(NSString *)identifier {
+    
+    GHPerson* agent = [self personWithIdentifier:identifier];
     
     self.money += agent.costToUse;
     
@@ -240,7 +256,7 @@
     for (GHMission* mission in missions) {
         
         for (NSString* type in agent.functionTypes) {
-            if ([mission.functionsRequired containsObject:type]) {
+            if (YES || [mission.functionsRequired containsObject:type]) {
                 [self missionCompleted:mission successfully:YES];
                 break;
             }
@@ -257,6 +273,7 @@
     
     if (successfully) {
         self.points += mission.successPoints;
+        self.missionsSucceeded++;
     } else {
         // we use a +, but this value is always negative
         self.points += mission.failurePoints;
@@ -270,20 +287,31 @@
 - (void)setPoints:(NSInteger)points {
     _points = points;
     
-    if (points <= self.pointsFailureThreshold) {
-        [self gameOver];
+    if (self.gameState == GHGameStatePerformingMissions) {
+        if (points <= self.pointsFailureThreshold) {
+            [self gameOver];
+        }
+        
+        if (points >= self.pointsSuccessThreshold) {
+            [self roundSucceeded];
+        }
     }
     
-    if (points >= self.pointsSuccessThreshold) {
-        [self roundSucceeded];
-    }
-    
-    [self sendMessageNamed:@"points" data:@{@"points":@(self.points)}];
+    [self sendMessageNamed:@"points" data:@{@"points":@(self.points)} mode:MCSessionSendDataUnreliable];
 }
 
 #pragma mark - Round management
 
 - (void) roundSucceeded {
+    
+    // Send a game report
+    
+    NSDictionary* dict = @{@"missionsSucceeded": @(self.missionsSucceeded),
+                           @"minionsUsed": @(self.minionsUsed),
+                           @"moneySpent": @(self.money)};
+    
+    [self sendMessageNamed:@"endGameReport" data:dict mode:MCSessionSendDataReliable];
+    
     // Indicate to clients that we're now viewing game report
     self.gameState = GHGameStateViewingGameReport;
     
@@ -368,7 +396,7 @@
     
     NSMutableDictionary * dataToSend = [self prepareMessageWithName:messageName data:data];
     
-    if (peer == [GHNetworking sharedNetworking].localPeer) {
+    if (peer == [GHNetworking sharedNetworking].peerID) {
         [self.localClient processReceivedMessage:dataToSend];
     } else {
         [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageData data:dataToSend toPeer:peer deliveryMode:mode];
@@ -376,7 +404,7 @@
     
 }
 
-- (void) sendMessageNamed:(NSString*)messageName data:(NSDictionary*)data {
+- (void) sendMessageNamed:(NSString*)messageName data:(NSDictionary*)data mode:(MCSessionSendDataMode)mode {
     
     NSMutableDictionary * dataToSend = [self prepareMessageWithName:messageName data:data];
     
@@ -390,7 +418,7 @@
 - (void)setGameState:(GHGameState)gameState {
     _gameState = gameState;
     
-    [self sendMessageNamed:@"state" data:@{@"state":@(_gameState)}];
+    [self sendMessageNamed:@"state" data:@{@"state":@(_gameState)} mode:MCSessionSendDataReliable];
     
 }
 
