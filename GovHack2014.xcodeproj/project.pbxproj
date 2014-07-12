@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680161441970D29C0062C8E8 /* GHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161431970D29C0062C8E8 /* GHGame.m */; };
 		68E6C7D9196FD78D000CF1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7D8196FD78D000CF1A0 /* Foundation.framework */; };
 		68E6C7DB196FD78D000CF1A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */; };
 		68E6C7DD196FD78D000CF1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DC196FD78D000CF1A0 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		680161421970D29C0062C8E8 /* GHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGame.h; sourceTree = "<group>"; };
+		680161431970D29C0062C8E8 /* GHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGame.m; sourceTree = "<group>"; };
 		68E6C7D5196FD78D000CF1A0 /* GovHack2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHack2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E6C7D8196FD78D000CF1A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				68E6C811196FF3BE000CF1A0 /* LobbyViewController.m */,
 				68E6C80D196FDA63000CF1A0 /* GHNetworking.h */,
 				68E6C80E196FDA63000CF1A0 /* GHNetworking.m */,
+				680161421970D29C0062C8E8 /* GHGame.h */,
+				680161431970D29C0062C8E8 /* GHGame.m */,
 				68E6C7F0196FD78D000CF1A0 /* Images.xcassets */,
 				68E6C7DF196FD78D000CF1A0 /* Supporting Files */,
 			);
@@ -275,6 +280,7 @@
 				68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */,
 				68E6C7EF196FD78D000CF1A0 /* GamesListViewController.m in Sources */,
 				68E6C7E9196FD78D000CF1A0 /* AppDelegate.m in Sources */,
+				680161441970D29C0062C8E8 /* GHGame.m in Sources */,
 				68E6C7E5196FD78D000CF1A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
