@@ -10,8 +10,9 @@
 #import "GHNetworking.h"
 #import "GHGame.h"
 #import "GHGameClient.h"
+#import "GHMinionCell.h"
 
-@interface GameViewController () <GHNetworkingSessionDelegate>
+@interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource>
 
 @property (strong) GHGame* game;
 @property (strong) GHGameClient* gameClient;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *missionTimeProgress;
 @property (weak, nonatomic) IBOutlet UILabel *gameStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *minionsCollectionView;
 @end
 
 @implementation GameViewController
@@ -97,6 +99,7 @@
 
 - (void)updatePeople {
     NSLog(@"NEW PEOPLE:\n%@", self.gameClient.people);
+    [self.minionsCollectionView reloadData];
 }
 
 - (void) updatePoints {
@@ -172,6 +175,28 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Collection view
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.gameClient.people.count;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    GHMinionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PersonCell" forIndexPath:indexPath];
+    
+    NSDictionary* person = self.gameClient.people[indexPath.item];
+    
+    cell.nameLabel.text = person[@"name"];
+    
+    return cell;
+    
+    
 }
 
 /*

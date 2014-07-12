@@ -13,13 +13,16 @@
 // people can complete missions; each player has multiple people
 @interface GHPerson : NSObject
 
-// Display name of the person
+// Internal ID of the person; clients send this ID to indicate that it's done
+@property (strong) NSString* identifier;
+
+// Display name of the person, like "Bob Bobertson"
 @property (strong) NSString* name;
 
-// Array of strings
+// Array of strings, like "Military", "Finance"
 @property (strong) NSArray* functionTypes;
 
-// Amount of money deducted when this person is used
+// Amount of money used when this person is used
 @property (assign) NSUInteger costToUse;
 
 // The owner of this person
@@ -167,6 +170,16 @@
     
 }
 
+- (GHPerson*) personWithIdentifier:(NSString*)identifier {
+    
+    NSUInteger i = [_agents indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return YES;
+    }];
+    
+    return _agents[i];
+    
+}
+
 - (void) setupPeopleForPeer:(MCPeerID*)peerID {
     
     NSMutableArray* newPeople = [NSMutableArray array];
@@ -174,6 +187,11 @@
     for (int i = 0; i < self.peoplePerPeer; i++) {
         GHPerson* person = [[GHPerson alloc] init];
         person.name = [NSString stringWithFormat:@"PERSON %i", arc4random_uniform(10)];
+        
+        do {
+            person.identifier = [NSString stringWithFormat:@"%06i", arc4random_uniform(1000000)];
+        } while ([self personWithIdentifier:person.identifier] != NULL);
+        
         person.description = @"A RIGHT OLD CHAP";
         person.functionTypes = @[@"FUNCTION1", @"FUNCTION2"];
         person.appearance = @{};
@@ -193,7 +211,6 @@
     [self sendMessageNamed:@"people" data:@{@"people":newPeople} toPeer:peerID mode:MCSessionSendDataReliable];
     
 }
-
 
 - (void) peer:(MCPeerID*)peer usedAgent:(GHPerson*)agent {
     
