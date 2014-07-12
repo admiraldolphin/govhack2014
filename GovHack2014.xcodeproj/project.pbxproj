@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33C24FA219712C9C001B4755 /* UIImage+MinionImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */; };
 		680161411970C6CB0062C8E8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161401970C6CB0062C8E8 /* GameViewController.m */; };
 		680161441970D29C0062C8E8 /* GHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161431970D29C0062C8E8 /* GHGame.m */; };
 		680161471970E6170062C8E8 /* GHGameClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161461970E6170062C8E8 /* GHGameClient.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33C24FA019712C9C001B4755 /* UIImage+MinionImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MinionImage.h"; sourceTree = "<group>"; };
+		33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MinionImage.m"; sourceTree = "<group>"; };
 		6801613F1970C6CB0062C8E8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		680161401970C6CB0062C8E8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		680161421970D29C0062C8E8 /* GHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGame.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		68E6C7DE196FD78D000CF1A0 /* GovHack2014 */ = {
 			isa = PBXGroup;
 			children = (
+				33C24FA019712C9C001B4755 /* UIImage+MinionImage.h */,
+				33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */,
 				68E6C7E7196FD78D000CF1A0 /* AppDelegate.h */,
 				68E6C7E8196FD78D000CF1A0 /* AppDelegate.m */,
 				68E6C7EA196FD78D000CF1A0 /* Main.storyboard */,
@@ -302,6 +307,7 @@
 				68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */,
 				6801614D19711C3B0062C8E8 /* GHMinionCell.m in Sources */,
 				68E6C7EF196FD78D000CF1A0 /* GamesListViewController.m in Sources */,
+				33C24FA219712C9C001B4755 /* UIImage+MinionImage.m in Sources */,
 				68E6C7E9196FD78D000CF1A0 /* AppDelegate.m in Sources */,
 				680161411970C6CB0062C8E8 /* GameViewController.m in Sources */,
 				680161441970D29C0062C8E8 /* GHGame.m in Sources */,
