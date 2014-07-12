@@ -32,8 +32,10 @@
     [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Eyes%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(4, 1)]]]];
     // 1-6 Nose
     [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Nose%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(5, 1)]]]];
+    // 1-5 Accessory
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Accessory%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(6, 1)]]]];
     // 1-6 Head
-    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Head%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(6, 1)]]]];
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Head%@",gender,[minionImageIdentString substringWithRange:NSMakeRange(7, 1)]]]];
     // 1-6 accessories (none currently supported...)
     
     UIImage *image = imageArray[0];
