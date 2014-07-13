@@ -29,6 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.minionView.image = [UIImage randomMinionImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,19 +39,19 @@
 }
 - (IBAction)generateMinion:(id)sender
 {
-    NSString *appearanceString = [NSString stringWithFormat:@"%@%i%i%i%i%i%i%i%i",
-                                  arc4random_uniform(2) == 0 ? @"m" : @"f",
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(6)+1,
-                                  arc4random_uniform(2)+1
-                                  ];
-
-    self.minionView.image = [UIImage imageWithMinionString:appearanceString];
+    self.minionView.image = [UIImage randomMinionImage];
+}
+- (IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)shareMinion:(id)sender
+{
+    NSString *tweet = @"What is Gov? #GovHack #GovHackTas http://www.secretlab.com.au/govhack2014";
+    UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:@[tweet,self.minionView.image] applicationActivities:nil];
+    [self presentViewController:activity
+                       animated:YES
+                     completion:nil];
 }
 
 @end

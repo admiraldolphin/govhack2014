@@ -53,4 +53,19 @@
     return minion;
 }
 
++ (UIImage *)randomMinionImage
+{
+    return [UIImage imageWithMinionString:[NSString stringWithFormat:@"%@%i%i%i%i%i%i%i%i",
+                                           arc4random_uniform(2) == 0 ? @"m" : @"f",
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(6)+1,
+                                           arc4random_uniform(2)+1
+                                           ]];
+}
+
 @end

@@ -11,5 +11,6 @@
 @interface UIImage (MinionImage)
 
 + (UIImage *)imageWithMinionString:(NSString *)minionImageIdentString;
++ (UIImage *)randomMinionImage;
 
 @end
