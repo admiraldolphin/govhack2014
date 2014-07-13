@@ -164,6 +164,11 @@ NSArray* _missionData;
 // create and prepare a new mission
 + (GHMission*) missionForMinions:(NSArray*)minions difficultyScale:(float)scale {
     
+    if (minions.count == 0) {
+        NSLog(@"Tried to create a mission but had no minions that could complete it!");
+        return nil;
+    }
+    
     GHMission* mission = [[GHMission alloc] init];
     
     // Randomly pick through the missions list and find one that has requirements that match at least one function owned by at least one of the minions
@@ -479,8 +484,20 @@ NSArray* _missionData;
 - (GHMission*) createMissionForPeer:(MCPeerID*)peer {
     
     // make a new mission and send it out
+    /*
+    // Get the list of minions that are NOT owned by this peer
+    NSArray* filteredMinions = [_minions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(GHMinion* evaluatedObject, NSDictionary *bindings) {
+        
+        return evaluatedObject.owner != peer;
+        
+    }]];
+    
+    if ([GHNetworking sharedNetworking].)*/
     
     GHMission* mission = [GHMission missionForMinions:_minions difficultyScale:1.0];
+    
+    if (mission == nil)
+        return nil;
     
     [_missions setObject:mission forKey:peer];
     
