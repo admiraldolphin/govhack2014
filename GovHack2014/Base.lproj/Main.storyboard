@@ -22,8 +22,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Bq-vyN">
-                                <rect key="frame" x="0.0" y="141" width="320" height="120"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Bq-vyN">
+                                <rect key="frame" x="110" y="311" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Play The Game" backgroundImage="TextArea">
@@ -33,8 +33,8 @@
                                     <segue destination="inG-Ym-cde" kind="push" id="Plx-Yu-Nqd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
-                                <rect key="frame" x="0.0" y="269" width="320" height="69"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
+                                <rect key="frame" x="68" y="349" width="185" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Make Some Chumps" backgroundImage="tEXTTHIN">
@@ -44,9 +44,14 @@
                                     <segue destination="Ra1-wN-BzK" kind="push" id="0yN-RN-L9o"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="lOGOnEW (1)" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Tr-OGP">
+                                <rect key="frame" x="31" y="20" width="259" height="259"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="e1a-Tr-OGP" secondAttribute="centerX" id="5HB-Jv-iBf"/>
                             <constraint firstItem="lgY-u3-EHK" firstAttribute="top" secondItem="a9Y-g5-rYl" secondAttribute="bottom" id="9Fa-or-JWz"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="leading" secondItem="y9B-CH-vnf" secondAttribute="leading" id="L7e-ip-E67"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="top" secondItem="y9B-CH-vnf" secondAttribute="top" id="mde-5W-4Wy"/>
@@ -596,6 +601,7 @@
         <image name="TimerFrame" width="296" height="35"/>
         <image name="TimerThumb" width="36" height="47"/>
         <image name="peopleFrame" width="98" height="61"/>
+        <image name="lOGOnEW (1)" width="640" height="640"/>
         <image name="tEXTTHIN" width="640" height="148"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
