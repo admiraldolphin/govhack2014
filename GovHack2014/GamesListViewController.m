@@ -8,6 +8,7 @@
 
 #import "GamesListViewController.h"
 #import "GHNetworking.h"
+#import "GHGameViewCell.h"
 
 @interface GamesListViewController () <GHNetworkingPeerDiscoveryDelegate>
 
@@ -46,11 +47,11 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PeerCell" forIndexPath:indexPath];
+    GHGameViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PeerCell" forIndexPath:indexPath];
     
     MCPeerID* peer = [GHNetworking sharedNetworking].nearbyPeers[indexPath.row];
     
-    cell.textLabel.text = peer.displayName;
+    cell.gameNameLabel.text = peer.displayName;
     
     return cell;
 }

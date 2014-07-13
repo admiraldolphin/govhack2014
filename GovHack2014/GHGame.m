@@ -124,10 +124,10 @@ static NSArray* _minionData = nil;
 @property (assign) float timeRemaining;
 
 // number of points awarded on mission success (always positive)
-@property (assign) NSInteger successPoints;
+@property (assign) float successPoints;
 
 // number of points deducted on mission failure (always negative)
-@property (assign) NSInteger failurePoints;
+@property (assign) float failurePoints;
 
 
 @end
@@ -201,10 +201,11 @@ NSArray* _missionData;
     
     mission.title = selectedMission[@"title"];
     mission.functionsRequired = [selectedMission[@"validFunctions"] copy];
-    mission.time = arc4random_uniform(15) + 5;
+    mission.time = (arc4random_uniform(15) + 5) / scale;
     mission.timeRemaining = mission.time;
-    mission.failurePoints = -3;
-    mission.successPoints = +3;
+    
+    mission.failurePoints = -1 * scale;
+    mission.successPoints = +1;
     
     return mission;
 }
@@ -216,7 +217,7 @@ NSArray* _missionData;
 @interface GHGame ()
 
 // number of points currently
-@property (nonatomic, assign) NSInteger points;
+@property (nonatomic, assign) float points;
 
 // number of points needed to win the round
 @property (assign) NSInteger pointsSuccessThreshold;
@@ -230,6 +231,8 @@ NSArray* _missionData;
 @property (assign) NSUInteger missionsSucceeded;
 
 @property (assign) NSUInteger minionsUsed;
+
+@property (assign) CGFloat difficulty;
 
 @end
 
@@ -252,13 +255,20 @@ NSArray* _missionData;
         _missions = [NSMutableDictionary dictionary];
         _minions = [NSMutableArray array];
         
-        self.pointsFailureThreshold = -10;
-        self.pointsSuccessThreshold = 10;
+        // Difficulty starts based on number of people
+        self.difficulty = [GHNetworking sharedNetworking].connectedPeers.count;
+        if (self.difficulty == 0)
+            self.difficulty = 1.0;
+        
+        
+        self.pointsFailureThreshold = -5;
+        self.pointsSuccessThreshold = 5;
         self.points = 0;
         self.peoplePerPeer = 4;
         
         self.endOfRoundReportDelay = 3.0;
         self.waitingForMissionsDelay = 3.0;
+        
         
         [self beginRound];
         
@@ -354,10 +364,17 @@ NSArray* _missionData;
         for (NSString* type in agent.functionTypes) {
             if ([mission.functionsRequired containsObject:type]) {
                 [self missionCompleted:mission successfully:YES];
+                
+                // Tell the peer that they did a good thing
+                [self sendMessageNamed:@"completedMission" data:@{} toPeer:agent.owner mode:MCSessionSendDataUnreliable];
+                
                 return;
             }
         }
     }
+    
+    // Apply a penalty
+    self.points -= 1.0 * self.difficulty;
     
     // Tell the peer that they did a bad thing
     [self sendMessageNamed:@"failedMission" data:@{} toPeer:agent.owner mode:MCSessionSendDataUnreliable];
@@ -374,8 +391,6 @@ NSArray* _missionData;
     
     if (successfully) {
         
-        // Tell the peer that they did a good thing
-        [self sendMessageNamed:@"completedMission" data:@{} toPeer:peer mode:MCSessionSendDataUnreliable];
         
         self.points += mission.successPoints;
         self.missionsSucceeded++;
@@ -389,7 +404,7 @@ NSArray* _missionData;
 }
 
 // Update points, and end the round or game if appropriate
-- (void)setPoints:(NSInteger)points {
+- (void)setPoints:(float)points {
     _points = points;
     
     if (self.gameState == GHGameStatePerformingMissions) {
@@ -426,9 +441,18 @@ NSArray* _missionData;
     // Indicate to clients that we're now viewing game report
     self.gameState = GHGameStateViewingGameReport;
     
+    // Increase difficulty scaling
+    
+    float difficultyScaling = [[NSUserDefaults standardUserDefaults] floatForKey:@"difficultyScaling"];
+    
+    if (difficultyScaling < 1.0) {
+        difficultyScaling = 1.0;
+    }
+    
+    self.difficulty *= difficultyScaling;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.endOfRoundReportDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self beginRound];
-        
     });
 }
 
@@ -487,9 +511,6 @@ NSArray* _missionData;
     
     NSArray* filteredMinions = nil;
     
-    
-    
-    
     if ([GHNetworking sharedNetworking].connectedPeers.count == 0) {
         filteredMinions = _minions;
     } else {
@@ -502,7 +523,7 @@ NSArray* _missionData;
         
     }
     
-    GHMission* mission = [GHMission missionForMinions:filteredMinions difficultyScale:1.0];
+    GHMission* mission = [GHMission missionForMinions:filteredMinions difficultyScale:self.difficulty];
     
     if (mission == nil)
         return nil;
