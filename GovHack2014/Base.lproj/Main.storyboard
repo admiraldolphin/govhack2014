@@ -50,8 +50,11 @@
                                     <segue destination="Ra1-wN-BzK" kind="push" id="0yN-RN-L9o"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="lOGOnEW (1)" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Tr-OGP">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="lOGOnEW (1)" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Tr-OGP">
                                 <rect key="frame" x="31" y="20" width="259" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e1a-Tr-OGP" secondAttribute="height" multiplier="1:1" id="F3t-C7-S7o"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -61,6 +64,7 @@
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="centerX" secondItem="dLW-NA-Hyc" secondAttribute="centerX" id="Gju-Uc-Okc"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="leading" secondItem="y9B-CH-vnf" secondAttribute="leading" id="L7e-ip-E67"/>
                             <constraint firstItem="bi4-Bq-vyN" firstAttribute="width" secondItem="dLW-NA-Hyc" secondAttribute="width" id="Lew-kG-GmN"/>
+                            <constraint firstAttribute="trailing" secondItem="e1a-Tr-OGP" secondAttribute="trailing" constant="30" id="X03-1M-mad"/>
                             <constraint firstItem="dLW-NA-Hyc" firstAttribute="top" secondItem="a9Y-g5-rYl" secondAttribute="bottom" constant="-94" id="acW-Xe-sv5"/>
                             <constraint firstItem="bi4-Bq-vyN" firstAttribute="centerX" secondItem="dLW-NA-Hyc" secondAttribute="centerX" id="cZg-iG-svj"/>
                             <constraint firstItem="dLW-NA-Hyc" firstAttribute="top" secondItem="bi4-Bq-vyN" secondAttribute="bottom" constant="19" id="ilE-oh-kyv"/>
@@ -68,6 +72,7 @@
                             <constraint firstItem="bi4-Bq-vyN" firstAttribute="height" secondItem="dLW-NA-Hyc" secondAttribute="height" id="ocH-aM-RJM"/>
                             <constraint firstAttribute="trailing" secondItem="a9Y-g5-rYl" secondAttribute="trailing" id="r1P-Ol-80y"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="top" secondItem="e1a-Tr-OGP" secondAttribute="bottom" constant="-279" id="u4D-dD-C2F"/>
+                            <constraint firstItem="e1a-Tr-OGP" firstAttribute="leading" secondItem="y9B-CH-vnf" secondAttribute="leading" constant="31" id="vd9-jP-NjE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nmf-Ry-LyI"/>
@@ -331,17 +336,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZFy-hd-mTF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZFy-hd-mTF">
+                                <rect key="frame" x="0.0" y="0.0" width="319" height="480"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="tEXTTHIN" translatesAutoresizingMaskIntoConstraints="NO" id="4By-YO-WWf">
-                                <rect key="frame" x="0.0" y="370" width="320" height="70"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="tEXTTHIN" translatesAutoresizingMaskIntoConstraints="NO" id="4By-YO-WWf">
+                                <rect key="frame" x="0.0" y="370" width="319" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="rxh-4t-l5q"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-kh-1sL">
-                                <rect key="frame" x="32" y="395" width="256" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mission Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-kh-1sL">
+                                <rect key="frame" x="31" y="395" width="256" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -354,10 +359,10 @@
                                 <color key="progressTintColor" red="1" green="0.023573720190000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TimerFrame" translatesAutoresizingMaskIntoConstraints="NO" id="tjQ-zK-0xj">
-                                <rect key="frame" x="20" y="529" width="280" height="35"/>
+                                <rect key="frame" x="20" y="529" width="281" height="35"/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-Sf-Ixt">
-                                <rect key="frame" x="20" y="70" width="280" height="292"/>
+                                <rect key="frame" x="20" y="70" width="279" height="292"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="SM8-oX-VGs"/>
@@ -422,40 +427,17 @@
                                     <outlet property="delegate" destination="GHb-Ok-HAt" id="QMW-fQ-gAS"/>
                                 </connections>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Redtape" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-ta-7mF" customClass="GameProgressView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="113"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Redtape" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-ta-7mF" customClass="GameProgressView">
+                                <rect key="frame" x="0.0" y="20" width="319" height="113"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDq-cF-vXg" userLabel="Game Over">
-                                <rect key="frame" x="0.0" y="28" width="320" height="452"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6TJ-12-6cu">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="452"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="88" translatesAutoresizingMaskIntoConstraints="NO" id="tv1-ww-CAU">
-                                        <rect key="frame" x="115" y="220" width="88" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="6TJ-12-6cu" secondAttribute="bottom" id="3Lo-cE-aez"/>
-                                    <constraint firstItem="6TJ-12-6cu" firstAttribute="top" secondItem="XDq-cF-vXg" secondAttribute="top" id="Gwz-7Y-PSH"/>
-                                    <constraint firstAttribute="centerX" secondItem="tv1-ww-CAU" secondAttribute="centerX" id="KNt-dy-dJZ"/>
-                                    <constraint firstItem="6TJ-12-6cu" firstAttribute="leading" secondItem="XDq-cF-vXg" secondAttribute="leading" id="RoN-6D-ZCD"/>
-                                    <constraint firstAttribute="trailing" secondItem="6TJ-12-6cu" secondAttribute="trailing" id="X0q-QU-Kkk"/>
-                                    <constraint firstAttribute="centerY" secondItem="tv1-ww-CAU" secondAttribute="centerY" id="wo8-VW-W4d"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLv-Pd-quD" userLabel="End Game Report">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLv-Pd-quD" userLabel="End Game Report">
+                                <rect key="frame" x="0.0" y="0.0" width="319" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="xKH-dE-CIC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="569"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Govd" translatesAutoresizingMaskIntoConstraints="NO" id="cVb-ss-biE">
-                                        <rect key="frame" x="0.0" y="48" width="319" height="371"/>
+                                        <rect key="frame" x="0.0" y="48" width="319" height="372"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cVb-ss-biE" secondAttribute="height" multiplier="260:301" id="pQT-Wl-Kvd"/>
                                         </constraints>
@@ -472,14 +454,14 @@
                                     <constraint firstItem="xKH-dE-CIC" firstAttribute="centerX" secondItem="cVb-ss-biE" secondAttribute="centerX" id="hxD-z7-L1k"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97p-NW-7ef" userLabel="Waiting for Missions">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97p-NW-7ef" userLabel="Waiting for Missions">
+                                <rect key="frame" x="0.0" y="20" width="319" height="460"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="53c-Zd-AMF">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="53c-Zd-AMF">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="460"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="GETREADYTOGOV" translatesAutoresizingMaskIntoConstraints="NO" id="19K-uW-phS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="GETREADYTOGOV" translatesAutoresizingMaskIntoConstraints="NO" id="19K-uW-phS">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="548"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -494,6 +476,31 @@
                                     <constraint firstAttribute="bottom" secondItem="53c-Zd-AMF" secondAttribute="bottom" id="mII-gO-K69"/>
                                     <constraint firstAttribute="bottom" secondItem="19K-uW-phS" secondAttribute="bottom" id="qJL-Iv-zhL"/>
                                     <constraint firstAttribute="centerX" secondItem="19K-uW-phS" secondAttribute="centerX" id="skm-vr-SEC"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDq-cF-vXg" userLabel="Game Over">
+                                <rect key="frame" x="0.0" y="28" width="319" height="452"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="6TJ-12-6cu">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="452"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="YouLose" translatesAutoresizingMaskIntoConstraints="NO" id="sgm-9M-VcC">
+                                        <rect key="frame" x="0.0" y="-45" width="319" height="542"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sgm-9M-VcC" secondAttribute="height" multiplier="319:540" id="D59-EU-CwA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6TJ-12-6cu" secondAttribute="bottom" id="3Lo-cE-aez"/>
+                                    <constraint firstItem="6TJ-12-6cu" firstAttribute="top" secondItem="XDq-cF-vXg" secondAttribute="top" id="Gwz-7Y-PSH"/>
+                                    <constraint firstAttribute="centerY" secondItem="sgm-9M-VcC" secondAttribute="centerY" id="OCG-3P-ZDk"/>
+                                    <constraint firstItem="6TJ-12-6cu" firstAttribute="leading" secondItem="XDq-cF-vXg" secondAttribute="leading" id="RoN-6D-ZCD"/>
+                                    <constraint firstAttribute="trailing" secondItem="6TJ-12-6cu" secondAttribute="trailing" id="X0q-QU-Kkk"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgm-9M-VcC" secondAttribute="trailing" id="w2t-Lu-1iV"/>
+                                    <constraint firstItem="sgm-9M-VcC" firstAttribute="leading" secondItem="XDq-cF-vXg" secondAttribute="leading" id="ytG-gZ-z3S"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -578,6 +585,7 @@
         <image name="TextArea" width="320" height="120"/>
         <image name="TimerFrame" width="296" height="35"/>
         <image name="TimerThumb" width="36" height="47"/>
+        <image name="YouLose" width="640" height="1136"/>
         <image name="lOGOnEW (1)" width="640" height="640"/>
         <image name="peopleFrame" width="98" height="61"/>
         <image name="tEXTTHIN" width="640" height="148"/>
