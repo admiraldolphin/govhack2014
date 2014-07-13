@@ -1,0 +1,897 @@
+[
+    {
+        "title": "Collect statistics",
+        "validFunctions": [
+            "INSURANCE",
+            "SCIENCE",
+            "COMMITTEES OF INQUIRY",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Predict weather",
+        "validFunctions": [
+            "VITICULTURE",
+            "SPACE SCIENCE",
+            "SCIENCE",
+            "METEOROLOGY"
+        ]
+    },
+    {
+        "title": "Launch satellite",
+        "validFunctions": [
+            "SCIENCE",
+            "METEOROLOGY",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Hire CSIRO CEO",
+        "validFunctions": [
+            "SCIENCE",
+            "RECRUITMENT"
+        ]
+    },
+    {
+        "title": "Cure cancer",
+        "validFunctions": [
+            "GENETICS",
+            "HOSPITALS AND CLINICS"
+        ]
+    },
+    {
+        "title": "Invent WiFi",
+        "validFunctions": [
+            "EARTH SCIENCES",
+            "STUDENT ASSISTANCE",
+            "ENERGY",
+            "SCIENCE",
+            "WEIGHTS AND MEASURES"
+        ]
+    },
+    {
+        "title": "Bail out car manufacturer",
+        "validFunctions": [
+            "TAXATION",
+            "LOANS",
+            "TRADE",
+            "BANKING"
+        ]
+    },
+    {
+        "title": "Fly QANTAS",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "SEAT OF GOVERNMENT",
+            "FEDERAL LAW",
+            "EMERGENCY SERVICES",
+            "TAXATION",
+            "AIR TRANSPORT",
+            "ENVIRONMENT",
+            "CURRENCY",
+            "CONSUMER AFFAIRS",
+            "BROADCASTING",
+            "CENSORSHIP",
+            "PUBLIC UTILITIES",
+            "LOANS",
+            "COMPENSATION SCHEMES",
+            "CABINET",
+            "SEA TRANSPORT",
+            "TELECOMMUNICATIONS",
+            "PRESCHOOL EDUCATION",
+            "SPORT",
+            "AGRICULTURE",
+            "AUSTRALIAN CAPITAL TERRITORY",
+            "TRADE",
+            "CIVIL ENGINEERING",
+            "PUBLISHING AND PRINTING",
+            "GENETICS",
+            "VITICULTURE",
+            "MEMORIALS",
+            "SUPREME COURT LAW",
+            "LAW ENFORCEMENT",
+            "EMPLOYMENT",
+            "SOCIAL WELFARE",
+            "RESOURCES",
+            "INSURANCE",
+            "SPACE SCIENCE",
+            "DISABILITY SERVICES",
+            "POSTAL SERVICES",
+            "JUSTICE ADMINISTRATION",
+            "FAMILY LAW",
+            "NATIONAL EVENTS",
+            "COMMUNICATIONS",
+            "CEREMONIAL FUNCTIONS",
+            "ENVIRONMENTAL MONITORING",
+            "NAVY",
+            "OVERSEAS AID PROGRAMS",
+            "SECONDARY EDUCATION",
+            "NATURAL DISASTERS",
+            "CITIZENSHIP",
+            "VETERANS' AFFAIRS",
+            "AIR SAFETY",
+            "LAND TRANSPORT",
+            "INTERNAL SECURITY",
+            "GRANTS ADMINISTRATION",
+            "ELECTORAL MATTERS",
+            "REGIONAL DEVELOPMENT",
+            "QUARANTINE",
+            "METALS",
+            "CONSTRUCTION",
+            "AIRPORTS",
+            "COMMUNITY SERVICES",
+            "PENSIONS AND BENEFITS",
+            "TERTIARY EDUCATION",
+            "DEFENCE",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "CULTURAL AFFAIRS",
+            "RAIL TRANSPORT",
+            "FINANCIAL MATTERS",
+            "WATER RESOURCES",
+            "GOVERNMENT MEDIA",
+            "BUILDING",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "AIR FORCE",
+            "WAR MEMORIALS",
+            "PRIMARY EDUCATION",
+            "INDUSTRIAL RELATIONS",
+            "TRANSPORT",
+            "EDUCATION",
+            "ARCHIVES ADMINISTRATION",
+            "FOREIGN POLICY",
+            "URBAN OR REGIONAL DEVELOPMENT",
+            "OMBUDSMAN",
+            "PATHOLOGY",
+            "COLONIAL ADMINISTRATION",
+            "EARTH SCIENCES",
+            "STUDENT ASSISTANCE",
+            "LEGAL",
+            "FISHERIES REGULATION",
+            "RECORDS OF THE GOVERNMENT",
+            "HOUSE OF REPRESENTATIVES COMMITTEES",
+            "RADIO BROADCASTING",
+            "INSPECTION SERVICES",
+            "PARLIAMENTARY MATTERS",
+            "CUSTOMS",
+            "LIGHTHOUSES",
+            "MARINE SCIENCE",
+            "ARTS",
+            "BANKING",
+            "WARTIME SECURITY",
+            "REHABILITATION",
+            "ENERGY",
+            "REPATRIATION",
+            "WASTE DISPOSAL",
+            "TRAINING",
+            "SUPERANNUATION",
+            "LEGISLATION",
+            "REFUGEES",
+            "SOCIAL AND ECONOMIC RESEARCH",
+            "STATISTICS",
+            "NATIONAL HERITAGE",
+            "ADMINISTRATIVE LAW",
+            "MIGRATION",
+            "CONSULAR SERVICES",
+            "NATIONAL PARKS",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "TARIFF",
+            "SCIENCE",
+            "WEIGHTS AND MEASURES",
+            "PASTORAL",
+            "METEOROLOGY",
+            "MEDICAL RESEARCH",
+            "CORPORATE AFFAIRS",
+            "FORESTRY REGULATION",
+            "MINING",
+            "PROPERTY MANAGEMENT",
+            "MARKET REGULATION",
+            "HORTICULTURE",
+            "HOSPITALS AND CLINICS",
+            "PROTECTIVE SERVICES",
+            "HOUSING",
+            "POLICE ADMINISTRATION",
+            "DENTAL SERVICES",
+            "LITERATURE FUNDING",
+            "VOCATIONAL TRAINING SCHEMES",
+            "HUMAN RIGHTS",
+            "COURTS AND TRIBUNALS",
+            "ARMY",
+            "EXPORTS AND IMPORTS",
+            "CONSERVATION",
+            "COLLECTION MANAGEMENT",
+            "TOURISM",
+            "FILM PRODUCTION",
+            "CHILD WELFARE",
+            "HEALTH",
+            "ROAD SAFETY",
+            "NATIONAL FITNESS",
+            "MULTICULTURALISM",
+            "INDUSTRIES",
+            "ARBITRATION",
+            "EQUITY PROGRAMS",
+            "TERRITORY ADMINISTRATION",
+            "SURVEILLANCE",
+            "NATIONAL SERVICE",
+            "PHARMACEUTICALS AND MEDICAL AIDS",
+            "COPYRIGHT",
+            "LAND USE",
+            "HYDROELECTRIC POWER",
+            "INTERNATIONAL RELATIONS",
+            "PATENTS AND TRADEMARKS",
+            "SHIPBUILDING",
+            "COMMITTEES OF INQUIRY",
+            "ADMINISTRATIVE SERVICES",
+            "GOVERNOR GENERAL",
+            "PRISONERS OF WAR",
+            "HISTORIC MEMORIALS",
+            "RECREATION",
+            "AUDIT",
+            "LABOUR MARKET PROGRAMS",
+            "ROYAL COMMISSIONS",
+            "GOODS AND SERVICES",
+            "RECRUITMENT",
+            "PORT AUTHORITIES",
+            "COASTAL SURVEILLANCE",
+            "SURVEY AND MAPPING",
+            "CURRICULUM DEVELOPMENT",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Clean lighthouse windows",
+        "validFunctions": [
+            "LIGHTHOUSES",
+            "MARINE SCIENCE",
+            "NATIONAL PARKS"
+        ]
+    },
+    {
+        "title": "Clear runway",
+        "validFunctions": [
+            "AIR TRANSPORT",
+            "ENVIRONMENT",
+            "PUBLIC UTILITIES",
+            "AIR SAFETY",
+            "AIRPORTS"
+        ]
+    },
+    {
+        "title": "Build road of the future",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "LAND TRANSPORT"
+        ]
+    },
+    {
+        "title": "Build new airport",
+        "validFunctions": [
+            "AIR TRANSPORT",
+            "AIR SAFETY",
+            "LAND TRANSPORT",
+            "AIRPORTS"
+        ]
+    },
+    {
+        "title": "Deliver post",
+        "validFunctions": [
+            "PUBLIC UTILITIES",
+            "CEREMONIAL FUNCTIONS",
+            "COMMUNITY SERVICES"
+        ]
+    },
+    {
+        "title": "Ally asking for peacekeepers",
+        "validFunctions": [
+            "SEA TRANSPORT",
+            "NAVY",
+            "OVERSEAS AID PROGRAMS",
+            "LAND TRANSPORT",
+            "DEFENCE",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "AIR FORCE",
+            "FOREIGN POLICY",
+            "COLONIAL ADMINISTRATION",
+            "WARTIME SECURITY",
+            "POLICE ADMINISTRATION",
+            "ARMY",
+            "NATIONAL SERVICE",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Celebrate ANZAC Day",
+        "validFunctions": [
+            "MEMORIALS",
+            "NATIONAL EVENTS",
+            "CEREMONIAL FUNCTIONS",
+            "NAVY",
+            "COMMUNITY SERVICES",
+            "DEFENCE",
+            "CULTURAL AFFAIRS",
+            "GOVERNMENT MEDIA",
+            "AIR FORCE",
+            "WAR MEMORIALS",
+            "NATIONAL PARKS",
+            "POLICE ADMINISTRATION",
+            "ARMY",
+            "NATIONAL SERVICE",
+            "GOVERNOR GENERAL",
+            "HISTORIC MEMORIALS",
+            "RECREATION"
+        ]
+    },
+    {
+        "title": "Protect indonesia",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "AIR TRANSPORT",
+            "SEA TRANSPORT",
+            "LAW ENFORCEMENT",
+            "NAVY",
+            "OVERSEAS AID PROGRAMS",
+            "LAND TRANSPORT",
+            "AIRPORTS",
+            "DEFENCE",
+            "RAIL TRANSPORT",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "AIR FORCE",
+            "TRANSPORT",
+            "FOREIGN POLICY",
+            "WARTIME SECURITY",
+            "MIGRATION",
+            "CONSULAR SERVICES",
+            "HUMAN RIGHTS",
+            "ARMY",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Erect memorial statue",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "AUSTRALIAN CAPITAL TERRITORY",
+            "MEMORIALS",
+            "NATIONAL EVENTS",
+            "VETERANS' AFFAIRS",
+            "DEFENCE",
+            "AIR FORCE",
+            "WAR MEMORIALS",
+            "RADIO BROADCASTING",
+            "NATIONAL HERITAGE",
+            "NATIONAL PARKS",
+            "ARMY",
+            "GOVERNOR GENERAL"
+        ]
+    },
+    {
+        "title": "Recruit soldiers",
+        "validFunctions": [
+            "BROADCASTING",
+            "CENSORSHIP",
+            "CABINET",
+            "TELECOMMUNICATIONS",
+            "SUPREME COURT LAW",
+            "LAW ENFORCEMENT",
+            "EMPLOYMENT",
+            "NAVY",
+            "DEFENCE",
+            "GOVERNMENT MEDIA",
+            "AIR FORCE",
+            "ARMY"
+        ]
+    },
+    {
+        "title": "Resolve Teachers strike ",
+        "validFunctions": [
+            "",
+            "COMMONWEALTH STATE RELATIONS",
+            "FEDERAL LAW",
+            "TAXATION",
+            "BROADCASTING",
+            "CENSORSHIP",
+            "CABINET",
+            "PRESCHOOL EDUCATION",
+            "EMPLOYMENT",
+            "FAMILY LAW",
+            "SECONDARY EDUCATION",
+            "PRIMARY EDUCATION",
+            "LEGAL",
+            "CHILD WELFARE",
+            "COMMITTEES OF INQUIRY",
+            "GOVERNOR GENERAL"
+        ]
+    },
+    {
+        "title": "Reduce unemployment",
+        "validFunctions": [
+            "TAXATION",
+            "CURRENCY",
+            "CONSUMER AFFAIRS",
+            "LOANS",
+            "COMPENSATION SCHEMES",
+            "EMPLOYMENT",
+            "OMBUDSMAN",
+            "LEGAL",
+            "TRAINING",
+            "SUPERANNUATION",
+            "LEGISLATION",
+            "INDUSTRIES",
+            "ARBITRATION",
+            "EQUITY PROGRAMS",
+            "LABOUR MARKET PROGRAMS",
+            "ROYAL COMMISSIONS"
+        ]
+    },
+    {
+        "title": "Perform public lecture",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "SEAT OF GOVERNMENT",
+            "BROADCASTING",
+            "CENSORSHIP",
+            "TELECOMMUNICATIONS",
+            "AUSTRALIAN CAPITAL TERRITORY",
+            "PUBLISHING AND PRINTING",
+            "MEMORIALS",
+            "GOVERNMENT MEDIA",
+            "RADIO BROADCASTING",
+            "GOVERNOR GENERAL"
+        ]
+    },
+    {
+        "title": "Open library",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "SEAT OF GOVERNMENT",
+            "BROADCASTING",
+            "PUBLIC UTILITIES",
+            "COMMUNITY SERVICES",
+            "PENSIONS AND BENEFITS",
+            "RECORDS OF THE GOVERNMENT",
+            "ARTS",
+            "GOVERNOR GENERAL"
+        ]
+    },
+    {
+        "title": "Stimulate business",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "SEAT OF GOVERNMENT",
+            "CONSUMER AFFAIRS",
+            "LOANS",
+            "EMPLOYMENT",
+            "SOCIAL WELFARE",
+            "RESOURCES",
+            "POSTAL SERVICES",
+            "CONSTRUCTION",
+            "AIRPORTS",
+            "COMMUNITY SERVICES",
+            "PENSIONS AND BENEFITS",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "BANKING",
+            "SOCIAL AND ECONOMIC RESEARCH",
+            "STATISTICS",
+            "MARKET REGULATION",
+            "LITERATURE FUNDING",
+            "VOCATIONAL TRAINING SCHEMES",
+            "ROYAL COMMISSIONS",
+            "GOODS AND SERVICES",
+            "RECRUITMENT"
+        ]
+    },
+    {
+        "title": "Hire ABC intern",
+        "validFunctions": [
+            "BROADCASTING",
+            "TELECOMMUNICATIONS",
+            "ARTS",
+            "FILM PRODUCTION",
+            "SURVEILLANCE"
+        ]
+    },
+    {
+        "title": "Rollout NBN",
+        "validFunctions": [
+            "BROADCASTING",
+            "PUBLIC UTILITIES",
+            "CABINET",
+            "CIVIL ENGINEERING",
+            "SPACE SCIENCE",
+            "RADIO BROADCASTING",
+            "SCIENCE",
+            "SURVEILLANCE"
+        ]
+    },
+    {
+        "title": "Broadcast propaganda",
+        "validFunctions": [
+            "BROADCASTING",
+            "CENSORSHIP"
+        ]
+    },
+    {
+        "title": "Commision Humpty cannibalism simulator",
+        "validFunctions": [
+            "ARTS",
+            "BROADCASTING"
+        ]
+    },
+    {
+        "title": "Run GovHack",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "SEAT OF GOVERNMENT",
+            "FEDERAL LAW",
+            "EMERGENCY SERVICES",
+            "TAXATION",
+            "AIR TRANSPORT",
+            "ENVIRONMENT",
+            "CURRENCY",
+            "CONSUMER AFFAIRS",
+            "BROADCASTING",
+            "CENSORSHIP",
+            "PUBLIC UTILITIES",
+            "LOANS",
+            "COMPENSATION SCHEMES",
+            "CABINET",
+            "SEA TRANSPORT",
+            "TELECOMMUNICATIONS",
+            "PRESCHOOL EDUCATION",
+            "SPORT",
+            "AGRICULTURE",
+            "AUSTRALIAN CAPITAL TERRITORY",
+            "TRADE",
+            "CIVIL ENGINEERING",
+            "PUBLISHING AND PRINTING",
+            "GENETICS",
+            "VITICULTURE",
+            "MEMORIALS",
+            "SUPREME COURT LAW",
+            "LAW ENFORCEMENT",
+            "EMPLOYMENT",
+            "SOCIAL WELFARE",
+            "RESOURCES",
+            "INSURANCE",
+            "SPACE SCIENCE",
+            "DISABILITY SERVICES",
+            "POSTAL SERVICES",
+            "JUSTICE ADMINISTRATION",
+            "FAMILY LAW",
+            "NATIONAL EVENTS",
+            "COMMUNICATIONS",
+            "CEREMONIAL FUNCTIONS",
+            "ENVIRONMENTAL MONITORING",
+            "NAVY",
+            "OVERSEAS AID PROGRAMS",
+            "SECONDARY EDUCATION",
+            "NATURAL DISASTERS",
+            "CITIZENSHIP",
+            "VETERANS' AFFAIRS",
+            "AIR SAFETY",
+            "LAND TRANSPORT",
+            "INTERNAL SECURITY",
+            "GRANTS ADMINISTRATION",
+            "ELECTORAL MATTERS",
+            "REGIONAL DEVELOPMENT",
+            "QUARANTINE",
+            "METALS",
+            "CONSTRUCTION",
+            "AIRPORTS",
+            "COMMUNITY SERVICES",
+            "PENSIONS AND BENEFITS",
+            "TERTIARY EDUCATION",
+            "DEFENCE",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "CULTURAL AFFAIRS",
+            "RAIL TRANSPORT",
+            "FINANCIAL MATTERS",
+            "WATER RESOURCES",
+            "GOVERNMENT MEDIA",
+            "BUILDING",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "AIR FORCE",
+            "WAR MEMORIALS",
+            "PRIMARY EDUCATION",
+            "INDUSTRIAL RELATIONS",
+            "TRANSPORT",
+            "EDUCATION",
+            "ARCHIVES ADMINISTRATION",
+            "FOREIGN POLICY",
+            "URBAN OR REGIONAL DEVELOPMENT",
+            "OMBUDSMAN",
+            "PATHOLOGY",
+            "COLONIAL ADMINISTRATION",
+            "EARTH SCIENCES",
+            "STUDENT ASSISTANCE",
+            "LEGAL",
+            "FISHERIES REGULATION",
+            "RECORDS OF THE GOVERNMENT",
+            "HOUSE OF REPRESENTATIVES COMMITTEES",
+            "RADIO BROADCASTING",
+            "INSPECTION SERVICES",
+            "PARLIAMENTARY MATTERS",
+            "CUSTOMS",
+            "LIGHTHOUSES",
+            "MARINE SCIENCE",
+            "ARTS",
+            "BANKING",
+            "WARTIME SECURITY",
+            "REHABILITATION",
+            "ENERGY",
+            "REPATRIATION",
+            "WASTE DISPOSAL",
+            "TRAINING",
+            "SUPERANNUATION",
+            "LEGISLATION",
+            "REFUGEES",
+            "SOCIAL AND ECONOMIC RESEARCH",
+            "STATISTICS",
+            "NATIONAL HERITAGE",
+            "ADMINISTRATIVE LAW",
+            "MIGRATION",
+            "CONSULAR SERVICES",
+            "NATIONAL PARKS",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "TARIFF",
+            "SCIENCE",
+            "WEIGHTS AND MEASURES",
+            "PASTORAL",
+            "METEOROLOGY",
+            "MEDICAL RESEARCH",
+            "CORPORATE AFFAIRS",
+            "FORESTRY REGULATION",
+            "MINING",
+            "PROPERTY MANAGEMENT",
+            "MARKET REGULATION",
+            "HORTICULTURE",
+            "HOSPITALS AND CLINICS",
+            "PROTECTIVE SERVICES",
+            "HOUSING",
+            "POLICE ADMINISTRATION",
+            "DENTAL SERVICES",
+            "LITERATURE FUNDING",
+            "VOCATIONAL TRAINING SCHEMES",
+            "HUMAN RIGHTS",
+            "COURTS AND TRIBUNALS",
+            "ARMY",
+            "EXPORTS AND IMPORTS",
+            "CONSERVATION",
+            "COLLECTION MANAGEMENT",
+            "TOURISM",
+            "FILM PRODUCTION",
+            "CHILD WELFARE",
+            "HEALTH",
+            "ROAD SAFETY",
+            "NATIONAL FITNESS",
+            "MULTICULTURALISM",
+            "INDUSTRIES",
+            "ARBITRATION",
+            "EQUITY PROGRAMS",
+            "TERRITORY ADMINISTRATION",
+            "SURVEILLANCE",
+            "NATIONAL SERVICE",
+            "PHARMACEUTICALS AND MEDICAL AIDS",
+            "COPYRIGHT",
+            "LAND USE",
+            "HYDROELECTRIC POWER",
+            "INTERNATIONAL RELATIONS",
+            "PATENTS AND TRADEMARKS",
+            "SHIPBUILDING",
+            "COMMITTEES OF INQUIRY",
+            "ADMINISTRATIVE SERVICES",
+            "GOVERNOR GENERAL",
+            "PRISONERS OF WAR",
+            "HISTORIC MEMORIALS",
+            "RECREATION",
+            "AUDIT",
+            "LABOUR MARKET PROGRAMS",
+            "ROYAL COMMISSIONS",
+            "GOODS AND SERVICES",
+            "RECRUITMENT",
+            "PORT AUTHORITIES",
+            "COASTAL SURVEILLANCE",
+            "SURVEY AND MAPPING",
+            "CURRICULUM DEVELOPMENT",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Reduce ABC funding",
+        "validFunctions": [
+            "TAXATION",
+            "ARTS"
+        ]
+    },
+    {
+        "title": "Celebrate Australia Day",
+        "validFunctions": [
+            "CEREMONIAL FUNCTIONS",
+            "COMMUNITY SERVICES",
+            "CULTURAL AFFAIRS",
+            "NATIONAL EVENTS",
+            "NATIONAL HERITAGE"
+        ]
+    },
+    {
+        "title": "Celebrate ANZAC Day",
+        "validFunctions": [
+            "CEREMONIAL FUNCTIONS",
+            "COMMUNITY SERVICES",
+            "CULTURAL AFFAIRS",
+            "NATIONAL HERITAGE",
+            "NAVY",
+            "VETERANS' AFFAIRS",
+            "DEFENCE",
+            "AIR FORCE",
+            "WAR MEMORIALS",
+            "FOREIGN POLICY",
+            "NATIONAL EVENTS",
+            "NATIONAL HERITAGE",
+            "ARMY",
+            "PRISONERS OF WAR",
+            "RECRUITMENT",
+            "SECURITY AND INTELLIGENCE"
+        ]
+    },
+    {
+        "title": "Support single parents",
+        "validFunctions": [
+            "TAXATION",
+            "PUBLIC UTILITIES",
+            "PRESCHOOL EDUCATION",
+            "SOCIAL WELFARE",
+            "FAMILY LAW",
+            "SECONDARY EDUCATION",
+            "COMMUNITY SERVICES",
+            "TERTIARY EDUCATION",
+            "PRIMARY EDUCATION",
+            "INDUSTRIAL RELATIONS",
+            "EDUCATION",
+            "STUDENT ASSISTANCE",
+            "CHILD WELFARE",
+            "HEALTH"
+        ]
+    },
+    {
+        "title": "Build public housing",
+        "validFunctions": [
+            "PUBLIC UTILITIES",
+            "SOCIAL WELFARE",
+            "COMMUNITY SERVICES",
+            "HOUSING"
+        ]
+    },
+    {
+        "title": "Farmers need more water in Murray-Darling Basin",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "ENVIRONMENT",
+            "AGRICULTURE",
+            "CIVIL ENGINEERING",
+            "PUBLISHING AND PRINTING",
+            "GENETICS",
+            "VITICULTURE",
+            "EARTH SCIENCES",
+            "CONSERVATION",
+            "LAND USE"
+        ]
+    },
+    {
+        "title": "Mine for coal",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "ENVIRONMENT",
+            "EMPLOYMENT",
+            "RESOURCES",
+            "RAIL TRANSPORT",
+            "INDUSTRIAL RELATIONS",
+            "EARTH SCIENCES",
+            "ENERGY",
+            "MINING",
+            "LAND USE"
+        ]
+    },
+    {
+        "title": "Build a bridge",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "PUBLIC UTILITIES",
+            "CONSTRUCTION",
+            "CIVIL ENGINEERING",
+            "LAND TRANSPORT",
+            "RAIL TRANSPORT",
+            "TRANSPORT",
+            "ROAD SAFETY"
+        ]
+    },
+    {
+        "title": "Build more farms",
+        "validFunctions": [
+            "ENVIRONMENT",
+            "AGRICULTURE",
+            "VITICULTURE",
+            "RESOURCES",
+            "GRANTS ADMINISTRATION",
+            "REGIONAL DEVELOPMENT",
+            "WATER RESOURCES",
+            "EARTH SCIENCES"
+        ]
+    },
+    {
+        "title": "Grant exploration permit",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "ENVIRONMENT",
+            "RESOURCES",
+            "MINING",
+            "CONSERVATION",
+            "RESOURCES",
+            "EARTH SCIENCES"
+        ]
+    },
+    {
+        "title": "Impose water restrictions",
+        "validFunctions": [
+            "COMMONWEALTH STATE RELATIONS",
+            "ENVIRONMENT",
+            "AGRICULTURE",
+            "WATER RESOURCES",
+            "EARTH SCIENCES",
+            "MARINE SCIENCE",
+            "HYDROELECTRIC POWER"
+        ]
+    },
+    {
+        "title": "Generate electricity",
+        "validFunctions": [
+            "ENVIRONMENT",
+            "PUBLIC UTILITIES",
+            "MINING",
+            "HYDROELECTRIC POWER"
+        ]
+    },
+    {
+        "title": "Fund gallery",
+        "validFunctions": [
+            "",
+            "GRANTS ADMINISTRATION",
+            "CULTURAL AFFAIRS",
+            "ARTS"
+        ]
+    },
+    {
+        "title": "Commission statue",
+        "validFunctions": [
+            "NATIONAL EVENTS",
+            "GRANTS ADMINISTRATION",
+            "LEGAL",
+            "ARTS"
+        ]
+    },
+    {
+        "title": "Protect consumers",
+        "validFunctions": [
+            "CONSUMER AFFAIRS",
+            "LEGAL"
+        ]
+    },
+    {
+        "title": "Show foreign film on SBS",
+        "validFunctions": [
+            "BROADCASTING",
+            "ARTS"
+        ]
+    },
+    {
+        "title": "Fine evil corporation",
+        "validFunctions": [
+            "FEDERAL LAW",
+            "LAW ENFORCEMENT",
+            "OMBUDSMAN",
+            "LEGAL",
+            "COMMITTEES OF INQUIRY",
+            "AUDIT",
+            "ROYAL COMMISSIONS"
+        ]
+    }
+]

@@ -31,8 +31,8 @@
         self.missionName = dict[@"missionName"];
     }
     
-    if ([dict[@"messageType"] isEqualToString:@"points"]) {
-        self.points = [dict[@"points"] integerValue];
+    if ([dict[@"messageType"] isEqualToString:@"progress"]) {
+        self.progress = [dict[@"progress"] floatValue];
     }
     
     if ([dict[@"messageType"] isEqualToString:@"time"]) {
@@ -51,6 +51,17 @@
         self.moneySpent = [dict[@"moneySpent"] unsignedIntegerValue];
 
     }
+    
+    if ([dict[@"messageType"] isEqualToString:@"failedMission"]) {
+        [self.delegate missionDidNotSucceed];
+    }
+    
+    if ([dict[@"messageType"] isEqualToString:@"completedMission"]) {
+        [self.delegate missionSucceeded];
+    }
+    
+    
+    
     
 }
 

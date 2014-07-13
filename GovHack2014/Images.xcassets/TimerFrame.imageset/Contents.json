@@ -2,34 +2,34 @@
   "images" : [
     {
       "resizing" : {
-        "mode" : "3-part-vertical",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "height" : 78
+          "width" : 1
         },
         "capInsets" : {
-          "top" : 21,
-          "bottom" : 21
+          "right" : 98,
+          "left" : 98
         }
       },
       "idiom" : "universal",
-      "filename" : "TextArea.png",
+      "filename" : "TimerFrame.png",
       "scale" : "1x"
     },
     {
       "resizing" : {
-        "mode" : "3-part-vertical",
+        "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "fill",
-          "height" : 153
+          "width" : 1
         },
         "capInsets" : {
-          "top" : 43,
-          "bottom" : 44
+          "right" : 195,
+          "left" : 195
         }
       },
       "idiom" : "universal",
-      "filename" : "TextArea@2x.png",
+      "filename" : "TimerFrame@2x.png",
       "scale" : "2x"
     }
   ],

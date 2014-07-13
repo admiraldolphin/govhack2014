@@ -85,16 +85,19 @@ static NSArray* _minionData = nil;
     
     NSArray* allMinions = [GHMinion minionData];
     
-    int index = arc4random_uniform(allMinions.count);
-    
-    NSDictionary* minionData = allMinions[index];
     
     GHMinion* minion = [[GHMinion alloc] init];
     
-    minion.name = minionData[@"description"];
-    minion.description = minion.name;
-    minion.functionTypes = [minionData[@"functionTypes"] copy];
-    minion.costToUse = [minionData[@"cost"] integerValue];
+    do {
+        int index = arc4random_uniform(allMinions.count);
+        
+        NSDictionary* minionData = allMinions[index];
+        
+        minion.name = minionData[@"description"];
+        minion.description = minion.name;
+        minion.functionTypes = [minionData[@"functionTypes"] copy];
+        minion.costToUse = [minionData[@"cost"] integerValue];
+    } while (minion.description == nil);
     
     return minion;
     
@@ -142,15 +145,15 @@ NSArray* _missionData;
         NSData* data = [NSData dataWithContentsOfURL:url];
         
         NSError* error = nil;
-        _minionData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        _missionData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
-        if (_minionData == nil) {
+        if (_missionData == nil) {
             NSLog(@"Error loading missions! %@", error);
         }
         
     });
     
-    return _minionData;
+    return _missionData;
 }
 
 // replace this with the actual data source
@@ -162,17 +165,6 @@ NSArray* _missionData;
 + (GHMission*) missionForMinions:(NSArray*)minions difficultyScale:(float)scale {
     
     GHMission* mission = [[GHMission alloc] init];
-    
-    
-    mission.title = @"A MISSION";
-    
-    mission.time = arc4random_uniform(15) + 5;
-    mission.timeRemaining = mission.time;
-    mission.failurePoints = -3;
-    mission.successPoints = +3;
-    
-    return mission;
-
     
     // Randomly pick through the missions list and find one that has requirements that match at least one function owned by at least one of the minions
     
@@ -203,7 +195,7 @@ NSArray* _missionData;
     } while (hasSuitableMinion == NO);
     
     mission.title = selectedMission[@"title"];
-    
+    mission.functionsRequired = [selectedMission[@"validFunctions"] copy];
     mission.time = arc4random_uniform(15) + 5;
     mission.timeRemaining = mission.time;
     mission.failurePoints = -3;
@@ -284,12 +276,15 @@ NSArray* _missionData;
     // create a mission for all peers
     
     for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
-        [self createMissionForPeer:peer];
         [self setupMinionsForPeer:peer];
     }
-    [self createMissionForPeer:[GHNetworking sharedNetworking].peerID];
     [self setupMinionsForPeer:[GHNetworking sharedNetworking].peerID];
 
+    for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
+        [self createMissionForPeer:peer];
+    }
+    
+    [self createMissionForPeer:[GHNetworking sharedNetworking].peerID];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waitingForMissionsDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
@@ -352,12 +347,17 @@ NSArray* _missionData;
     for (GHMission* mission in missions) {
         
         for (NSString* type in agent.functionTypes) {
-            if (YES || [mission.functionsRequired containsObject:type]) {
+            if ([mission.functionsRequired containsObject:type]) {
                 [self missionCompleted:mission successfully:YES];
-                break;
+                return;
             }
         }
     }
+    
+    // Tell the peer that they did a bad thing
+    [self sendMessageNamed:@"failedMission" data:@{} toPeer:agent.owner mode:MCSessionSendDataUnreliable];
+    
+    
 }
 
 // Called when a mission succeeds or fails
@@ -368,6 +368,10 @@ NSArray* _missionData;
     MCPeerID* peer = [self peerForMission:mission];
     
     if (successfully) {
+        
+        // Tell the peer that they did a good thing
+        [self sendMessageNamed:@"completedMission" data:@{} toPeer:peer mode:MCSessionSendDataUnreliable];
+        
         self.points += mission.successPoints;
         self.missionsSucceeded++;
     } else {
@@ -393,7 +397,13 @@ NSArray* _missionData;
         }
     }
     
-    [self sendMessageNamed:@"points" data:@{@"points":@(self.points)} mode:MCSessionSendDataUnreliable];
+    float scaledPoints = self.points + (abs(self.pointsFailureThreshold));
+    float scaledMax = abs(self.pointsFailureThreshold) + abs(self.pointsSuccessThreshold);
+    
+    float progress = scaledPoints / scaledMax;
+    
+    
+    [self sendMessageNamed:@"progress" data:@{@"progress":@(progress)} mode:MCSessionSendDataUnreliable];
 }
 
 #pragma mark - Round management

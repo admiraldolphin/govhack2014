@@ -9,10 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "GHGame.h"
 
+@protocol GHGameClientDelegate <NSObject>
+
+- (void) missionSucceeded;
+- (void) missionDidNotSucceed;
+
+@end
 
 @interface GHGameClient : NSObject
 
 - (void) processReceivedMessage:(NSDictionary*)dict;
+
+@property (weak) id <GHGameClientDelegate> delegate;
 
 @property (nonatomic, assign) GHGameState state;
 
@@ -25,7 +33,7 @@
 
 @property (strong) NSString* missionName;
 
-@property (assign) NSInteger points;
+@property (assign) float progress;
 
 @property (strong) NSArray* people;
 

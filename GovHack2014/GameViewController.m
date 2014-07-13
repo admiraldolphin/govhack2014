@@ -12,8 +12,9 @@
 #import "GHGameClient.h"
 #import "GHMinionCell.h"
 #import "UIImage+MinionImage.h"
+#import "GameProgressView.h"
 
-@interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource, UICollectionViewDelegate, GHGameClientDelegate>
 
 @property (strong) GHGame* game;
 @property (strong) GHGameClient* gameClient;
@@ -30,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet UIView *endGameReportView;
 
 @property (weak, nonatomic) IBOutlet UILabel *endGameReportLabel;
+
+@property (weak, nonatomic) IBOutlet GameProgressView *progressView;
+
+@property (strong) UIView* feedbackView;
 
 @end
 
@@ -52,11 +57,19 @@
     
     // Create a client
     self.gameClient = [[GHGameClient alloc] init];
+    self.gameClient.delegate = self;
     
     // If I'm the server, create the game and start it off
     if ([GHNetworking sharedNetworking].isHost) {
         self.game = [[GHGame alloc] initWithLocalClient:self.gameClient];
     }
+    
+    self.feedbackView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.feedbackView.backgroundColor = [UIColor greenColor];
+    self.feedbackView.userInteractionEnabled = NO;
+    self.feedbackView.alpha = 0.0;
+    [self.view addSubview:self.feedbackView];
+    
     
     
     [self.gameClient addObserver:self forKeyPath:@"missionName" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
@@ -67,7 +80,7 @@
     
     [self.gameClient addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     
-    [self.gameClient addObserver:self forKeyPath:@"points" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
+    [self.gameClient addObserver:self forKeyPath:@"progress" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     
     [self.gameClient addObserver:self forKeyPath:@"people" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     
@@ -95,7 +108,7 @@
         [self updateState];
     }
     
-    if ([keyPath isEqualToString:@"points"]) {
+    if ([keyPath isEqualToString:@"progress"]) {
         [self updatePoints];
     }
     
@@ -111,7 +124,7 @@
 }
 
 - (void) updatePoints {
-    self.pointsLabel.text = [NSString stringWithFormat:@"%i Points", self.gameClient.points];
+    self.progressView.progress = self.gameClient.progress;
 }
 
 - (void) updateProgress {
@@ -251,6 +264,24 @@
         
     }
     
+}
+
+- (void)missionDidNotSucceed {
+    self.feedbackView.backgroundColor = [UIColor redColor];
+    self.feedbackView.alpha = 0.25;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.feedbackView.alpha = 0.0;
+    }];
+}
+
+- (void)missionSucceeded {
+    self.feedbackView.backgroundColor = [UIColor greenColor];
+    self.feedbackView.alpha = 0.25;
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        self.feedbackView.alpha = 0.0;
+    }];
 }
 
 /*
