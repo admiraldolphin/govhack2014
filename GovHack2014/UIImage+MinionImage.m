@@ -68,4 +68,38 @@
                                            ]];
 }
 
++ (UIImage *)randomGenderlessMinionImage
+{
+    NSMutableArray *imageArray = [NSMutableArray array];
+    
+    // shirt
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Shirt%i",arc4random_uniform(2)+1]]];
+    // hair
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Hair%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    // eyebrows
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Eyebrow%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    // mouth
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Mouth%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    // eyes
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Eyes%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    // nose
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Nose%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    // accessories
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"Accessory%i",arc4random_uniform(5)+1]]];
+    // head
+    [imageArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%@Head%i",arc4random_uniform(2) == 0 ? @"Male" : @"Female",arc4random_uniform(6)+1]]];
+    
+    UIImage *image = imageArray[0];
+    UIGraphicsBeginImageContext(image.size);
+    
+    for (UIImage *image in [imageArray reverseObjectEnumerator].allObjects)
+    {
+        [image drawAtPoint:CGPointMake(0, 0)];
+    }
+    UIImage *minion = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return minion;
+}
+
 @end

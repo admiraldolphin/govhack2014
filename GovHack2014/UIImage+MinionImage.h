@@ -12,5 +12,6 @@
 
 + (UIImage *)imageWithMinionString:(NSString *)minionImageIdentString;
 + (UIImage *)randomMinionImage;
++ (UIImage *)randomGenderlessMinionImage;
 
 @end

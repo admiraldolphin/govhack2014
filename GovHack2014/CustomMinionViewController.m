@@ -39,7 +39,7 @@
 }
 - (IBAction)generateMinion:(id)sender
 {
-    self.minionView.image = [UIImage randomMinionImage];
+    self.minionView.image = [UIImage randomGenderlessMinionImage];//randomMinionImage];
 }
 - (IBAction)goBack:(id)sender
 {
