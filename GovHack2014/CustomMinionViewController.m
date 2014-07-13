@@ -16,6 +16,10 @@
 
 @implementation CustomMinionViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,7 +35,6 @@
 	// Do any additional setup after loading the view.
     self.minionView.image = [UIImage randomMinionImage];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -39,7 +42,7 @@
 }
 - (IBAction)generateMinion:(id)sender
 {
-    int roll = arc4random_uniform(10) + 1;
+    int roll = arc4random_uniform(10);
     if (roll == 0)
         self.minionView.image = [UIImage randomGenderlessMinionImage];
     else
@@ -51,7 +54,8 @@
 }
 - (IBAction)shareMinion:(id)sender
 {
-    NSString *tweet = @"What is Gov? #GovHack #GovHackTas http://www.secretlab.com.au/govhack2014";
+    NSURL *site = [NSURL URLWithString:@"http://www.secretlab.com.au/govhack2014"];
+    NSString *tweet = [NSString stringWithFormat:@"What is Gov? #GovHack #GovHackTas %@",site];
     UIActivityViewController *activity = [[UIActivityViewController alloc] initWithActivityItems:@[tweet,self.minionView.image] applicationActivities:nil];
     [self presentViewController:activity
                        animated:YES
