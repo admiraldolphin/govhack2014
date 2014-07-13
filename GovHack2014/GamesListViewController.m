@@ -15,6 +15,10 @@
 
 @implementation GamesListViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)startGame:(id)sender {
     [[GHNetworking sharedNetworking] createGame];
     [self performSegueWithIdentifier:@"ShowGame" sender:nil];

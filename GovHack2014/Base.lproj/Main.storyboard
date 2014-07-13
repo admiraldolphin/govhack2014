@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0uT-I0-edz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0uT-I0-edz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="qb8-GJ-ddS">
             <objects>
-                <viewController id="n2i-UL-CfH" sceneMemberID="viewController">
+                <viewController id="n2i-UL-CfH" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VdW-wn-kpX"/>
                         <viewControllerLayoutGuide type="bottom" id="lgY-u3-EHK"/>
@@ -18,6 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="a9Y-g5-rYl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Bq-vyN">
                                 <rect key="frame" x="110" y="175" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -40,6 +44,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lgY-u3-EHK" firstAttribute="top" secondItem="a9Y-g5-rYl" secondAttribute="bottom" id="9Fa-or-JWz"/>
+                            <constraint firstItem="a9Y-g5-rYl" firstAttribute="leading" secondItem="y9B-CH-vnf" secondAttribute="leading" id="L7e-ip-E67"/>
+                            <constraint firstItem="a9Y-g5-rYl" firstAttribute="top" secondItem="y9B-CH-vnf" secondAttribute="top" id="mde-5W-4Wy"/>
+                            <constraint firstAttribute="trailing" secondItem="a9Y-g5-rYl" secondAttribute="trailing" id="r1P-Ol-80y"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nmf-Ry-LyI"/>
                 </viewController>
@@ -122,6 +132,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="jWU-91-2ks">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySi-bB-Ii8">
                                 <rect key="frame" x="127" y="430" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,11 +185,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="jWU-91-2ks" secondAttribute="bottom" id="6MI-DD-mll"/>
                             <constraint firstItem="nmd-AG-yS6" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="20" id="AaZ-ao-khH"/>
                             <constraint firstAttribute="trailing" secondItem="f0u-BL-kUj" secondAttribute="trailing" constant="20" id="E7e-wM-zaH"/>
+                            <constraint firstItem="jWU-91-2ks" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" id="EGG-nJ-O9M"/>
                             <constraint firstAttribute="trailing" secondItem="ySi-bB-Ii8" secondAttribute="trailing" constant="126" id="GIo-aN-sqt"/>
                             <constraint firstItem="FRC-PS-aVk" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="20" id="I2g-fU-AND"/>
                             <constraint firstAttribute="trailing" secondItem="nmd-AG-yS6" secondAttribute="trailing" constant="20" id="JlI-pO-4Hc"/>
+                            <constraint firstItem="jWU-91-2ks" firstAttribute="top" secondItem="iOc-CM-36y" secondAttribute="top" id="KBU-lv-Ceg"/>
                             <constraint firstItem="nmd-AG-yS6" firstAttribute="top" secondItem="lSa-7C-rEf" secondAttribute="bottom" id="Lcm-Ks-uqf"/>
                             <constraint firstItem="f0u-BL-kUj" firstAttribute="leading" secondItem="ySi-bB-Ii8" secondAttribute="trailing" constant="66" id="Qrp-K5-GKM"/>
                             <constraint firstItem="ySi-bB-Ii8" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="127" id="R8f-44-7an"/>
@@ -184,6 +201,7 @@
                             <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="ySi-bB-Ii8" secondAttribute="bottom" constant="20" id="kLV-XJ-vML"/>
                             <constraint firstItem="ySi-bB-Ii8" firstAttribute="top" secondItem="nmd-AG-yS6" secondAttribute="bottom" constant="8" id="m0w-qx-FF2"/>
                             <constraint firstItem="FRC-PS-aVk" firstAttribute="top" secondItem="nmd-AG-yS6" secondAttribute="bottom" constant="8" id="mmW-Ed-RUn"/>
+                            <constraint firstAttribute="trailing" secondItem="jWU-91-2ks" secondAttribute="trailing" id="qQt-La-1cN"/>
                             <constraint firstItem="ySi-bB-Ii8" firstAttribute="leading" secondItem="FRC-PS-aVk" secondAttribute="trailing" constant="73" id="wVV-CC-DOr"/>
                             <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="f0u-BL-kUj" secondAttribute="bottom" constant="20" id="wr6-O9-KBb"/>
                         </constraints>
@@ -194,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-JS-odp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="727"/>
+            <point key="canvasLocation" x="350" y="687"/>
         </scene>
         <!--Lobby View Controller-->
         <scene sceneID="Net-Sj-VqT">
@@ -308,11 +326,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZFy-hd-mTF">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZFy-hd-mTF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="tEXTTHIN" translatesAutoresizingMaskIntoConstraints="NO" id="4By-YO-WWf">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="tEXTTHIN" translatesAutoresizingMaskIntoConstraints="NO" id="4By-YO-WWf">
                                 <rect key="frame" x="0.0" y="370" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <constraints>
@@ -465,11 +483,11 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="53c-Zd-AMF">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="53c-Zd-AMF">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="GETREADYTOGOV" translatesAutoresizingMaskIntoConstraints="NO" id="19K-uW-phS">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="GETREADYTOGOV" translatesAutoresizingMaskIntoConstraints="NO" id="19K-uW-phS">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
