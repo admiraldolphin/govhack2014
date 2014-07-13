@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *gameOverView;
 @property (weak, nonatomic) IBOutlet UIView *endGameReportView;
 
+@property (weak, nonatomic) IBOutlet UILabel *endGameReportLabel;
 
 @end
 
@@ -189,7 +190,7 @@
     
     if ([GHNetworking sharedNetworking].isHost) {
         if ([data[@"messageType"] isEqualToString:@"selectedMinion"]) {
-            [self.game peerUsedAgentWithIdentifier:data[@"identifier"]];
+            [self.game peerUsedMinionWithIdentifier:data[@"identifier"]];
         }
     }
     
@@ -240,7 +241,7 @@
     
     if ([[GHNetworking sharedNetworking] isHost]) {
         // tell the server directly
-        [self.game peerUsedAgentWithIdentifier:minion[@"identifier"]];
+        [self.game peerUsedMinionWithIdentifier:minion[@"identifier"]];
     } else {
         // send a message to the server
         

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GHMinionCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *frameImage;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

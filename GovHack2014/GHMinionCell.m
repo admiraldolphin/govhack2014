@@ -8,6 +8,8 @@
 
 #import "GHMinionCell.h"
 
+#define FRAME_COUNT 12
+
 @implementation GHMinionCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -17,6 +19,16 @@
         // Initialization code
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    int frameNumber = arc4random_uniform(12) + 1;
+    
+    NSString* frameID = [NSString stringWithFormat:@"Frame%i", frameNumber];
+    
+    UIImage* frame = [UIImage imageNamed:frameID];
+    
+    self.frameImage.image = frame;
 }
 
 /*

@@ -40,8 +40,8 @@
         self.timeRemaining = [dict[@"timeRemaining"] floatValue];
     }
     
-    if ([dict[@"messageType"] isEqualToString:@"people"]) {
-        self.people = [dict[@"people"] copy];
+    if ([dict[@"messageType"] isEqualToString:@"minions"]) {
+        self.people = [dict[@"minions"] copy];
     }
     
     if ([dict[@"messageType"] isEqualToString:@"endGameReport"]) {

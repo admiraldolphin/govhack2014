@@ -29,6 +29,6 @@ typedef enum : NSUInteger {
 
 @property (weak) GHGameClient* localClient;
 
-- (void) peerUsedAgentWithIdentifier:(NSString*)agent;
+- (void) peerUsedMinionWithIdentifier:(NSString*)agent;
 
 @end

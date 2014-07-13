@@ -14,6 +14,8 @@
 		6801614A1970ECF50062C8E8 /* GHMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161491970ECF50062C8E8 /* GHMessage.m */; };
 		6801614D19711C3B0062C8E8 /* GHMinionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6801614C19711C3B0062C8E8 /* GHMinionCell.m */; };
 		6801614F19712DDD0062C8E8 /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6801614E19712DDD0062C8E8 /* People.xcassets */; };
+		68363DB71971FE1C005088A6 /* minions.json in Resources */ = {isa = PBXBuildFile; fileRef = 68363DB61971FE1C005088A6 /* minions.json */; };
+		68363DB9197201F8005088A6 /* Frames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68363DB8197201F7005088A6 /* Frames.xcassets */; };
 		68E6C7D9196FD78D000CF1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7D8196FD78D000CF1A0 /* Foundation.framework */; };
 		68E6C7DB196FD78D000CF1A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */; };
 		68E6C7DD196FD78D000CF1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DC196FD78D000CF1A0 /* UIKit.framework */; };
@@ -57,6 +59,8 @@
 		6801614B19711C3B0062C8E8 /* GHMinionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHMinionCell.h; sourceTree = "<group>"; };
 		6801614C19711C3B0062C8E8 /* GHMinionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHMinionCell.m; sourceTree = "<group>"; };
 		6801614E19712DDD0062C8E8 /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
+		68363DB61971FE1C005088A6 /* minions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = minions.json; sourceTree = "<group>"; };
+		68363DB8197201F7005088A6 /* Frames.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Frames.xcassets; sourceTree = "<group>"; };
 		68E6C7D5196FD78D000CF1A0 /* GovHack2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHack2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E6C7D8196FD78D000CF1A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,6 +146,7 @@
 		68E6C7DE196FD78D000CF1A0 /* GovHack2014 */ = {
 			isa = PBXGroup;
 			children = (
+				68363DB61971FE1C005088A6 /* minions.json */,
 				33C24FA019712C9C001B4755 /* UIImage+MinionImage.h */,
 				33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */,
 				68E6C7E7196FD78D000CF1A0 /* AppDelegate.h */,
@@ -166,6 +171,7 @@
 				68E6C7F0196FD78D000CF1A0 /* Images.xcassets */,
 				68E6C7DF196FD78D000CF1A0 /* Supporting Files */,
 				6801614E19712DDD0062C8E8 /* People.xcassets */,
+				68363DB8197201F7005088A6 /* Frames.xcassets */,
 			);
 			path = GovHack2014;
 			sourceTree = "<group>";
@@ -285,8 +291,10 @@
 			files = (
 				6801614F19712DDD0062C8E8 /* People.xcassets in Resources */,
 				68E6C7F1196FD78D000CF1A0 /* Images.xcassets in Resources */,
+				68363DB71971FE1C005088A6 /* minions.json in Resources */,
 				68E6C7E3196FD78D000CF1A0 /* InfoPlist.strings in Resources */,
 				68E6C7EC196FD78D000CF1A0 /* Main.storyboard in Resources */,
+				68363DB9197201F8005088A6 /* Frames.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 #import "GHGameClient.h"
 
 // people can complete missions; each player has multiple people
-@interface GHPerson : NSObject
+@interface GHMinion : NSObject
 
 // Internal ID of the person; clients send this ID to indicate that it's done
 @property (strong) NSString* identifier;
@@ -36,7 +36,9 @@
 
 @end
 
-@implementation GHPerson
+static NSArray* _minionData = nil;
+
+@implementation GHMinion
 
 - (id)init {
     self = [super init];
@@ -59,11 +61,50 @@
     return self;
 }
 
++ (NSArray*) minionData {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        NSURL* url = [[NSBundle mainBundle] URLForResource:@"minions" withExtension:@"json"];
+        NSData* data = [NSData dataWithContentsOfURL:url];
+        
+        NSError* error = nil;
+        _minionData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if (_minionData == nil) {
+            NSLog(@"Error loading minions! %@", error);
+        }
+        
+    });
+    
+    return _minionData;
+}
+
++ (GHMinion*) minion {
+    // Pick a random minion
+    
+    NSArray* allMinions = [GHMinion minionData];
+    
+    int index = arc4random_uniform(allMinions.count);
+    
+    NSDictionary* minionData = allMinions[index];
+    
+    GHMinion* minion = [[GHMinion alloc] init];
+    
+    minion.name = minionData[@"description"];
+    minion.description = minion.name;
+    minion.functionTypes = [minionData[@"functionTypes"] copy];
+    minion.costToUse = [minionData[@"cost"] integerValue];
+    
+    return minion;
+    
+}
+
 @end
 
 #pragma mark -
 
-// missions are tasks that must be completed by an agent
+// missions are tasks that must be completed by a minion
 @interface GHMission : NSObject
 
 // The name of the mission, selected
@@ -89,8 +130,28 @@
 @end
 
 
+NSArray* _missionData;
 
 @implementation GHMission
+
++ (NSArray*) missionData {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        NSURL* url = [[NSBundle mainBundle] URLForResource:@"missions" withExtension:@"json"];
+        NSData* data = [NSData dataWithContentsOfURL:url];
+        
+        NSError* error = nil;
+        _minionData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if (_minionData == nil) {
+            NSLog(@"Error loading missions! %@", error);
+        }
+        
+    });
+    
+    return _minionData;
+}
 
 // replace this with the actual data source
 + (NSArray*) TEMPmissionNames {
@@ -98,16 +159,55 @@
 }
 
 // create and prepare a new mission
-+ (GHMission*) mission {
++ (GHMission*) missionForMinions:(NSArray*)minions difficultyScale:(float)scale {
+    
     GHMission* mission = [[GHMission alloc] init];
     
-    mission.title = [[self TEMPmissionNames] objectAtIndex:arc4random_uniform([self TEMPmissionNames].count)];
+    
+    mission.title = @"A MISSION";
     
     mission.time = arc4random_uniform(15) + 5;
     mission.timeRemaining = mission.time;
     mission.failurePoints = -3;
     mission.successPoints = +3;
     
+    return mission;
+
+    
+    // Randomly pick through the missions list and find one that has requirements that match at least one function owned by at least one of the minions
+    
+    NSArray* missionData = [GHMission missionData];
+    
+    NSDictionary* selectedMission = nil;
+    
+    BOOL hasSuitableMinion = NO;
+    do {
+        
+        int i  = arc4random_uniform(missionData.count);
+        
+        selectedMission = missionData[i];
+        
+        
+        for (GHMinion* minion in minions) {
+            for (NSString* function in minion.functionTypes) {
+                if ([selectedMission[@"validFunctions"] containsObject:function]) {
+                    hasSuitableMinion = YES;
+                    break;
+                }
+            }
+            if (hasSuitableMinion)
+                break;
+        }
+        
+        
+    } while (hasSuitableMinion == NO);
+    
+    mission.title = selectedMission[@"title"];
+    
+    mission.time = arc4random_uniform(15) + 5;
+    mission.timeRemaining = mission.time;
+    mission.failurePoints = -3;
+    mission.successPoints = +3;
     
     return mission;
 }
@@ -140,7 +240,7 @@
     // maps peerIDs to missions
     NSMutableDictionary* _missions;
     
-    NSMutableArray* _agents;
+    NSMutableArray* _minions;
     
     NSTimer* _timer;
 }
@@ -153,7 +253,7 @@
         _localClient = localClient;
         
         _missions = [NSMutableDictionary dictionary];
-        _agents = [NSMutableArray array];
+        _minions = [NSMutableArray array];
         
         self.pointsFailureThreshold = -10;
         self.pointsSuccessThreshold = 10;
@@ -165,7 +265,7 @@
         
         [self beginRound];
         
-        _timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(timerUpdated:) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerUpdated:) userInfo:nil repeats:YES];
         
     }
     
@@ -179,16 +279,16 @@
     self.gameState = GHGameStateWaitingForMissions;
     
     // Delete all agents
-    [_agents removeAllObjects];
+    [_minions removeAllObjects];
     
     // create a mission for all peers
     
     for (MCPeerID* peer in [GHNetworking sharedNetworking].connectedPeers) {
         [self createMissionForPeer:peer];
-        [self setupPeopleForPeer:peer];
+        [self setupMinionsForPeer:peer];
     }
     [self createMissionForPeer:[GHNetworking sharedNetworking].peerID];
-    [self setupPeopleForPeer:[GHNetworking sharedNetworking].peerID];
+    [self setupMinionsForPeer:[GHNetworking sharedNetworking].peerID];
 
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.waitingForMissionsDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -199,37 +299,33 @@
     
 }
 
-- (GHPerson*) personWithIdentifier:(NSString*)identifier {
+- (GHMinion*) personWithIdentifier:(NSString*)identifier {
     
-    NSUInteger i = [_agents indexOfObjectPassingTest:^BOOL(GHPerson* obj, NSUInteger idx, BOOL *stop) {
+    NSUInteger i = [_minions indexOfObjectPassingTest:^BOOL(GHMinion* obj, NSUInteger idx, BOOL *stop) {
         return [obj.identifier isEqualToString:identifier];
     }];
     
     if (i == NSNotFound)
         return nil;
     
-    return _agents[i];
+    return _minions[i];
     
 }
 
-- (void) setupPeopleForPeer:(MCPeerID*)peerID {
+- (void) setupMinionsForPeer:(MCPeerID*)peerID {
     
     NSMutableArray* newPeople = [NSMutableArray array];
     
     for (int i = 0; i < self.peoplePerPeer; i++) {
-        GHPerson* person = [[GHPerson alloc] init];
-        person.name = [NSString stringWithFormat:@"PERSON %i", arc4random_uniform(10)];
+        GHMinion* person = [GHMinion minion];
         
         do {
             person.identifier = [NSString stringWithFormat:@"%06i", arc4random_uniform(1000000)];
         } while ([self personWithIdentifier:person.identifier] != NULL);
         
-        person.description = @"A RIGHT OLD CHAP";
-        person.functionTypes = @[@"FUNCTION1", @"FUNCTION2"];
-        person.costToUse = arc4random_uniform(15);
         person.owner = peerID;
         
-        [_agents addObject:person];
+        [_minions addObject:person];
         
         NSDictionary* descriptionDict = @{@"name": person.name,
                                           @"description": person.description,
@@ -240,13 +336,13 @@
         
     }
     
-    [self sendMessageNamed:@"people" data:@{@"people":newPeople} toPeer:peerID mode:MCSessionSendDataReliable];
+    [self sendMessageNamed:@"minions" data:@{@"minions":newPeople} toPeer:peerID mode:MCSessionSendDataReliable];
     
 }
 
-- (void) peerUsedAgentWithIdentifier:(NSString *)identifier {
+- (void) peerUsedMinionWithIdentifier:(NSString *)identifier {
     
-    GHPerson* agent = [self personWithIdentifier:identifier];
+    GHMinion* agent = [self personWithIdentifier:identifier];
     
     self.money += agent.costToUse;
     
@@ -374,7 +470,7 @@
     
     // make a new mission and send it out
     
-    GHMission* mission = [GHMission mission];
+    GHMission* mission = [GHMission missionForMinions:_minions difficultyScale:1.0];
     
     [_missions setObject:mission forKey:peer];
     
