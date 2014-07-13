@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Bq-vyN">
-                                <rect key="frame" x="110" y="175" width="101" height="30"/>
+                                <rect key="frame" x="110" y="311" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Go get elected">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
-                                <rect key="frame" x="68" y="213" width="185" height="30"/>
+                                <rect key="frame" x="68" y="349" width="185" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Generate some candidates">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,9 +42,14 @@
                                     <segue destination="Ra1-wN-BzK" kind="push" id="0yN-RN-L9o"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="lOGOnEW (1)" translatesAutoresizingMaskIntoConstraints="NO" id="e1a-Tr-OGP">
+                                <rect key="frame" x="31" y="20" width="259" height="259"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="e1a-Tr-OGP" secondAttribute="centerX" id="5HB-Jv-iBf"/>
                             <constraint firstItem="lgY-u3-EHK" firstAttribute="top" secondItem="a9Y-g5-rYl" secondAttribute="bottom" id="9Fa-or-JWz"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="leading" secondItem="y9B-CH-vnf" secondAttribute="leading" id="L7e-ip-E67"/>
                             <constraint firstItem="a9Y-g5-rYl" firstAttribute="top" secondItem="y9B-CH-vnf" secondAttribute="top" id="mde-5W-4Wy"/>
@@ -597,12 +602,13 @@
     </scenes>
     <resources>
         <image name="Background" width="320" height="568"/>
-        <image name="Frame1" width="1164" height="1164"/>
+        <image name="Frame1" width="313" height="313"/>
         <image name="GETREADYTOGOV" width="640" height="1136"/>
         <image name="Govd" width="640" height="483"/>
         <image name="Redtape" width="306" height="113"/>
         <image name="TimerFrame" width="296" height="35"/>
         <image name="TimerThumb" width="36" height="47"/>
+        <image name="lOGOnEW (1)" width="640" height="640"/>
         <image name="tEXTTHIN" width="640" height="148"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
