@@ -10,7 +10,8 @@
 #import "GHNetworking.h"
 #import "GHGameViewCell.h"
 
-@interface GamesListViewController () <GHNetworkingPeerDiscoveryDelegate>
+@interface GamesListViewController () <GHNetworkingPeerDiscoveryDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -54,6 +55,10 @@
     cell.gameNameLabel.text = peer.displayName;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 - (void)networkingDidJoinSession:(MCPeerID*)peerID {
