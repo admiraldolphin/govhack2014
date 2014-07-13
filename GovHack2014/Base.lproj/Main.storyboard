@@ -5,6 +5,47 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="qb8-GJ-ddS">
+            <objects>
+                <viewController id="n2i-UL-CfH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VdW-wn-kpX"/>
+                        <viewControllerLayoutGuide type="bottom" id="lgY-u3-EHK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y9B-CH-vnf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-Bq-vyN">
+                                <rect key="frame" x="110" y="175" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go get elected">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="inG-Ym-cde" kind="push" id="Plx-Yu-Nqd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
+                                <rect key="frame" x="68" y="213" width="185" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Generate some candidates">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ra1-wN-BzK" kind="push" id="0yN-RN-L9o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nmf-Ry-LyI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXA-SH-H3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-107" y="59"/>
+        </scene>
         <!--Games List View Controller - Root View Controller-->
         <scene sceneID="uIx-mh-iYw">
             <objects>
@@ -67,6 +108,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzs-tv-cAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="59"/>
+        </scene>
+        <!--Custom Minion View Controller-->
+        <scene sceneID="Q6a-ef-sQI">
+            <objects>
+                <viewController id="Ra1-wN-BzK" customClass="CustomMinionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lSa-7C-rEf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ycJ-4q-LrP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iOc-CM-36y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySi-bB-Ii8">
+                                <rect key="frame" x="127" y="518" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="lSF-Pn-fLo"/>
+                                    <constraint firstAttribute="height" constant="30" id="rb8-ic-IPW"/>
+                                </constraints>
+                                <state key="normal" title="Generate!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateMinion:" destination="Ra1-wN-BzK" eventType="touchUpInside" id="1mL-mg-ozE"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nmd-AG-yS6">
+                                <rect key="frame" x="20" y="20" width="280" height="490"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRC-PS-aVk">
+                                <rect key="frame" x="20" y="518" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Kou-XS-05c"/>
+                                    <constraint firstAttribute="width" constant="34" id="d3b-sr-VQS"/>
+                                </constraints>
+                                <state key="normal" title="back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="Ra1-wN-BzK" eventType="touchUpInside" id="rCY-Hn-YdM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0u-BL-kUj">
+                                <rect key="frame" x="260" y="518" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IBV-Dx-3fF"/>
+                                    <constraint firstAttribute="width" constant="40" id="gMB-VO-Upf"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareMinion:" destination="Ra1-wN-BzK" eventType="touchUpInside" id="pXt-KS-Y7m"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nmd-AG-yS6" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="20" id="AaZ-ao-khH"/>
+                            <constraint firstAttribute="trailing" secondItem="f0u-BL-kUj" secondAttribute="trailing" constant="20" id="E7e-wM-zaH"/>
+                            <constraint firstAttribute="trailing" secondItem="ySi-bB-Ii8" secondAttribute="trailing" constant="126" id="GIo-aN-sqt"/>
+                            <constraint firstItem="FRC-PS-aVk" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="20" id="I2g-fU-AND"/>
+                            <constraint firstAttribute="trailing" secondItem="nmd-AG-yS6" secondAttribute="trailing" constant="20" id="JlI-pO-4Hc"/>
+                            <constraint firstItem="nmd-AG-yS6" firstAttribute="top" secondItem="lSa-7C-rEf" secondAttribute="bottom" id="Lcm-Ks-uqf"/>
+                            <constraint firstItem="f0u-BL-kUj" firstAttribute="leading" secondItem="ySi-bB-Ii8" secondAttribute="trailing" constant="66" id="Qrp-K5-GKM"/>
+                            <constraint firstItem="ySi-bB-Ii8" firstAttribute="leading" secondItem="iOc-CM-36y" secondAttribute="leading" constant="127" id="R8f-44-7an"/>
+                            <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="FRC-PS-aVk" secondAttribute="bottom" constant="20" id="ULX-ia-hdD"/>
+                            <constraint firstItem="f0u-BL-kUj" firstAttribute="top" secondItem="nmd-AG-yS6" secondAttribute="bottom" constant="8" id="dIi-XV-rZm"/>
+                            <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="ySi-bB-Ii8" secondAttribute="bottom" constant="20" id="kLV-XJ-vML"/>
+                            <constraint firstItem="ySi-bB-Ii8" firstAttribute="top" secondItem="nmd-AG-yS6" secondAttribute="bottom" constant="8" id="m0w-qx-FF2"/>
+                            <constraint firstItem="FRC-PS-aVk" firstAttribute="top" secondItem="nmd-AG-yS6" secondAttribute="bottom" constant="8" id="mmW-Ed-RUn"/>
+                            <constraint firstItem="ySi-bB-Ii8" firstAttribute="leading" secondItem="FRC-PS-aVk" secondAttribute="trailing" constant="73" id="wVV-CC-DOr"/>
+                            <constraint firstItem="ycJ-4q-LrP" firstAttribute="top" secondItem="f0u-BL-kUj" secondAttribute="bottom" constant="20" id="wr6-O9-KBb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="minionView" destination="nmd-AG-yS6" id="0qx-n5-hyd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-JS-odp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="727"/>
         </scene>
         <!--Lobby View Controller-->
         <scene sceneID="Net-Sj-VqT">
@@ -389,12 +516,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="inG-Ym-cde" kind="relationship" relationship="rootViewController" id="Lno-7G-Dhg"/>
+                        <segue destination="n2i-UL-CfH" kind="relationship" relationship="rootViewController" id="0M9-Vp-nGh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Db-yK-p4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="59"/>
+            <point key="canvasLocation" x="-591" y="59"/>
         </scene>
     </scenes>
     <resources>

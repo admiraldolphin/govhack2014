@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33C24FA219712C9C001B4755 /* UIImage+MinionImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */; };
+		33E6900419717B07009FBD39 /* CustomMinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E6900319717B07009FBD39 /* CustomMinionViewController.m */; };
 		680161411970C6CB0062C8E8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161401970C6CB0062C8E8 /* GameViewController.m */; };
 		680161441970D29C0062C8E8 /* GHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161431970D29C0062C8E8 /* GHGame.m */; };
 		680161471970E6170062C8E8 /* GHGameClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 680161461970E6170062C8E8 /* GHGameClient.m */; };
@@ -48,6 +49,8 @@
 /* Begin PBXFileReference section */
 		33C24FA019712C9C001B4755 /* UIImage+MinionImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MinionImage.h"; sourceTree = "<group>"; };
 		33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MinionImage.m"; sourceTree = "<group>"; };
+		33E6900219717B07009FBD39 /* CustomMinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMinionViewController.h; sourceTree = "<group>"; };
+		33E6900319717B07009FBD39 /* CustomMinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMinionViewController.m; sourceTree = "<group>"; };
 		6801613F1970C6CB0062C8E8 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		680161401970C6CB0062C8E8 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		680161421970D29C0062C8E8 /* GHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGame.h; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				68363DB61971FE1C005088A6 /* minions.json */,
+				33E6900219717B07009FBD39 /* CustomMinionViewController.h */,
+				33E6900319717B07009FBD39 /* CustomMinionViewController.m */,
 				33C24FA019712C9C001B4755 /* UIImage+MinionImage.h */,
 				33C24FA119712C9C001B4755 /* UIImage+MinionImage.m */,
 				68E6C7E7196FD78D000CF1A0 /* AppDelegate.h */,
@@ -324,6 +329,7 @@
 				680161411970C6CB0062C8E8 /* GameViewController.m in Sources */,
 				680161441970D29C0062C8E8 /* GHGame.m in Sources */,
 				68E6C7E5196FD78D000CF1A0 /* main.m in Sources */,
+				33E6900419717B07009FBD39 /* CustomMinionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
