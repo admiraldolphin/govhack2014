@@ -354,6 +354,10 @@ NSArray* _missionData;
         for (NSString* type in agent.functionTypes) {
             if ([mission.functionsRequired containsObject:type]) {
                 [self missionCompleted:mission successfully:YES];
+                
+                // Tell the peer that they did a good thing
+                [self sendMessageNamed:@"completedMission" data:@{} toPeer:agent.owner mode:MCSessionSendDataUnreliable];
+                
                 return;
             }
         }
@@ -374,8 +378,6 @@ NSArray* _missionData;
     
     if (successfully) {
         
-        // Tell the peer that they did a good thing
-        [self sendMessageNamed:@"completedMission" data:@{} toPeer:peer mode:MCSessionSendDataUnreliable];
         
         self.points += mission.successPoints;
         self.missionsSucceeded++;
@@ -486,9 +488,6 @@ NSArray* _missionData;
     // make a new mission and send it out
     
     NSArray* filteredMinions = nil;
-    
-    
-    
     
     if ([GHNetworking sharedNetworking].connectedPeers.count == 0) {
         filteredMinions = _minions;

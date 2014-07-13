@@ -22,6 +22,7 @@
 		68363DB9197201F8005088A6 /* Frames.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68363DB8197201F7005088A6 /* Frames.xcassets */; };
 		68363DBB197211F6005088A6 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 68363DBA197211F6005088A6 /* missions.json */; };
 		68363DBE19721512005088A6 /* GameProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68363DBD19721512005088A6 /* GameProgressView.m */; };
+		68363DC119723B5C005088A6 /* GHGameViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68363DC019723B5C005088A6 /* GHGameViewCell.m */; };
 		68E6C7D9196FD78D000CF1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7D8196FD78D000CF1A0 /* Foundation.framework */; };
 		68E6C7DB196FD78D000CF1A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */; };
 		68E6C7DD196FD78D000CF1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DC196FD78D000CF1A0 /* UIKit.framework */; };
@@ -75,6 +76,8 @@
 		68363DBA197211F6005088A6 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		68363DBC19721512005088A6 /* GameProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameProgressView.h; sourceTree = "<group>"; };
 		68363DBD19721512005088A6 /* GameProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameProgressView.m; sourceTree = "<group>"; };
+		68363DBF19723B5C005088A6 /* GHGameViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGameViewCell.h; sourceTree = "<group>"; };
+		68363DC019723B5C005088A6 /* GHGameViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGameViewCell.m; sourceTree = "<group>"; };
 		68E6C7D5196FD78D000CF1A0 /* GovHack2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHack2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E6C7D8196FD78D000CF1A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -196,6 +199,8 @@
 				680161461970E6170062C8E8 /* GHGameClient.m */,
 				6801614B19711C3B0062C8E8 /* GHMinionCell.h */,
 				6801614C19711C3B0062C8E8 /* GHMinionCell.m */,
+				68363DBF19723B5C005088A6 /* GHGameViewCell.h */,
+				68363DC019723B5C005088A6 /* GHGameViewCell.m */,
 				68363DBC19721512005088A6 /* GameProgressView.h */,
 				68363DBD19721512005088A6 /* GameProgressView.m */,
 				68E6C7F0196FD78D000CF1A0 /* Images.xcassets */,
@@ -350,6 +355,7 @@
 				68E6C812196FF3BE000CF1A0 /* LobbyViewController.m in Sources */,
 				6801614A1970ECF50062C8E8 /* GHMessage.m in Sources */,
 				680161471970E6170062C8E8 /* GHGameClient.m in Sources */,
+				68363DC119723B5C005088A6 /* GHGameViewCell.m in Sources */,
 				68E6C80F196FDA63000CF1A0 /* GHNetworking.m in Sources */,
 				6801614D19711C3B0062C8E8 /* GHMinionCell.m in Sources */,
 				68363DBE19721512005088A6 /* GameProgressView.m in Sources */,
