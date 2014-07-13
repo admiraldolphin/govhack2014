@@ -39,7 +39,11 @@
 }
 - (IBAction)generateMinion:(id)sender
 {
-    self.minionView.image = [UIImage randomGenderlessMinionImage];//randomMinionImage];
+    int roll = arc4random_uniform(10) + 1;
+    if (roll == 0)
+        self.minionView.image = [UIImage randomGenderlessMinionImage];
+    else
+        self.minionView.image = [UIImage randomMinionImage];
 }
 - (IBAction)goBack:(id)sender
 {
