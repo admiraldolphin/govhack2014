@@ -484,17 +484,25 @@ NSArray* _missionData;
 - (GHMission*) createMissionForPeer:(MCPeerID*)peer {
     
     // make a new mission and send it out
-    /*
-    // Get the list of minions that are NOT owned by this peer
-    NSArray* filteredMinions = [_minions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(GHMinion* evaluatedObject, NSDictionary *bindings) {
-        
-        return evaluatedObject.owner != peer;
-        
-    }]];
     
-    if ([GHNetworking sharedNetworking].)*/
+    NSArray* filteredMinions = nil;
     
-    GHMission* mission = [GHMission missionForMinions:_minions difficultyScale:1.0];
+    
+    
+    
+    if ([GHNetworking sharedNetworking].connectedPeers.count == 0) {
+        filteredMinions = _minions;
+    } else {
+        // Get the list of minions that are NOT owned by this peer
+        filteredMinions = [_minions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(GHMinion* evaluatedObject, NSDictionary *bindings) {
+            
+            return evaluatedObject.owner != peer;
+            
+        }]];
+        
+    }
+    
+    GHMission* mission = [GHMission missionForMinions:filteredMinions difficultyScale:1.0];
     
     if (mission == nil)
         return nil;
