@@ -78,10 +78,12 @@
         self.peerTypeLabel.text = @"You are the server";
         
         self.startGameButton.enabled = YES;
+        self.startGameButton.hidden = NO;
     } else {
         self.peerTypeLabel.text = @"You are a client";
         
         self.startGameButton.enabled = NO;
+        self.startGameButton.hidden = YES;
     }
     
     [self updatePlayerCount];
