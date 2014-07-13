@@ -818,5 +818,83 @@
             "AUDIT",
             "ROYAL COMMISSIONS"
         ]
-    }
+    },
+    {
+        "title": "Investigate securities fraud",
+        "validFunctions": [
+            "CORPORATE AFFAIRS",
+            "ADMINISTRATIVE LAW",
+            "CONSUMER AFFAIRS"
+        ]
+    },
+    {
+        "title": "Refurbish hydro-electric dam",
+        "validFunctions": [
+            "CIVIL ENGINEERING",
+            "ENERGY"
+        ]
+    },
+    {
+        "title": "Archive cultural works",
+        "validFunctions": [
+            "COLLECTION MANAGEMENT",
+            "ARCHIVES ADMINISTRATION",
+            "ARTS",
+            "BROADCASTING"
+        ]
+    },
+    {
+        "title": "Set environmental standards",
+        "validFunctions": [
+            "ENVIRONMENT",
+            "CONSERVATION"
+        ]
+    },
+    {
+        "title": "Play cricket",
+        "validFunctions": [
+            "SPORT",
+            "NATIONAL FITNESS"
+        ]
+    },
+    {
+        "title": "Secure airport",
+        "validFunctions": [
+            "PROTECTIVE SERVICES",
+            "POLICE ADMINISTRATION",
+            "AIR SAFETY"
+        ]
+    },
+    {
+        "title": "Think of the children",
+        "validFunctions": [
+            "CHILD WELFARE"
+        ]
+    },
+    {
+        "title": "Grant export permit",
+        "validFunctions": [
+            "EXPORTS AND IMPORTS",
+            "LAND TRANSPORT",
+            "SEA TRANSPORT",
+            "AIR TRANSPORT",
+            "CUSTOMS"
+        ]
+    },
+    {
+        "title": "Inspect incoming freight",
+        "validFunctions": [
+            "EXPORTS AND IMPORTS",
+            "LAND TRANSPORT",
+            "SEA TRANSPORT",
+            "AIR TRANSPORT",
+            "CUSTOMS"
+        ]
+    },
+        {
+         "title": "Review film classification",
+        "validFunctions": [
+            "CENSORSHIP"
+        ]
+    }    
 ]
