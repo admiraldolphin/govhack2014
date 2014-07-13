@@ -46,7 +46,7 @@
     // +1 to include ourself
     NSUInteger playerCount = [GHNetworking sharedNetworking].connectedPeers.count + 1;
     
-    NSString* playerCountString = [NSString stringWithFormat:@"%lu players connected", (unsigned long)playerCount];
+    NSString* playerCountString = [NSString stringWithFormat:@"%lu", (unsigned long)playerCount];
     
     self.playersLabel.text = playerCountString;
 }

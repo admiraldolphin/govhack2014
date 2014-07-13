@@ -32,8 +32,8 @@
                                     <segue destination="inG-Ym-cde" kind="push" id="Plx-Yu-Nqd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
-                                <rect key="frame" x="68" y="213" width="185" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-NA-Hyc">
+                                <rect key="frame" x="68" y="213" width="185" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Generate some candidates">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,85 +226,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6G-I2-i1b">
-                                <rect key="frame" x="214" y="213" width="86" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="QgD-rm-2Ud">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Leave Game">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="leaveGame:" destination="37L-MH-mqa" eventType="touchUpInside" id="uOk-pw-7gQ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-dC-KZD">
-                                <rect key="frame" x="128" y="50" width="66" height="21"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cW-M2-tuc">
+                                <rect key="frame" x="30" y="220" width="260" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are the PEERTYPE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5P-4w-hnn">
-                                <rect key="frame" x="72" y="79" width="177" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chat Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raQ-12-8tl">
-                                <rect key="frame" x="20" y="137" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XB2-YP-euu">
-                                <rect key="frame" x="138" y="175" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendChat:" destination="37L-MH-mqa" eventType="touchUpInside" id="qTC-Gh-sah"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cW-M2-tuc">
-                                <rect key="frame" x="20" y="213" width="79" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Game">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <state key="normal" title="Start Gov" image="Frame1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="startGame:" destination="37L-MH-mqa" eventType="touchUpInside" id="7oG-nA-LAx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 players in game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-BU-aag">
-                                <rect key="frame" x="88" y="108" width="145" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-BU-aag">
+                                <rect key="frame" x="88" y="133" width="145" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TextArea" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-ug-qkc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CREATING GOV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCn-dC-KZD">
+                                <rect key="frame" x="20" y="40" width="280" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tEXTTHIN" translatesAutoresizingMaskIntoConstraints="NO" id="l9y-o7-YyZ">
+                                <rect key="frame" x="40" y="167" width="240" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People Connected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-K6-B2h">
+                                <rect key="frame" x="40" y="167" width="240" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QqS-yh-WPv">
+                                <rect key="frame" x="80" y="264" width="160" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9803922176361084" green="0.86666673421859741" blue="0.85490202903747559" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="E5P-4w-hnn" secondAttribute="centerX" constant="-0.5" id="0Wn-Z7-vg9"/>
-                            <constraint firstItem="raQ-12-8tl" firstAttribute="leading" secondItem="gU5-yV-AV3" secondAttribute="leading" constant="20" id="18x-I5-6df"/>
-                            <constraint firstItem="R6G-I2-i1b" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="8" symbolic="YES" id="9Rh-YD-vZv"/>
-                            <constraint firstAttribute="centerX" secondItem="9QC-BU-aag" secondAttribute="centerX" id="G0h-vk-x2e"/>
-                            <constraint firstItem="xCn-dC-KZD" firstAttribute="top" secondItem="rQV-ni-8Xa" secondAttribute="bottom" constant="30" id="OOK-0T-5Ju"/>
-                            <constraint firstItem="E5P-4w-hnn" firstAttribute="top" secondItem="xCn-dC-KZD" secondAttribute="bottom" constant="8" symbolic="YES" id="XUn-M7-HGo"/>
-                            <constraint firstAttribute="centerX" secondItem="XB2-YP-euu" secondAttribute="centerX" constant="4" id="ZjS-DY-Vda"/>
-                            <constraint firstItem="8cW-M2-tuc" firstAttribute="top" secondItem="XB2-YP-euu" secondAttribute="bottom" constant="8" id="aui-lj-DL0"/>
-                            <constraint firstAttribute="centerX" secondItem="xCn-dC-KZD" secondAttribute="centerX" constant="-0.5" id="dBc-MT-M3Q"/>
-                            <constraint firstAttribute="trailing" secondItem="raQ-12-8tl" secondAttribute="trailing" constant="20" id="fLT-Ib-7GN"/>
-                            <constraint firstItem="8cW-M2-tuc" firstAttribute="leading" secondItem="gU5-yV-AV3" secondAttribute="leading" constant="20" symbolic="YES" id="fP7-rM-Weq"/>
-                            <constraint firstAttribute="trailing" secondItem="R6G-I2-i1b" secondAttribute="trailing" constant="20" symbolic="YES" id="hQ2-gu-Pcf"/>
-                            <constraint firstItem="raQ-12-8tl" firstAttribute="top" secondItem="9QC-BU-aag" secondAttribute="bottom" constant="8" symbolic="YES" id="qGZ-Og-uc3"/>
-                            <constraint firstItem="XB2-YP-euu" firstAttribute="top" secondItem="raQ-12-8tl" secondAttribute="bottom" constant="8" id="uV2-b3-A3C"/>
-                            <constraint firstItem="9QC-BU-aag" firstAttribute="top" secondItem="E5P-4w-hnn" secondAttribute="bottom" constant="8" symbolic="YES" id="vJF-9a-jY4"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KvM-lT-cyg"/>
                     <connections>
-                        <outlet property="chatField" destination="raQ-12-8tl" id="Eoy-qB-NRt"/>
-                        <outlet property="peerTypeLabel" destination="E5P-4w-hnn" id="2PN-jS-dni"/>
                         <outlet property="playersLabel" destination="9QC-BU-aag" id="H7v-mV-nDA"/>
                         <outlet property="startGameButton" destination="8cW-M2-tuc" id="4Ee-p9-cMQ"/>
                         <segue destination="GHb-Ok-HAt" kind="push" identifier="BeginGame" id="Bll-w0-xOd"/>
@@ -584,6 +559,7 @@
         <image name="GETREADYTOGOV" width="640" height="1136"/>
         <image name="Govd" width="640" height="483"/>
         <image name="Redtape" width="306" height="113"/>
+        <image name="TextArea" width="320" height="120"/>
         <image name="TimerFrame" width="296" height="35"/>
         <image name="TimerThumb" width="36" height="47"/>
         <image name="tEXTTHIN" width="640" height="148"/>
