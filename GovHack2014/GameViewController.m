@@ -151,6 +151,10 @@
     switch (self.gameClient.state) {
         case GHGameStateWaitingForMissions:
         {
+            NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"get-read-to-gov" withExtension:@"wav"];
+            AVAudioPlayer *bgNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
+            [bgNoise play];
+            
             string = @"Waiting for missions";
             self.waitingForMissionsView.hidden = NO;
         }
