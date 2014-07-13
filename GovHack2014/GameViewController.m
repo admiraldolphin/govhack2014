@@ -13,7 +13,7 @@
 #import "GHMinionCell.h"
 #import "UIImage+MinionImage.h"
 
-@interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource>
+@interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong) GHGame* game;
 @property (strong) GHGameClient* gameClient;
@@ -23,6 +23,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameStateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *minionsCollectionView;
+
+
+@property (weak, nonatomic) IBOutlet UIView *waitingForMissionsView;
+@property (weak, nonatomic) IBOutlet UIView *gameOverView;
+@property (weak, nonatomic) IBOutlet UIView *endGameReportView;
+
+@property (weak, nonatomic) IBOutlet UILabel *endGameReportLabel;
+
 @end
 
 @implementation GameViewController
@@ -47,8 +55,7 @@
     
     // If I'm the server, create the game and start it off
     if ([GHNetworking sharedNetworking].isHost) {
-        self.game = [[GHGame alloc] init];
-        self.game.localClient = self.gameClient;
+        self.game = [[GHGame alloc] initWithLocalClient:self.gameClient];
     }
     
     
@@ -123,18 +130,38 @@
     
     NSString* string = nil;
     
+    self.waitingForMissionsView.hidden = YES;
+    self.gameOverView.hidden = YES;
+    self.endGameReportView.hidden = YES;
+    
     switch (self.gameClient.state) {
         case GHGameStateWaitingForMissions:
+        {
             string = @"Waiting for missions";
+            self.waitingForMissionsView.hidden = NO;
+        }
             break;
         case GHGameStatePerformingMissions:
+        {
             string = @"Performing missions";
+        }
             break;
         case GHGameStateGameOver:
+        {
             string = @"Game over";
+            self.gameOverView.hidden = NO;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [[GHNetworking sharedNetworking] leaveGame];
+            });
+            
+        }
             break;
         case GHGameStateViewingGameReport:
+        {
             string = @"Viewing game report";
+            self.endGameReportView.hidden = NO;
+        }
             break;
     }
     
@@ -155,10 +182,18 @@
 }
 
 - (void)networkingDidTerminateSession {
+    [self.navigationController popToRootViewControllerAnimated:YES];
     
 }
 
 - (void)networkingDidReceiveMessage:(GHNetworkingMessage)message data:(NSDictionary *)data {
+    
+    if ([GHNetworking sharedNetworking].isHost) {
+        if ([data[@"messageType"] isEqualToString:@"selectedMinion"]) {
+            [self.game peerUsedMinionWithIdentifier:data[@"identifier"]];
+        }
+    }
+    
     [self.gameClient processReceivedMessage:data];
 }
 
@@ -198,6 +233,23 @@
     
     return cell;
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDictionary* minion = self.gameClient.people[indexPath.item];
+    
+    if ([[GHNetworking sharedNetworking] isHost]) {
+        // tell the server directly
+        [self.game peerUsedMinionWithIdentifier:minion[@"identifier"]];
+    } else {
+        // send a message to the server
+        
+        NSDictionary* messageDict = @{@"messageType": @"selectedMinion", @"identifier":minion[@"identifier"]};
+        
+        [[GHNetworking sharedNetworking] sendMessage:GHNetworkingMessageData data:messageDict toPeer:[GHNetworking sharedNetworking].hostPeerID deliveryMode:MCSessionSendDataReliable];
+        
+    }
     
 }
 

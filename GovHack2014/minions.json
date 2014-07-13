@@ -1,0 +1,908 @@
+[
+    {
+        "description": "Department of the Senate",
+        "functionTypes": [
+            "CORPORATE AFFAIRS",
+            "RESOURCES",
+            "NATIONAL SERVICE",
+            "CULTURAL AFFAIRS",
+            "COMMUNITY SERVICES",
+            "CURRICULUM DEVELOPMENT",
+            "COLLECTION MANAGEMENT",
+            "PUBLISHING AND PRINTING",
+            "ADMINISTRATIVE LAW",
+            "COMMUNICATIONS",
+            "HEALTH",
+            "ADMINISTRATIVE SERVICES",
+            "DEFENCE",
+            "COMMITTEES OF INQUIRY",
+            "SEA TRANSPORT",
+            "TRADE",
+            "PARLIAMENTARY MATTERS",
+            "SCIENCE",
+            "HUMAN RIGHTS",
+            "PASTORAL",
+            "INDUSTRIAL RELATIONS",
+            "CITIZENSHIP",
+            "HOSPITALS AND CLINICS",
+            "BROADCASTING",
+            "ENERGY",
+            "CONSERVATION",
+            "EDUCATION",
+            "AGRICULTURE",
+            "WEIGHTS AND MEASURES",
+            "ARTS",
+            "REPATRIATION",
+            "TELECOMMUNICATIONS",
+            "ENVIRONMENT",
+            "AIR TRANSPORT",
+            "SOCIAL AND ECONOMIC RESEARCH"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Federal Executive Council",
+        "functionTypes": [
+            "SUPREME COURT LAW"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of the Prime Minister and Cabinet",
+        "functionTypes": [
+            "ARCHIVES ADMINISTRATION",
+            "ARTS",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "COMMITTEES OF INQUIRY",
+            "INDUSTRIAL RELATIONS",
+            "PASTORAL",
+            "NATIONAL EVENTS",
+            "COLLECTION MANAGEMENT",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "GOVERNMENT MEDIA",
+            "POSTAL SERVICES",
+            "HUMAN RIGHTS",
+            "ROYAL COMMISSIONS",
+            "BROADCASTING",
+            "REGIONAL DEVELOPMENT",
+            "ELECTORAL MATTERS",
+            "COMMONWEALTH STATE RELATIONS",
+            "CEREMONIAL FUNCTIONS",
+            "ARBITRATION",
+            "PARLIAMENTARY MATTERS",
+            "CUSTOMS",
+            "ENERGY",
+            "PHARMACEUTICALS AND MEDICAL AIDS",
+            "ADMINISTRATIVE LAW",
+            "AGRICULTURE",
+            "LITERATURE FUNDING",
+            "MULTICULTURALISM",
+            "INTERNAL SECURITY",
+            "CABINET",
+            "EXPORTS AND IMPORTS",
+            "OMBUDSMAN",
+            "SOCIAL AND ECONOMIC RESEARCH",
+            "EMPLOYMENT",
+            "FEDERAL LAW",
+            "FOREIGN POLICY",
+            "INTERNATIONAL RELATIONS",
+            "HISTORIC MEMORIALS",
+            "EDUCATION",
+            "NATIONAL HERITAGE",
+            "SCIENCE",
+            "MIGRATION",
+            "CITIZENSHIP",
+            "WATER RESOURCES",
+            "TERRITORY ADMINISTRATION",
+            "CHILD WELFARE",
+            "PROPERTY MANAGEMENT",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "CONSERVATION",
+            "BUILDING",
+            "AIR TRANSPORT",
+            "COMMUNITY SERVICES",
+            "CULTURAL AFFAIRS",
+            "CORPORATE AFFAIRS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Commonwealth Director of Public Prosecutions",
+        "functionTypes": [
+            "ADMINISTRATIVE LAW"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Postal Corporation",
+        "functionTypes": [
+            "POSTAL SERVICES",
+            "TELECOMMUNICATIONS",
+            "TERRITORY ADMINISTRATION",
+            "ELECTORAL MATTERS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Institute of Health and Welfare",
+        "functionTypes": [
+            "MEDICAL RESEARCH",
+            "OCCUPATIONAL HEALTH AND SAFETY"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Ports Australia",
+        "functionTypes": [
+            "SEA TRANSPORT",
+            "MIGRATION",
+            "EXPORTS AND IMPORTS",
+            "AIR TRANSPORT",
+            "FORESTRY REGULATION",
+            "LIGHTHOUSES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Communications",
+        "functionTypes": [
+            "BROADCASTING",
+            "POSTAL SERVICES",
+            "TELECOMMUNICATIONS",
+            "ADMINISTRATIVE LAW",
+            "COMMUNICATIONS",
+            "ARTS",
+            "COMMITTEES OF INQUIRY",
+            "SEA TRANSPORT",
+            "ARCHIVES ADMINISTRATION",
+            "METEOROLOGY",
+            "LIGHTHOUSES",
+            "EARTH SCIENCES",
+            "CIVIL ENGINEERING",
+            "AIR TRANSPORT",
+            "TRANSPORT",
+            "CUSTOMS",
+            "RAIL TRANSPORT",
+            "EXPORTS AND IMPORTS",
+            "SCIENCE",
+            "COLLECTION MANAGEMENT",
+            "HEALTH",
+            "CEREMONIAL FUNCTIONS",
+            "EMPLOYMENT",
+            "NATIONAL EVENTS",
+            "LAND TRANSPORT",
+            "SPORT",
+            "CONSTRUCTION",
+            "COMMONWEALTH STATE RELATIONS",
+            "AIR FORCE",
+            "SOCIAL AND ECONOMIC RESEARCH",
+            "HOUSE OF REPRESENTATIVES COMMITTEES",
+            "CONSERVATION",
+            "CORPORATE AFFAIRS",
+            "ENERGY",
+            "ENVIRONMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Christmas Island Administration",
+        "functionTypes": [
+            "TERRITORY ADMINISTRATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Environment Protection Agency",
+        "functionTypes": [
+            "ENVIRONMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Foreign Affairs and Trade",
+        "functionTypes": [
+            "CUSTOMS",
+            "CENSORSHIP",
+            "EXPORTS AND IMPORTS",
+            "COMMONWEALTH STATE RELATIONS",
+            "AGRICULTURE",
+            "PASTORAL",
+            "SEA TRANSPORT",
+            "INTERNATIONAL RELATIONS",
+            "LIGHTHOUSES",
+            "QUARANTINE",
+            "HORTICULTURE",
+            "ADMINISTRATIVE LAW",
+            "TRADE",
+            "TRANSPORT",
+            "RESOURCES",
+            "COPYRIGHT",
+            "PATENTS AND TRADEMARKS",
+            "DENTAL SERVICES",
+            "EMPLOYMENT",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "CONSUMER AFFAIRS",
+            "GOVERNMENT MEDIA",
+            "ENERGY",
+            "TRAINING",
+            "REGIONAL DEVELOPMENT",
+            "DEFENCE",
+            "CONSTRUCTION",
+            "SPORT",
+            "GRANTS ADMINISTRATION",
+            "OVERSEAS AID PROGRAMS",
+            "HEALTH",
+            "AIR TRANSPORT",
+            "RECREATION",
+            "SCIENCE",
+            "MULTICULTURALISM",
+            "TOURISM",
+            "INDUSTRIAL RELATIONS",
+            "FOREIGN POLICY",
+            "TERRITORY ADMINISTRATION",
+            "CULTURAL AFFAIRS",
+            "CONSULAR SERVICES",
+            "ARTS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "RAAF",
+        "functionTypes": [
+            "AIR FORCE"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Valuation Office",
+        "functionTypes": [
+            "CORPORATE AFFAIRS",
+            "GOODS AND SERVICES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Human Rights Commission",
+        "functionTypes": [
+            "HUMAN RIGHTS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "National Library of Australia",
+        "functionTypes": [
+            "COLLECTION MANAGEMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Qantas Airways Limited",
+        "functionTypes": [
+            "AIR TRANSPORT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Taxation Office",
+        "functionTypes": [
+            "CORPORATE AFFAIRS",
+            "GOODS AND SERVICES",
+            "COMMUNITY SERVICES",
+            "PENSIONS AND BENEFITS",
+            "ELECTORAL MATTERS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "National Archives of Australia",
+        "functionTypes": [
+            "ARCHIVES ADMINISTRATION",
+            "BROADCASTING",
+            "ARTS",
+            "COLLECTION MANAGEMENT",
+            "SPORT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian High Commissions",
+        "functionTypes": [
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "MIGRATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "National Capital Authority",
+        "functionTypes": [
+            "MEMORIALS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "AustralianHorticulturalCorporation,AppleandPearDivision",
+        "functionTypes": [
+            "TELECOMMUNICATIONS",
+            "CIVIL ENGINEERING",
+            "TERRITORY ADMINISTRATION",
+            "CONSERVATION",
+            "PUBLIC UTILITIES",
+            "RAIL TRANSPORT",
+            "TRANSPORT",
+            "BROADCASTING",
+            "SCIENCE",
+            "DEFENCE",
+            "CONSTRUCTION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Commissioner for Superannuation",
+        "functionTypes": [
+            "TERRITORY ADMINISTRATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Parks Australia",
+        "functionTypes": [
+            "NATIONAL PARKS",
+            "CONSERVATION",
+            "ENVIRONMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Employment",
+        "functionTypes": [
+            "HUMAN RIGHTS",
+            "ENERGY",
+            "TRAINING",
+            "EMPLOYMENT",
+            "INDUSTRIAL RELATIONS",
+            "ARBITRATION",
+            "COMMITTEES OF INQUIRY",
+            "SEA TRANSPORT",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "ARCHIVES ADMINISTRATION",
+            "ADMINISTRATIVE LAW",
+            "EDUCATION",
+            "HEALTH",
+            "TERTIARY EDUCATION",
+            "STUDENT ASSISTANCE",
+            "CURRICULUM DEVELOPMENT",
+            "CHILD WELFARE",
+            "ARTS",
+            "COMMUNITY SERVICES",
+            "BUILDING",
+            "COLLECTION MANAGEMENT",
+            "SPACE SCIENCE",
+            "MIGRATION",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "CONSTRUCTION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Army",
+        "functionTypes": [
+            "ARMY"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Education",
+        "functionTypes": [
+            "STUDENT ASSISTANCE",
+            "SPACE SCIENCE",
+            "EDUCATION",
+            "PASTORAL",
+            "TERTIARY EDUCATION",
+            "PRESCHOOL EDUCATION",
+            "CURRICULUM DEVELOPMENT",
+            "BUILDING",
+            "TRAINING",
+            "METEOROLOGY",
+            "FISHERIES REGULATION",
+            "MARINE SCIENCE",
+            "WEIGHTS AND MEASURES",
+            "COMMITTEES OF INQUIRY",
+            "INTERNATIONAL RELATIONS",
+            "HORTICULTURE",
+            "MIGRATION",
+            "ARTS",
+            "SOCIAL WELFARE",
+            "SEA TRANSPORT",
+            "FOREIGN POLICY",
+            "OVERSEAS AID PROGRAMS",
+            "CULTURAL AFFAIRS",
+            "COLONIAL ADMINISTRATION",
+            "ENVIRONMENT",
+            "ADMINISTRATIVE LAW",
+            "INDUSTRIAL RELATIONS",
+            "ENERGY",
+            "CONSTRUCTION",
+            "CHILD WELFARE",
+            "CIVIL ENGINEERING",
+            "COPYRIGHT",
+            "GRANTS ADMINISTRATION",
+            "GOVERNMENT MEDIA",
+            "SCIENCE",
+            "EMPLOYMENT",
+            "TERRITORY ADMINISTRATION",
+            "RESOURCES",
+            "ADMINISTRATIVE SERVICES",
+            "COMMUNITY SERVICES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Office of the Supervising Scientist",
+        "functionTypes": [
+            "ENVIRONMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Federal Police",
+        "functionTypes": [
+            "SECURITY AND INTELLIGENCE",
+            "PROTECTIVE SERVICES",
+            "POLICE ADMINISTRATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Fair work",
+        "functionTypes": [
+            "EMPLOYMENT",
+            "INDUSTRIAL RELATIONS",
+            "BUILDING"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Classification Board",
+        "functionTypes": [
+            "REGIONAL DEVELOPMENT",
+            "CENSORSHIP"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Institute of Urban Studies",
+        "functionTypes": [
+            "TERTIARY EDUCATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Sports Commission",
+        "functionTypes": [
+            "SPORT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Maritime Safety Authority",
+        "functionTypes": [
+            "LIGHTHOUSES",
+            "EMPLOYMENT",
+            "CUSTOMS",
+            "SEA TRANSPORT",
+            "EARTH SCIENCES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Horticulture Australia",
+        "functionTypes": [
+            "HORTICULTURE"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Broadcasting Corporation",
+        "functionTypes": [
+            "BROADCASTING",
+            "ARCHIVES ADMINISTRATION",
+            "ARTS",
+            "ADMINISTRATIVE LAW",
+            "CENSORSHIP"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Commonwealth Consumer Affairs Advisory Council",
+        "functionTypes": [
+            "SPACE SCIENCE",
+            "BUILDING",
+            "MARINE SCIENCE",
+            "METEOROLOGY",
+            "COLLECTION MANAGEMENT",
+            "PASTORAL",
+            "ADMINISTRATIVE LAW",
+            "COPYRIGHT",
+            "WEIGHTS AND MEASURES",
+            "CONSUMER AFFAIRS",
+            "HORTICULTURE",
+            "ARTS",
+            "FISHERIES REGULATION",
+            "CUSTOMS",
+            "EXPORTS AND IMPORTS",
+            "ENERGY",
+            "MIGRATION",
+            "COMMITTEES OF INQUIRY",
+            "CORPORATE AFFAIRS",
+            "AIR TRANSPORT",
+            "ARCHIVES ADMINISTRATION",
+            "POSTAL SERVICES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Emergency Management Australia",
+        "functionTypes": [
+            "NATURAL DISASTERS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian War Memorial",
+        "functionTypes": [
+            "ARCHIVES ADMINISTRATION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "National Health and Medical Research Council",
+        "functionTypes": [
+            "HEALTH"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "AustralianFilm,TelevisionandRadioSchool",
+        "functionTypes": [
+            "ARTS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Administrative Appeals Tribunal",
+        "functionTypes": [
+            "ADMINISTRATIVE LAW",
+            "FEDERAL LAW"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Land Headquarters",
+        "functionTypes": [
+            "CONSTRUCTION"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "CSIRO",
+        "functionTypes": [
+            "BROADCASTING",
+            "MARINE SCIENCE",
+            "PASTORAL",
+            "METEOROLOGY",
+            "BUILDING",
+            "MINING",
+            "FISHERIES REGULATION",
+            "EARTH SCIENCES",
+            "AGRICULTURE",
+            "ENERGY",
+            "HORTICULTURE",
+            "COLLECTION MANAGEMENT",
+            "SPACE SCIENCE",
+            "PUBLIC UTILITIES",
+            "PUBLISHING AND PRINTING",
+            "CONSERVATION",
+            "CIVIL ENGINEERING"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Bureau of Meteorology",
+        "functionTypes": [
+            "METEOROLOGY",
+            "SPACE SCIENCE"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Snowy Hydro",
+        "functionTypes": [
+            "CIVIL ENGINEERING",
+            "ENERGY",
+            "COMMONWEALTH STATE RELATIONS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Defence",
+        "functionTypes": [
+            "DEFENCE",
+            "PENSIONS AND BENEFITS",
+            "CABINET",
+            "REPATRIATION",
+            "AIR TRANSPORT",
+            "CENSORSHIP",
+            "GOVERNMENT MEDIA",
+            "COMMONWEALTH STATE RELATIONS",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "AIR FORCE",
+            "HOUSING",
+            "CIVIL ENGINEERING",
+            "COMMITTEES OF INQUIRY",
+            "WARTIME SECURITY",
+            "INDUSTRIAL RELATIONS",
+            "HOSPITALS AND CLINICS",
+            "HEALTH",
+            "LAND TRANSPORT",
+            "BROADCASTING",
+            "TRAINING",
+            "NATURAL DISASTERS",
+            "CONSUMER AFFAIRS",
+            "SURVEY AND MAPPING",
+            "ADMINISTRATIVE LAW",
+            "POLICE ADMINISTRATION",
+            "CONSTRUCTION",
+            "BUILDING",
+            "PATENTS AND TRADEMARKS",
+            "MEDICAL RESEARCH",
+            "CEREMONIAL FUNCTIONS",
+            "SEA TRANSPORT",
+            "EDUCATION",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "ARTS",
+            "GOODS AND SERVICES",
+            "EMPLOYMENT",
+            "SECURITY AND INTELLIGENCE",
+            "DENTAL SERVICES",
+            "TERRITORY ADMINISTRATION",
+            "RECRUITMENT",
+            "PHARMACEUTICALS AND MEDICAL AIDS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Institute of Sport",
+        "functionTypes": [
+            "SPORT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australia Council",
+        "functionTypes": [
+            "COLLECTION MANAGEMENT"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Centrelink",
+        "functionTypes": [
+            "COMMUNITY SERVICES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Parliamentary Services",
+        "functionTypes": [
+            "COLLECTION MANAGEMENT",
+            "PARLIAMENTARY MATTERS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of Finance",
+        "functionTypes": [
+            "COMMONWEALTH STATE RELATIONS",
+            "HOUSING",
+            "COMMUNITY SERVICES",
+            "SEA TRANSPORT",
+            "CONSTRUCTION",
+            "GOODS AND SERVICES",
+            "ARCHIVES ADMINISTRATION",
+            "REGIONAL DEVELOPMENT",
+            "ELECTORAL MATTERS",
+            "PARLIAMENTARY MATTERS",
+            "TRAINING",
+            "GOVERNMENT MEDIA",
+            "CORPORATE AFFAIRS",
+            "PUBLIC UTILITIES",
+            "PUBLISHING AND PRINTING",
+            "ADMINISTRATIVE LAW",
+            "TELECOMMUNICATIONS",
+            "PRISONERS OF WAR",
+            "SPORT",
+            "WARTIME SECURITY",
+            "BROADCASTING"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of the House of Representatives",
+        "functionTypes": [
+            "DEFENCE",
+            "BROADCASTING",
+            "ADMINISTRATIVE LAW",
+            "REPATRIATION",
+            "PUBLISHING AND PRINTING",
+            "ELECTORAL MATTERS",
+            "COLLECTION MANAGEMENT",
+            "MIGRATION",
+            "SCIENCE",
+            "COMMITTEES OF INQUIRY",
+            "PENSIONS AND BENEFITS",
+            "GOVERNMENT ACCOMMODATION AND CATERING",
+            "CONSTRUCTION",
+            "EDUCATION",
+            "INTERNAL SECURITY",
+            "INDUSTRIES",
+            "HEALTH",
+            "CUSTOMS",
+            "FORESTRY REGULATION",
+            "ENVIRONMENT",
+            "TELECOMMUNICATIONS",
+            "CABINET",
+            "EMPLOYMENT",
+            "CORPORATE AFFAIRS",
+            "COMMUNICATIONS",
+            "HOUSE OF REPRESENTATIVES COMMITTEES",
+            "HORTICULTURE",
+            "SEA TRANSPORT",
+            "AIR TRANSPORT",
+            "CULTURAL AFFAIRS",
+            "PARLIAMENTARY MATTERS",
+            "AGRICULTURE",
+            "TOURISM",
+            "NATURAL DISASTERS",
+            "CONSERVATION",
+            "SECURITY AND INTELLIGENCE"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Trade Commission",
+        "functionTypes": [
+            "EXPORTS AND IMPORTS",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "TRADE",
+            "MIGRATION",
+            "COMMONWEALTH STATE RELATIONS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Special Broadcasting Service (SBS)",
+        "functionTypes": [
+            "BROADCASTING"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Department of the Environment",
+        "functionTypes": [
+            "COLLECTION MANAGEMENT",
+            "METEOROLOGY",
+            "NATIONAL PARKS",
+            "BROADCASTING",
+            "ENVIRONMENT",
+            "ARTS",
+            "WATER RESOURCES",
+            "CONSERVATION",
+            "AGRICULTURE",
+            "REGIONAL DEVELOPMENT",
+            "MEMORIALS",
+            "TERRITORY ADMINISTRATION",
+            "SPORT",
+            "GOVERNMENT MEDIA",
+            "ARCHIVES ADMINISTRATION",
+            "NATIONAL EVENTS",
+            "COMMUNICATIONS",
+            "GOODS AND SERVICES",
+            "LITERATURE FUNDING",
+            "HISTORIC MEMORIALS",
+            "CEREMONIAL FUNCTIONS",
+            "ELECTORAL MATTERS",
+            "ENERGY",
+            "BUILDING",
+            "RESOURCES",
+            "FOREIGN POLICY",
+            "COMMITTEES OF INQUIRY",
+            "NATIONAL HERITAGE",
+            "PUBLIC UTILITIES"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Securities and Investments Commission",
+        "functionTypes": [
+            "CORPORATE AFFAIRS"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Australian Government Solicitor",
+        "functionTypes": [
+            "SUPREME COURT LAW",
+            "ADMINISTRATIVE LAW"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Governor-General",
+        "functionTypes": [
+            "AGRICULTURE",
+            "GOODS AND SERVICES",
+            "CULTURAL AFFAIRS",
+            "TERRITORY ADMINISTRATION",
+            "EMPLOYMENT",
+            "ADMINISTRATIVE LAW",
+            "INDUSTRIAL RELATIONS",
+            "REGIONAL DEVELOPMENT",
+            "CABINET",
+            "EARTH SCIENCES",
+            "EDUCATION",
+            "COMMUNITY SERVICES",
+            "COMMONWEALTH STATE RELATIONS",
+            "DEFENCE",
+            "COMMUNICATIONS",
+            "FOREIGN POLICY",
+            "POSTAL SERVICES",
+            "TRANSPORT",
+            "AIR TRANSPORT",
+            "CONSTRUCTION",
+            "OCCUPATIONAL HEALTH AND SAFETY",
+            "AIR FORCE",
+            "TOURISM",
+            "PATENTS AND TRADEMARKS",
+            "EXPORTS AND IMPORTS",
+            "BROADCASTING",
+            "ARCHIVES ADMINISTRATION",
+            "ENVIRONMENT",
+            "RECREATION",
+            "CENSORSHIP",
+            "CEREMONIAL FUNCTIONS",
+            "ARBITRATION",
+            "CITIZENSHIP",
+            "REPATRIATION",
+            "ARTS",
+            "ELECTORAL MATTERS",
+            "ENERGY",
+            "ARMY",
+            "LAND TRANSPORT",
+            "DENTAL SERVICES",
+            "SEA TRANSPORT",
+            "PROPERTY MANAGEMENT",
+            "MIGRATION",
+            "RESOURCES",
+            "SUPREME COURT LAW",
+            "CHILD WELFARE",
+            "PARLIAMENTARY MATTERS",
+            "INTERNATIONAL RELATIONS",
+            "HEALTH",
+            "GOVERNMENT REPRESENTATION OVERSEAS",
+            "MARINE SCIENCE",
+            "TRADE",
+            "WARTIME SECURITY",
+            "HOUSING"
+        ],
+        "cost": 20
+    },
+    {
+        "description": "Geoscience Australia",
+        "functionTypes": [
+            "SURVEY AND MAPPING",
+            "GOVERNMENT MEDIA",
+            "EARTH SCIENCES"
+        ],
+        "cost": 20
+    }
+]

@@ -29,8 +29,7 @@ static GHNetworking* _sharedInstance;
 }
 
 @property MCSession* session;
-@property (nonatomic, strong) MCPeerID *peerID;
-@property (nonatomic, strong) MCPeerID *hostPeerID;
+
 
 @property (nonatomic, strong) MCNearbyServiceAdvertiser* advertiser;
 @property (nonatomic, strong) MCNearbyServiceBrowser* browser;

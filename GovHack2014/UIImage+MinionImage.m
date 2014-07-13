@@ -41,11 +41,14 @@
     
     
     UIImage *image = imageArray[0];
-    UIGraphicsBeginImageContext(image.size);
+    
+    CGSize size = CGSizeMake(image.size.width, image.size.width);
+    
+    UIGraphicsBeginImageContext(size);
     
     for (UIImage *image in [imageArray reverseObjectEnumerator].allObjects)
     {
-        [image drawAtPoint:CGPointMake(0, 0)];
+        [image drawAtPoint:CGPointMake(0, -80)];
     }
     UIImage *minion = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

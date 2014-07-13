@@ -10,6 +10,15 @@
 
 @implementation GHGameClient
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.state = GHGameStateWaitingForMissions;
+    }
+    
+    return self;
+}
+
 - (void)processReceivedMessage:(NSDictionary *)dict {
     
     if ([dict[@"messageType"] isEqualToString:@"state"]) {
@@ -31,8 +40,16 @@
         self.timeRemaining = [dict[@"timeRemaining"] floatValue];
     }
     
-    if ([dict[@"messageType"] isEqualToString:@"people"]) {
-        self.people = [dict[@"people"] copy];
+    if ([dict[@"messageType"] isEqualToString:@"minions"]) {
+        self.people = [dict[@"minions"] copy];
+    }
+    
+    if ([dict[@"messageType"] isEqualToString:@"endGameReport"]) {
+        
+        self.missionsSucceeded = [dict[@"missionsSucceeded"] unsignedIntegerValue];
+        self.minionsUsed = [dict[@"minionsUsed"] unsignedIntegerValue];
+        self.moneySpent = [dict[@"moneySpent"] unsignedIntegerValue];
+
     }
     
 }
