@@ -32,7 +32,12 @@
     }
     
     if ([dict[@"messageType"] isEqualToString:@"progress"]) {
-        self.progress = [dict[@"progress"] floatValue];
+        float progress = [dict[@"progress"] floatValue];
+        if (isnan(progress)) {
+            progress = 0.0;
+        }
+        self.progress = progress;
+        
     }
     
     if ([dict[@"messageType"] isEqualToString:@"time"]) {

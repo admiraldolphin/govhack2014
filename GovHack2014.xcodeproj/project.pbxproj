@@ -23,6 +23,7 @@
 		68363DBB197211F6005088A6 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 68363DBA197211F6005088A6 /* missions.json */; };
 		68363DBE19721512005088A6 /* GameProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68363DBD19721512005088A6 /* GameProgressView.m */; };
 		68363DC119723B5C005088A6 /* GHGameViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68363DC019723B5C005088A6 /* GHGameViewCell.m */; };
+		688C6A641972449F00F1DB01 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 688C6A631972449F00F1DB01 /* Settings.bundle */; };
 		68E6C7D9196FD78D000CF1A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7D8196FD78D000CF1A0 /* Foundation.framework */; };
 		68E6C7DB196FD78D000CF1A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */; };
 		68E6C7DD196FD78D000CF1A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E6C7DC196FD78D000CF1A0 /* UIKit.framework */; };
@@ -78,6 +79,7 @@
 		68363DBD19721512005088A6 /* GameProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameProgressView.m; sourceTree = "<group>"; };
 		68363DBF19723B5C005088A6 /* GHGameViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHGameViewCell.h; sourceTree = "<group>"; };
 		68363DC019723B5C005088A6 /* GHGameViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHGameViewCell.m; sourceTree = "<group>"; };
+		688C6A631972449F00F1DB01 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		68E6C7D5196FD78D000CF1A0 /* GovHack2014.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GovHack2014.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E6C7D8196FD78D000CF1A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68E6C7DA196FD78D000CF1A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -207,6 +209,7 @@
 				68E6C7DF196FD78D000CF1A0 /* Supporting Files */,
 				6801614E19712DDD0062C8E8 /* People.xcassets */,
 				68363DB8197201F7005088A6 /* Frames.xcassets */,
+				688C6A631972449F00F1DB01 /* Settings.bundle */,
 			);
 			path = GovHack2014;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				33CF9C1419722EE10050C675 /* wrong-answer.wav in Resources */,
 				68363DB9197201F8005088A6 /* Frames.xcassets in Resources */,
 				33CF9C1619722F350050C675 /* right-answer.mp3 in Resources */,
+				688C6A641972449F00F1DB01 /* Settings.bundle in Resources */,
 				33CF9C18197230040050C675 /* get-read-to-gov.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,8 +510,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SECRET LAB PTY. LTD.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SECRET LAB PTY. LTD.";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GovHack2014/GovHack2014-Prefix.pch";
 				INFOPLIST_FILE = "GovHack2014/GovHack2014-Info.plist";
