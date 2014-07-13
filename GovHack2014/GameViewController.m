@@ -187,6 +187,10 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)networkingWillBeginGame {
     
 }
