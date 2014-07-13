@@ -13,6 +13,7 @@
 #import "GHMinionCell.h"
 #import "UIImage+MinionImage.h"
 #import "GameProgressView.h"
+@import AVFoundation;
 
 @interface GameViewController () <GHNetworkingSessionDelegate, UICollectionViewDataSource, UICollectionViewDelegate, GHGameClientDelegate>
 
@@ -271,6 +272,10 @@
 }
 
 - (void)missionDidNotSucceed {
+    NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"wrong-answer" withExtension:@"wav"];
+    AVAudioPlayer *wrongNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
+    [wrongNoise play];
+    
     self.feedbackView.backgroundColor = [UIColor redColor];
     self.feedbackView.alpha = 0.25;
     
@@ -280,6 +285,9 @@
 }
 
 - (void)missionSucceeded {
+    NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"right-answer" withExtension:@"mp3"];
+    AVAudioPlayer *rightNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
+    [rightNoise play];
     self.feedbackView.backgroundColor = [UIColor greenColor];
     self.feedbackView.alpha = 0.25;
     

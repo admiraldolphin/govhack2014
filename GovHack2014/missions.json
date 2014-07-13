@@ -276,7 +276,8 @@
         "validFunctions": [
             "PUBLIC UTILITIES",
             "CEREMONIAL FUNCTIONS",
-            "COMMUNITY SERVICES"
+            "COMMUNITY SERVICES",
+            "TELECOMMUNICATIONS"
         ]
     },
     {
@@ -324,23 +325,15 @@
         "title": "Protect indonesia",
         "validFunctions": [
             "COMMONWEALTH STATE RELATIONS",
-            "AIR TRANSPORT",
-            "SEA TRANSPORT",
-            "LAW ENFORCEMENT",
             "NAVY",
             "OVERSEAS AID PROGRAMS",
-            "LAND TRANSPORT",
-            "AIRPORTS",
             "DEFENCE",
-            "RAIL TRANSPORT",
             "GOVERNMENT REPRESENTATION OVERSEAS",
             "AIR FORCE",
-            "TRANSPORT",
             "FOREIGN POLICY",
             "WARTIME SECURITY",
             "MIGRATION",
             "CONSULAR SERVICES",
-            "HUMAN RIGHTS",
             "ARMY",
             "SECURITY AND INTELLIGENCE"
         ]
@@ -356,7 +349,6 @@
             "DEFENCE",
             "AIR FORCE",
             "WAR MEMORIALS",
-            "RADIO BROADCASTING",
             "NATIONAL HERITAGE",
             "NATIONAL PARKS",
             "ARMY",
@@ -366,16 +358,9 @@
     {
         "title": "Recruit soldiers",
         "validFunctions": [
-            "BROADCASTING",
-            "CENSORSHIP",
-            "CABINET",
-            "TELECOMMUNICATIONS",
-            "SUPREME COURT LAW",
-            "LAW ENFORCEMENT",
             "EMPLOYMENT",
             "NAVY",
             "DEFENCE",
-            "GOVERNMENT MEDIA",
             "AIR FORCE",
             "ARMY"
         ]
@@ -383,22 +368,13 @@
     {
         "title": "Resolve Teachers strike ",
         "validFunctions": [
-            "",
-            "COMMONWEALTH STATE RELATIONS",
-            "FEDERAL LAW",
-            "TAXATION",
-            "BROADCASTING",
-            "CENSORSHIP",
-            "CABINET",
             "PRESCHOOL EDUCATION",
             "EMPLOYMENT",
-            "FAMILY LAW",
             "SECONDARY EDUCATION",
             "PRIMARY EDUCATION",
             "LEGAL",
             "CHILD WELFARE",
-            "COMMITTEES OF INQUIRY",
-            "GOVERNOR GENERAL"
+            "COMMITTEES OF INQUIRY"
         ]
     },
     {
@@ -415,7 +391,6 @@
             "TRAINING",
             "SUPERANNUATION",
             "LEGISLATION",
-            "INDUSTRIES",
             "ARBITRATION",
             "EQUITY PROGRAMS",
             "LABOUR MARKET PROGRAMS",
@@ -425,14 +400,9 @@
     {
         "title": "Perform public lecture",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
             "SEAT OF GOVERNMENT",
-            "BROADCASTING",
-            "CENSORSHIP",
-            "TELECOMMUNICATIONS",
             "AUSTRALIAN CAPITAL TERRITORY",
             "PUBLISHING AND PRINTING",
-            "MEMORIALS",
             "GOVERNMENT MEDIA",
             "RADIO BROADCASTING",
             "GOVERNOR GENERAL"
@@ -441,10 +411,8 @@
     {
         "title": "Open library",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
             "SEAT OF GOVERNMENT",
             "BROADCASTING",
-            "PUBLIC UTILITIES",
             "COMMUNITY SERVICES",
             "PENSIONS AND BENEFITS",
             "RECORDS OF THE GOVERNMENT",
@@ -455,26 +423,17 @@
     {
         "title": "Stimulate business",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
-            "SEAT OF GOVERNMENT",
             "CONSUMER AFFAIRS",
             "LOANS",
             "EMPLOYMENT",
             "SOCIAL WELFARE",
-            "RESOURCES",
-            "POSTAL SERVICES",
             "CONSTRUCTION",
-            "AIRPORTS",
             "COMMUNITY SERVICES",
             "PENSIONS AND BENEFITS",
-            "OCCUPATIONAL HEALTH AND SAFETY",
-            "BANKING",
             "SOCIAL AND ECONOMIC RESEARCH",
-            "STATISTICS",
             "MARKET REGULATION",
             "LITERATURE FUNDING",
             "VOCATIONAL TRAINING SCHEMES",
-            "ROYAL COMMISSIONS",
             "GOODS AND SERVICES",
             "RECRUITMENT"
         ]
@@ -485,8 +444,7 @@
             "BROADCASTING",
             "TELECOMMUNICATIONS",
             "ARTS",
-            "FILM PRODUCTION",
-            "SURVEILLANCE"
+            "FILM PRODUCTION"
         ]
     },
     {
@@ -510,7 +468,7 @@
         ]
     },
     {
-        "title": "Commision Humpty cannibalism simulator",
+        "title": "Commission Humpty cannibalism simulator",
         "validFunctions": [
             "ARTS",
             "BROADCASTING"
@@ -713,31 +671,9 @@
         ]
     },
     {
-        "title": "Celebrate ANZAC Day",
-        "validFunctions": [
-            "CEREMONIAL FUNCTIONS",
-            "COMMUNITY SERVICES",
-            "CULTURAL AFFAIRS",
-            "NATIONAL HERITAGE",
-            "NAVY",
-            "VETERANS' AFFAIRS",
-            "DEFENCE",
-            "AIR FORCE",
-            "WAR MEMORIALS",
-            "FOREIGN POLICY",
-            "NATIONAL EVENTS",
-            "NATIONAL HERITAGE",
-            "ARMY",
-            "PRISONERS OF WAR",
-            "RECRUITMENT",
-            "SECURITY AND INTELLIGENCE"
-        ]
-    },
-    {
         "title": "Support single parents",
         "validFunctions": [
             "TAXATION",
-            "PUBLIC UTILITIES",
             "PRESCHOOL EDUCATION",
             "SOCIAL WELFARE",
             "FAMILY LAW",
@@ -745,11 +681,9 @@
             "COMMUNITY SERVICES",
             "TERTIARY EDUCATION",
             "PRIMARY EDUCATION",
-            "INDUSTRIAL RELATIONS",
             "EDUCATION",
             "STUDENT ASSISTANCE",
-            "CHILD WELFARE",
-            "HEALTH"
+            "CHILD WELFARE"
         ]
     },
     {
@@ -768,7 +702,6 @@
             "ENVIRONMENT",
             "AGRICULTURE",
             "CIVIL ENGINEERING",
-            "PUBLISHING AND PRINTING",
             "GENETICS",
             "VITICULTURE",
             "EARTH SCIENCES",
@@ -779,7 +712,6 @@
     {
         "title": "Mine for coal",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
             "ENVIRONMENT",
             "EMPLOYMENT",
             "RESOURCES",
@@ -794,12 +726,9 @@
     {
         "title": "Build a bridge",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
             "PUBLIC UTILITIES",
             "CONSTRUCTION",
             "CIVIL ENGINEERING",
-            "LAND TRANSPORT",
-            "RAIL TRANSPORT",
             "TRANSPORT",
             "ROAD SAFETY"
         ]
@@ -811,7 +740,6 @@
             "AGRICULTURE",
             "VITICULTURE",
             "RESOURCES",
-            "GRANTS ADMINISTRATION",
             "REGIONAL DEVELOPMENT",
             "WATER RESOURCES",
             "EARTH SCIENCES"
@@ -820,7 +748,6 @@
     {
         "title": "Grant exploration permit",
         "validFunctions": [
-            "COMMONWEALTH STATE RELATIONS",
             "ENVIRONMENT",
             "RESOURCES",
             "MINING",
@@ -853,7 +780,6 @@
     {
         "title": "Fund gallery",
         "validFunctions": [
-            "",
             "GRANTS ADMINISTRATION",
             "CULTURAL AFFAIRS",
             "ARTS"
@@ -885,7 +811,6 @@
     {
         "title": "Fine evil corporation",
         "validFunctions": [
-            "FEDERAL LAW",
             "LAW ENFORCEMENT",
             "OMBUDSMAN",
             "LEGAL",
