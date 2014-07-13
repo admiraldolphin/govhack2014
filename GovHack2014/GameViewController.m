@@ -20,6 +20,10 @@
 @property (strong) GHGame* game;
 @property (strong) GHGameClient* gameClient;
 
+@property (strong) AVAudioPlayer *wrongMinionPlayer;
+@property (strong) AVAudioPlayer *rightMinionPlayer;
+@property (strong) AVAudioPlayer *readyToGovPlayer;
+
 @property (weak, nonatomic) IBOutlet UILabel *missionNameLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *missionTimeProgress;
 @property (weak, nonatomic) IBOutlet UILabel *gameStateLabel;
@@ -85,8 +89,15 @@
     
     [self.gameClient addObserver:self forKeyPath:@"people" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionInitial context:nil];
     
+    // loading up the audio players
+    NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"get-read-to-gov" withExtension:@"wav"];
+    self.readyToGovPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
     
+    filePath = [[NSBundle mainBundle] URLForResource:@"wrong-answer" withExtension:@"wav"];
+    self.wrongMinionPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
     
+    filePath = [[NSBundle mainBundle] URLForResource:@"right-answer" withExtension:@"mp3"];
+    self.rightMinionPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -151,12 +162,10 @@
     switch (self.gameClient.state) {
         case GHGameStateWaitingForMissions:
         {
-            NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"get-read-to-gov" withExtension:@"wav"];
-            AVAudioPlayer *bgNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
-            [bgNoise play];
-            
             string = @"Waiting for missions";
             self.waitingForMissionsView.hidden = NO;
+            
+            [self.readyToGovPlayer play];
         }
             break;
         case GHGameStatePerformingMissions:
@@ -276,9 +285,7 @@
 }
 
 - (void)missionDidNotSucceed {
-    NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"wrong-answer" withExtension:@"wav"];
-    AVAudioPlayer *wrongNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
-    [wrongNoise play];
+    [self.wrongMinionPlayer play];
     
     self.feedbackView.backgroundColor = [UIColor redColor];
     self.feedbackView.alpha = 0.25;
@@ -289,9 +296,8 @@
 }
 
 - (void)missionSucceeded {
-    NSURL *filePath = [[NSBundle mainBundle] URLForResource:@"right-answer" withExtension:@"mp3"];
-    AVAudioPlayer *rightNoise = [[AVAudioPlayer alloc] initWithContentsOfURL:filePath error:nil];
-    [rightNoise play];
+    [self.rightMinionPlayer play];
+    
     self.feedbackView.backgroundColor = [UIColor greenColor];
     self.feedbackView.alpha = 0.25;
     
