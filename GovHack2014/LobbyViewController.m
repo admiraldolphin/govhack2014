@@ -46,7 +46,7 @@
     // +1 to include ourself
     NSUInteger playerCount = [GHNetworking sharedNetworking].connectedPeers.count + 1;
     
-    NSString* playerCountString = [NSString stringWithFormat:@"%lu players connected", (unsigned long)playerCount];
+    NSString* playerCountString = [NSString stringWithFormat:@"%lu", (unsigned long)playerCount];
     
     self.playersLabel.text = playerCountString;
 }
@@ -78,10 +78,12 @@
         self.peerTypeLabel.text = @"You are the server";
         
         self.startGameButton.enabled = YES;
+        self.startGameButton.hidden = NO;
     } else {
         self.peerTypeLabel.text = @"You are a client";
         
         self.startGameButton.enabled = NO;
+        self.startGameButton.hidden = YES;
     }
     
     [self updatePlayerCount];
