@@ -51,7 +51,7 @@
     GHGameViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PeerCell" forIndexPath:indexPath];
     
     MCPeerID* peer = [GHNetworking sharedNetworking].nearbyPeers[indexPath.row];
-    
+    cell.backgroundColor = [UIColor clearColor];
     cell.gameNameLabel.text = peer.displayName;
     
     return cell;
